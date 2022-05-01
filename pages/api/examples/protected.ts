@@ -1,0 +1,87 @@
+// This is an example of to protect an API route
+import { getSession } from "next-auth/react"
+import type { NextApiRequest, NextApiResponse } from "next"
+import rateLimit from "../../../utils/rate-limit"
+import { env } from "process"
+
+const limiter = rateLimit({
+  interval: 60 * 1000, // 60 seconds
+  uniqueTokenPerInterval: 500, // Max 500 users per second
+})
+
+const { Configuration, OpenAIApi } = require("openai")
+
+const configuration = new Configuration({
+  apiKey: env.OPENAI_API_KEY,
+})
+const openai = new OpenAIApi(configuration)
+
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  await limiter.check(res, 10, "CACHE_TOKEN") // 10 requests per minute
+
+  const session = await getSession({ req })
+
+  //console.log(req.body)
+  //console.log(req.body.textup)
+  //console.log(req.body.selectedOption.value)
+
+  console.log(
+    "#### Translate this function into " +
+      req.body.selectedOption.value +
+      " \n### \n    \n  " +
+      req.body.textup +
+      " \n    \n### " +
+      req.body.selectedOption.value +
+      "\n\n"
+  )
+
+  if(req.body.textup.length > 1000) {
+    res.status(400).json({
+      message: "Please under 1000 chars",
+    })
+    return
+  }
+
+
+  if (session) {
+    const { user } = session
+
+    // add sending user id to the request
+    openai
+      .createCompletion("text-curie-001", {
+        //text-davinci-002,
+        prompt:
+          "##### Translate this function into " +
+          req.body.selectedOption.value +
+          " \n### \n    \n  " +
+          req.body.textup +
+          " \n    \n### " +
+          req.body.selectedOption.value +
+          "\n\n",
+        temperature: 0.7,
+        max_tokens: 250,
+        top_p: 1,
+        frequency_penalty: 0,
+        presence_penalty: 0,
+        stop: ["###"],
+      })
+      .then((response: any) => {
+        console.log(response.data.choices[0].text)
+        //res.status(200).json(response.data)
+        try {
+          res.status(200).json({ data: response.data.choices[0].text })
+        } catch (err) {
+          console.log(err)
+        }
+      })
+      .catch((error: any) => {
+        console.log(error)
+        res.status(500).json(error)
+      })
+  } else {
+    res.send({
+      error:
+        "You must be signed in to view the protected content on this page.",
+    })
+  }
+}
