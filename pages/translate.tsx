@@ -45,7 +45,9 @@ export default function translate() {
       )
       .then((res) => setContent(res.data.trim()))
       .catch((err) => {
-        setContent("Max 1000 characters. Please dont Spam requests. No Adult Content. Try again in a few seconds.")
+        setContent(
+          "Max 1000 characters. Please dont Spam requests. No Adult Content. Try again in a few seconds."
+        )
         console.log(err)
       })
       .finally(() => setRequestloading(false))
@@ -106,8 +108,12 @@ export default function translate() {
               setCount(e.target.value.length)
             }}
           ></textarea>
-          
-          {count > 1000 ? (<p id="counter">Too much! +{count - 1000}</p>):(<p id="counter">{count}</p>)}
+
+          {count > 1000 ? (
+            <p id="counter">Too much! +{count - 1000}</p>
+          ) : (
+            <p id="counter">{count}</p>
+          )}
           <button onClick={buttonPress}>Translate</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
