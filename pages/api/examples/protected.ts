@@ -17,7 +17,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  await limiter.check(res, 10, "CACHE_TOKEN") // 10 requests per minute
+  await limiter.check(res, 8, "CACHE_TOKEN") // 8 requests per minute
 
   const session = await getSession({ req })
 
@@ -34,7 +34,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       req.body.selectedOption.value +
       "\n\n"
   )
-
+  
+  console.log("content length", req.body.textup.length)
   if (req.body.textup.length > 1000) {
     res.status(400).json({
       message: "Please under 1000 chars",

@@ -54,6 +54,16 @@ export default function translate() {
   }
 
   const buttonPress = () => {
+    if(selectedOption === undefined) {
+      alert("Please select a language")
+      return
+    } 
+    if(textup === "") {
+      alert("Please enter some code")
+      return
+    }
+
+
     setRequestloading(true)
     console.log("button pressed", textup)
     fetchData()
@@ -80,6 +90,10 @@ export default function translate() {
   return (
     <>
       <NextSeo
+        title="Translate Programming Language"
+        description="Translate from any Language to any Programming Language"
+        canonical="https://aiservice.vercel.app/translate"
+
         openGraph={{
           title: "Translate Programming Language",
           description:
