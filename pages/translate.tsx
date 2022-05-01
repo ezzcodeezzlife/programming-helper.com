@@ -45,7 +45,7 @@ export default function translate() {
       )
       .then((res) => setContent(res.data.trim()))
       .catch((err) => {
-        setContent("Max 1000 characters. Please dont Spam requests. Try again in a few seconds.")
+        setContent("Max 1000 characters. Please dont Spam requests. No Adult Content. Try again in a few seconds.")
         console.log(err)
       })
       .finally(() => setRequestloading(false))
