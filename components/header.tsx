@@ -102,13 +102,17 @@ export default function Header() {
             </Link>
           </li>
 
+
+
+
           <li className={styles.navItem}>
             <Link href="/code-to-explanation">
               <a>Generate Code from Description</a>
             </Link>
           </li>
+
           <li className={styles.navItem}>
-            <Link href="/code-to-explanation">
+            <Link href="/generate-html-from-description">
               <a>Generate HTML from Description</a>
             </Link>
           </li>
@@ -117,6 +121,8 @@ export default function Header() {
               <a>Fix Syntax of invalid Code</a>
             </Link>
           </li>
+          
+
 
 
         </ul>
