@@ -72,7 +72,7 @@ export default function Header() {
             </Link>
           </li>
 
-          <li style={decora} className={styles.navItem}>
+          <li className={styles.navItem}>
             <Link href="/translate">
               <a>Translate Languages</a>
             </Link>
