@@ -66,12 +66,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .createCompletion("text-curie-001", {
               //text-davinci-002,
               prompt:
-                "##### Translate this function into " +
+                "#### Generate a function in " +
                 req.body.selectedOption.value +
-                " \n### \n    \n  " +
+                " that does the following: " +
                 req.body.textup +
-                " \n    \n### " +
-                req.body.selectedOption.value +
+                " \n    \n ### " +
                 "\n\n",
               temperature: 0.7,
               max_tokens: 250,
