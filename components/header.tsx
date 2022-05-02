@@ -72,7 +72,7 @@ export default function Header() {
             </Link>
           </li>
 
-          <li className={styles.navItem}>
+          <li style={decora} className={styles.navItem}>
             <Link href="/translate">
               <a>Translate Languages</a>
             </Link>
@@ -80,7 +80,7 @@ export default function Header() {
 
           <li className={styles.navItem}>
             <Link href="/generate-funcition">
-              <a>Create function from description</a>
+              <a>Create Function from Description</a>
             </Link>
           </li>
 
@@ -102,6 +102,21 @@ export default function Header() {
             </Link>
           </li>
 
+          <li className={styles.navItem}>
+            <Link href="/code-to-explanation">
+              <a>Generate Code from Description</a>
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/code-to-explanation">
+              <a>Generate HTML from Description</a>
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/code-to-explanation">
+              <a>Fix Syntax of invalid Code</a>
+            </Link>
+          </li>
 
 
         </ul>
