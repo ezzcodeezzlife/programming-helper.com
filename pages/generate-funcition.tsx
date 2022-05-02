@@ -217,7 +217,7 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Generate {selectedOption? (<>{selectedOption.value}</>):(<></>)} Function</button>
+          <button onClick={buttonPress}>Generate Function</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea value={content}></textarea>
