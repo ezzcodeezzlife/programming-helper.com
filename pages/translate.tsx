@@ -7,6 +7,8 @@ import Select from "react-select"
 import { NextSeo } from "next-seo"
 import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
+import Script from 'next/script'
+
 
 const options = [
   { value: "Python", label: "Python" },
