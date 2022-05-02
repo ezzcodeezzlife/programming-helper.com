@@ -25,14 +25,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   //console.log(req.body.textup)
   //console.log(req.body.selectedOption.value)
 
-  console.log(
-    "#### Generate a fucntion in " +
-      " that does the following: " +
-      req.body.textup +
-      " \n    \n ### " +
-      "\n\n"
-  )
-
   console.log("content length", req.body.textup.length)
   if (req.body.textup.length > 1000) {
     res.status(400).json({
