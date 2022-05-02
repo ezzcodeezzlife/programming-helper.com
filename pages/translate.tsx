@@ -22,6 +22,12 @@ const options = [
   { value: "C", label: "C" },
   { value: "Swift", label: "Swift" },
   { value: "C#", label: "C#" },
+  { value: "Elixir", label: "Elixir" },
+  { value: "Haskell", label: "Haskell" },
+  { value: "Scala", label: "Scala" },
+  { value: "Kotlin", label: "Kotlin" },
+  { value: "R", label: "R" },
+  { value: "Ruby", label: "Ruby" },
 ]
 
 export const Bottomtext = () => {

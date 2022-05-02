@@ -22,6 +22,12 @@ const options = [
   { value: "C", label: "C" },
   { value: "Swift", label: "Swift" },
   { value: "C#", label: "C#" },
+  { value: "Elixir", label: "Elixir" },
+  { value: "Haskell", label: "Haskell" },
+  { value: "Scala", label: "Scala" },
+  { value: "Kotlin", label: "Kotlin" },
+  { value: "R", label: "R" },
+  { value: "Ruby", label: "Ruby" },
 ]
 
 export const Bottomtext = () => {
@@ -121,7 +127,7 @@ export default function translate() {
 
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
-        <h1>Translate to:</h1>
+        <h1>Create function from description:</h1>
         <Select options={options} onChange={handleChange} />
         <p>
           <textarea
