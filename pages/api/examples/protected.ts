@@ -60,6 +60,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         if (response.data.choices[0].text === "0") {
           console.log("safe contnet")
 
+          console.log("usermail:", user?.email)
+
           // add sending user id to the request
           openai
             .createCompletion("text-curie-001", {
@@ -78,6 +80,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               frequency_penalty: 0,
               presence_penalty: 0,
               stop: ["###"],
+              user: user?.email,
             })
             .then((response: any) => {
               console.log(response.data.choices[0].text)
