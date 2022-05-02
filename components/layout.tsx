@@ -22,7 +22,14 @@ export default function Layout({ children }: Props) {
           gtag('config', 'G-WMLR3PFFXE');
         `}
       </Script>
-      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8251732556629149" crossOrigin="anonymous"></Script>
+
+      <Script
+        id="Adsense-id"
+        data-ad-client="ca-pub-8251732556629149"
+        async={true}
+        strategy="beforeInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
 
       <Header />
       <main>{children}</main>
