@@ -9,7 +9,7 @@ body {
   color: #333;
 }
 
-make p float right li,
+li,
 p {
   line-height: 1.5rem;
 }
@@ -48,7 +48,8 @@ textarea {
 }
 
 button {
-  background: rgb(217, 229, 255);
+  background: #346df1;
+  color: #fff;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   padding: 0.5rem;

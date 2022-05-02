@@ -34,7 +34,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       req.body.selectedOption.value +
       "\n\n"
   )
-  
+
   console.log("content length", req.body.textup.length)
   if (req.body.textup.length > 1000) {
     res.status(400).json({
