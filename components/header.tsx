@@ -96,6 +96,14 @@ export default function Header() {
             </Link>
           </li>
 
+          <li className={styles.navItem}>
+            <Link href="/code-to-explanation">
+              <a>Code to Explanation</a>
+            </Link>
+          </li>
+
+
+
         </ul>
       </nav>
     </header>

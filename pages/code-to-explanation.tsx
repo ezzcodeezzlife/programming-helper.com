@@ -13,11 +13,11 @@ import Script from "next/script"
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
-      <h2>Time complexity from any function any language</h2>
+      <h2>From Code to Explanation</h2>
       {/* Write three sentences about this tool  */}
       <p>
-        Get Time complexity. Its easy and
-        fast
+        From Code to Explanation. Its easy and
+        fast.
       </p>
     </div>
   )
@@ -34,7 +34,7 @@ export default function translate() {
 
   // Fetch content from protected route
   const fetchData = async () => {
-    const res = await fetch("/api/examples/time-complexity", {
+    const res = await fetch("/api/examples/code-to-explanation", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export default function translate() {
     return (
       <Layout>
         <Head>
-          <title>Time complexity from any function any language</title>
+          <title>From Code to Explanation</title>
           <meta
             name="description"
             content="Generate function from description for any Programming Language"
@@ -106,16 +106,27 @@ export default function translate() {
 
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
-        <h1>Time complexity from any function any language:</h1>
+        <h1>From Code to Explanation:</h1>
         
         <p>
           <textarea
             value={textup}
-            placeholder="for (var i = 0; i < array.length; i++) {
-
-                items.push(array[i]);
-                
-                }"
+            placeholder="function quicksort(array) {
+              if (array.length <= 1) {
+                return array;
+              }
+            
+              var pivot = array[0];
+              
+              var left = []; 
+              var right = [];
+            
+              for (var i = 1; i < array.length; i++) {
+                array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
+              }
+            
+              return quicksort(left).concat(pivot, quicksort(right));
+            };"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -134,11 +145,11 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPressLogin}>Sign in to Generate Time Complexity</button>
+          <button onClick={buttonPressLogin}>Sign in to Generate Explanation</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
-            placeholder="O(n)"
+            placeholder="This function is a quicksort algorithm. The quicksort algorithm is a sorting algorithm that sorts an array by selecting a pivot element from the array and partitioning the other elements into two subarrays, one of which contains elements less than the pivot and the other of which contains elements greater than the pivot. The algorithm then sorts the subarrays and combines them to produce the sorted array."
             value={content}
           ></textarea>
         </p>
@@ -153,7 +164,7 @@ export default function translate() {
   return (
     <>
       <Head>
-        <title>Time complexity from any function any language</title>
+        <title>From Code to Explanation</title>
         <meta name="description" content="Generate function from description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="INDEX" />
@@ -181,16 +192,27 @@ export default function translate() {
       />
 
       <Layout>
-        <h1>Time complexity from any function any language:</h1>
+        <h1>From Code to Explanation:</h1>
        
         <p>
           <textarea
             value={textup}
-            placeholder="for (var i = 0; i < array.length; i++) {
-
-                items.push(array[i]);
-                
-                }"
+            placeholder="function quicksort(array) {
+              if (array.length <= 1) {
+                return array;
+              }
+            
+              var pivot = array[0];
+              
+              var left = []; 
+              var right = [];
+            
+              for (var i = 1; i < array.length; i++) {
+                array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
+              }
+            
+              return quicksort(left).concat(pivot, quicksort(right));
+            };"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -209,10 +231,10 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Generate Time Complexity</button>
+          <button onClick={buttonPress}>Generate Explanation</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea placeholder="0(n)" value={content}></textarea>
+          <textarea placeholder="This function is a quicksort algorithm. The quicksort algorithm is a sorting algorithm that sorts an array by selecting a pivot element from the array and partitioning the other elements into two subarrays, one of which contains elements less than the pivot and the other of which contains elements greater than the pivot. The algorithm then sorts the subarrays and combines them to produce the sorted array." value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>
