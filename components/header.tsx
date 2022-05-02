@@ -90,6 +90,12 @@ export default function Header() {
             </Link>
           </li>
 
+          <li className={styles.navItem}>
+            <Link href="/text-to-sql-syntax">
+              <a>Text Description to SQL Syntax</a>
+            </Link>
+          </li>
+
         </ul>
       </nav>
     </header>

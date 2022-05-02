@@ -13,10 +13,10 @@ import Script from "next/script"
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
-      <h2>Time complexity from any function any language</h2>
+      <h2>From Text Description to SQL Syntax</h2>
       {/* Write three sentences about this tool  */}
       <p>
-        Get Time complexity. Its easy and
+        Get SQL Syntax from text. Its easy and
         fast
       </p>
     </div>
@@ -34,7 +34,7 @@ export default function translate() {
 
   // Fetch content from protected route
   const fetchData = async () => {
-    const res = await fetch("/api/examples/time-complexity", {
+    const res = await fetch("/api/examples/sql", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export default function translate() {
     return (
       <Layout>
         <Head>
-          <title>Time complexity from any function any language</title>
+          <title>From Text Description to SQL Syntax</title>
           <meta
             name="description"
             content="Generate function from description for any Programming Language"
@@ -106,16 +106,12 @@ export default function translate() {
 
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
-        <h1>Time complexity from any function any language:</h1>
+        <h1>From Text Description to SQL Syntax:</h1>
         
         <p>
           <textarea
             value={textup}
-            placeholder="for (var i: number = 0; i < array.length; i++) {
-
-                items.push(array[i]);
-                
-                }"
+            placeholder="Get all customers from Los Angeles between ages 30 and 40"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -134,11 +130,11 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPressLogin}>Sign in to Generate Time Complexity</button>
+          <button onClick={buttonPressLogin}>Sign in to Generate SQL</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
-            placeholder="O(n)"
+            placeholder="SELECT * FROM customers WHERE city = 'Los Angeles' AND age >= 30 AND age <= 40"
             value={content}
           ></textarea>
         </p>
@@ -153,7 +149,7 @@ export default function translate() {
   return (
     <>
       <Head>
-        <title>Time complexity from any function any language</title>
+        <title>From Text Description to SQL Syntax</title>
         <meta name="description" content="Generate function from description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="INDEX" />
@@ -181,16 +177,12 @@ export default function translate() {
       />
 
       <Layout>
-        <h1>Time complexity from any function any language:</h1>
+        <h1>From Text Description to SQL Syntax:</h1>
        
         <p>
           <textarea
             value={textup}
-            placeholder="for (var i: number = 0; i < array.length; i++) {
-
-                items.push(array[i]);
-                
-                }"
+            placeholder="Get all customers from Los Angeles between ages 30 and 40"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -209,10 +201,10 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Generate Time Complexity</button>
+          <button onClick={buttonPress}>Generate SQL Command</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea placeholder="0(n)" value={content}></textarea>
+          <textarea placeholder="SELECT * FROM customers WHERE city = 'Los Angeles' AND age >= 30 AND age <= 40" value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

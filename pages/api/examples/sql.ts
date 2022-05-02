@@ -26,8 +26,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   //console.log(req.body.selectedOption.value)
 
   console.log(
-    "#### Generate a function in " +
-      req.body.selectedOption.value +
+    "#### Generate a fucntion in " +
       " that does the following: " +
       req.body.textup +
       " \n    \n ### " +
@@ -63,15 +62,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           // add sending user id to the request
           openai
-            .createCompletion("text-curie-001", {
+            .createCompletion("text-davinci-002", {
               //text-davinci-002,
               prompt:
-                "##### Translate this function into " +
-                req.body.selectedOption.value +
-                " \n### \n    \n  " +
+                "##### Translate this description into a SQL Synatx Command " +
+                " \n    \n  " +
                 req.body.textup +
-                " \n    \n### " +
-                req.body.selectedOption.value +
+                " \n    \n###  " +
                 "\n\n",
               temperature: 0.7,
               max_tokens: 250,
