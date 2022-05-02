@@ -83,6 +83,13 @@ export default function Header() {
               <a>Create function from description</a>
             </Link>
           </li>
+
+          <li className={styles.navItem}>
+            <Link href="/time-complexity">
+              <a>Get time complexity</a>
+            </Link>
+          </li>
+
         </ul>
       </nav>
     </header>
