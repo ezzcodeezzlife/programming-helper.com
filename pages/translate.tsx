@@ -179,7 +179,7 @@ export default function translate() {
 
       <Layout>
         <h1>Translate to:</h1>
-        <Select placeholder="Select Language ..." options={options} onChange={handleChange} />
+        <Select isSearchable={false} placeholder="Select Language ..." options={options} onChange={handleChange} />
         <p>
           <textarea
             value={textup}
