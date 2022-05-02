@@ -27,9 +27,9 @@ const options = [
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
-      <h2>Transalte any programming language to any other language</h2>
+      <h2>Generate a fuction just by describing what is should do</h2>
       {/* Write three sentences about this tool  */}
-      <p>With this Tool you can translate your code or functions to any other programming language. Its easy and fast </p>
+      <p>Generate a fuction just by describing what is should do. Its easy and fast</p>
       
     </div>
   )
@@ -46,7 +46,7 @@ export default function translate() {
 
   // Fetch content from protected route
   const fetchData = async () => {
-    const res = await fetch("/api/examples/protected", {
+    const res = await fetch("/api/examples/generate-function", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -100,10 +100,10 @@ export default function translate() {
     return (
       <Layout>
         <Head>
-          <title>Translate Programming Language</title>
+          <title>Generate function from description</title>
           <meta
             name="description"
-            content="Translate from any Language to any Programming Language"
+            content="Generate function from description for any Programming Language"
           />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="INDEX" />
@@ -126,7 +126,7 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="Type or paste code here"
+            placeholder="Type description here (Example: Add two numbers and return them)"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -145,10 +145,10 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPressLogin}>Sign in to Translate</button>
+          <button onClick={buttonPressLogin}>Sign in to Generate</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea value={content}></textarea>
+          <textarea placeholder="function add(a, b){ return a + b }" value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -161,10 +161,10 @@ export default function translate() {
   return (
     <>
       <Head>
-        <title>Translate Programming Language</title>
+        <title>Generate function from description</title>
         <meta
           name="description"
-          content="Translate from any Language to any Programming Language"
+          content="Generate function from description"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="INDEX" />
@@ -180,25 +180,25 @@ export default function translate() {
         <meta property="og:site_name" content="SITE NAME" />
       </Head>
       <NextSeo
-        title="Translate Programming Language"
-        description="Translate from any Language to any Programming Language"
-        canonical="https://aiservice.vercel.app/translate"
+        title="Generate function from description"
+        description="Generate function from description"
+        canonical="https://aiservice.vercel.app/generate-function"
         openGraph={{
-          title: "Translate Programming Language",
+          title: "Generate function from description",
           description:
-            "Translate from any Language to any Programming Language",
-          url: "https://aiservice.vercel.app/translate",
-          site_name: "Translate from any Language to any Programming Language",
+            "Generate function from description",
+          url: "https://aiservice.vercel.app/generate-function",
+          site_name: "Generate function from description",
         }}
       />
 
       <Layout>
-        <h1>Translate to:</h1>
+        <h1>Create function from description:</h1>
         <Select isSearchable={false} placeholder="Select Language ..." options={options} onChange={handleChange} />
         <p>
           <textarea
             value={textup}
-            placeholder="Type or paste code here"
+            placeholder="Type description here (Example: Add two numbers and return them)"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -217,7 +217,7 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Translate</button>
+          <button onClick={buttonPress}>Generate {selectedOption? (<>{selectedOption.value}</>):(<></>)} Function</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea value={content}></textarea>

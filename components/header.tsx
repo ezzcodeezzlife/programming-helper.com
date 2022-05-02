@@ -79,8 +79,8 @@ export default function Header() {
           </li>
 
           <li className={styles.navItem}>
-            <Link href="/protected">
-              <a>Create React Component</a>
+            <Link href="/generate-funcition">
+              <a>Create function from desciption</a>
             </Link>
           </li>
         </ul>
