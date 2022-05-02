@@ -5,7 +5,7 @@ import AccessDenied from "../components/access-denied"
 import { NextScript } from "next/document"
 import Select from "react-select"
 import { NextSeo } from "next-seo"
-
+import Head from "next/head"
 const options = [
   { value: "Python", label: "Python" },
   { value: "Javascript", label: "Javascript" },
@@ -89,6 +89,22 @@ export default function translate() {
   // If session exists, display content
   return (
     <>
+    <Head>
+      <title>Translate Programming Language</title>
+      <meta name="description" content="Translate from any Language to any Programming Language"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta name="robots" content="INDEX" />
+      <meta name="robots" content="FOLLOW" />
+      <meta property="og:type" content="article" />
+
+<meta property="og:title" content="TITLE OF YOUR POST OR PAGE" />
+
+<meta property="og:description" content="DESCRIPTION OF PAGE CONTENT" />
+
+<meta property="og:url" content="PERMALINK" />
+
+<meta property="og:site_name" content="SITE NAME" />
+    </Head>
       <NextSeo
         title="Translate Programming Language"
         description="Translate from any Language to any Programming Language"
@@ -98,8 +114,8 @@ export default function translate() {
           title: "Translate Programming Language",
           description:
             "Translate from any Language to any Programming Language",
-          url: "/translate",
-          site_name: "Translate",
+          url: "https://aiservice.vercel.app/translate",
+          site_name: "Translate from any Language to any Programming Language",
         }}
       />
 
