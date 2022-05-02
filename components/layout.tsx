@@ -26,8 +26,11 @@ export default function Layout({ children }: Props) {
       <Script
         id="Adsense-id"
         data-ad-client="ca-pub-8251732556629149"
-        async strategy="beforeInteractive"
-        onError={ (e) => { console.error('Script failed to load', e) }}
+        async
+        strategy="beforeInteractive"
+        onError={(e) => {
+          console.error("Script failed to load", e)
+        }}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
 

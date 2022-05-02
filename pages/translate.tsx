@@ -7,8 +7,7 @@ import Select from "react-select"
 import { NextSeo } from "next-seo"
 import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
-import Script from 'next/script'
-
+import Script from "next/script"
 
 const options = [
   { value: "Python", label: "Python" },
@@ -35,8 +34,10 @@ export const Bottomtext = () => {
     <div className="bottom-text">
       <h2>Transalte any programming language to any other language</h2>
       {/* Write three sentences about this tool  */}
-      <p>With this Tool you can translate your code or functions to any other programming language. Its easy and fast </p>
-      
+      <p>
+        With this Tool you can translate your code or functions to any other
+        programming language. Its easy and fast{" "}
+      </p>
     </div>
   )
 }
@@ -128,7 +129,11 @@ export default function translate() {
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
         <h1>Translate to:</h1>
-        <Select options={options} onChange={handleChange} />
+        <Select
+          isSearchable={false}
+          options={options}
+          onChange={handleChange}
+        />
         <p>
           <textarea
             value={textup}
@@ -200,7 +205,12 @@ export default function translate() {
 
       <Layout>
         <h1>Translate to:</h1>
-        <Select isSearchable={false} placeholder="Select Language ..." options={options} onChange={handleChange} />
+        <Select
+          isSearchable={false}
+          placeholder="Select Language ..."
+          options={options}
+          onChange={handleChange}
+        />
         <p>
           <textarea
             value={textup}
@@ -229,8 +239,6 @@ export default function translate() {
           <textarea value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
-
-        
       </Layout>
     </>
   )

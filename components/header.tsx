@@ -80,7 +80,7 @@ export default function Header() {
 
           <li className={styles.navItem}>
             <Link href="/generate-funcition">
-              <a>Create function from desciption</a>
+              <a>Create function from description</a>
             </Link>
           </li>
         </ul>

@@ -7,8 +7,7 @@ import Select from "react-select"
 import { NextSeo } from "next-seo"
 import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
-import Script from 'next/script'
-
+import Script from "next/script"
 
 const options = [
   { value: "Python", label: "Python" },
@@ -35,8 +34,10 @@ export const Bottomtext = () => {
     <div className="bottom-text">
       <h2>Generate a fuction just by describing what is should do</h2>
       {/* Write three sentences about this tool  */}
-      <p>Generate a fuction just by describing what is should do. Its easy and fast</p>
-      
+      <p>
+        Generate a function just by describing what is should do. Its easy and
+        fast
+      </p>
     </div>
   )
 }
@@ -128,7 +129,11 @@ export default function translate() {
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
         <h1>Create function from description:</h1>
-        <Select options={options} onChange={handleChange} />
+        <Select
+          isSearchable={false}
+          options={options}
+          onChange={handleChange}
+        />
         <p>
           <textarea
             value={textup}
@@ -154,7 +159,10 @@ export default function translate() {
           <button onClick={buttonPressLogin}>Sign in to Generate</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea placeholder="function add(a, b){ return a + b }" value={content}></textarea>
+          <textarea
+            placeholder="function add(a, b){ return a + b }"
+            value={content}
+          ></textarea>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -168,10 +176,7 @@ export default function translate() {
     <>
       <Head>
         <title>Generate function from description</title>
-        <meta
-          name="description"
-          content="Generate function from description"
-        />
+        <meta name="description" content="Generate function from description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="INDEX" />
         <meta name="robots" content="FOLLOW" />
@@ -191,8 +196,7 @@ export default function translate() {
         canonical="https://aiservice.vercel.app/generate-function"
         openGraph={{
           title: "Generate function from description",
-          description:
-            "Generate function from description",
+          description: "Generate function from description",
           url: "https://aiservice.vercel.app/generate-function",
           site_name: "Generate function from description",
         }}
@@ -200,7 +204,12 @@ export default function translate() {
 
       <Layout>
         <h1>Create function from description:</h1>
-        <Select isSearchable={false} placeholder="Select Language ..." options={options} onChange={handleChange} />
+        <Select
+          isSearchable={false}
+          placeholder="Select Language ..."
+          options={options}
+          onChange={handleChange}
+        />
         <p>
           <textarea
             value={textup}
@@ -229,8 +238,6 @@ export default function translate() {
           <textarea value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
-
-        
       </Layout>
     </>
   )
