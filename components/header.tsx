@@ -92,7 +92,7 @@ export default function Header() {
 
           <li className={styles.navItem}>
             <Link href="/text-to-sql-syntax">
-              <a>Text Description to SQL Syntax</a>
+              <a>Text Description to SQL Command</a>
             </Link>
           </li>
 
@@ -134,6 +134,33 @@ export default function Header() {
               <a>MongoDB Query from Description</a>
             </Link>
           </li>
+          <li className={styles.navItem}>
+            <Link href="/asdasdasdsad">
+              <a>Datastructures</a>
+            </Link>
+          </li>
+
+          <li className={styles.navItem}>
+            <Link href="/asdasdasdsad">
+              <a>Algorithms</a>
+            </Link>
+          </li>
+
+          <li className={styles.navItem}>
+            <Link href="/asdasdasdsad">
+              <a>Linux Command</a>
+            </Link>
+          </li>
+
+          <li className={styles.navItem}>
+            <Link href="/asdasdasdsad">
+              <a>Regex from Description</a>
+            </Link>
+          </li>
+
+
+
+      
       
   
               {/*<a>Generate Code from Description</a>*/}
