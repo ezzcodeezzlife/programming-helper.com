@@ -79,8 +79,8 @@ export default function Header() {
           </li>
 
           <li className={styles.navItem}>
-            <Link href="/generate-funcition">
-              <a>Create Function from Description</a>
+            <Link href="/generate-function">
+              <a>Function from Description</a>
             </Link>
           </li>
 
@@ -102,11 +102,9 @@ export default function Header() {
             </Link>
           </li>
 
-          <li className={styles.navItem}>
-            <Link href="/sadasdasdasdasdasd">
-              <a>Generate Code from Description</a>
-            </Link>
-          </li>
+          
+              {/*<a>Generate Code from Description</a>*/}
+           
 
           <li className={styles.navItem}>
             <Link href="/generate-html-from-description">
@@ -116,6 +114,11 @@ export default function Header() {
           <li className={styles.navItem}>
             <Link href="/fix-invalid-code">
               <a>Fix invalid Code</a>
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/asdasdasdsad">
+              <a>CSS from Description</a>
             </Link>
           </li>
         </ul>
