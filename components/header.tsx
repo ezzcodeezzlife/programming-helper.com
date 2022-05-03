@@ -101,11 +101,6 @@ export default function Header() {
               <a>Code to Explanation</a>
             </Link>
           </li>
-
-          
-              {/*<a>Generate Code from Description</a>*/}
-           
-
           <li className={styles.navItem}>
             <Link href="/generate-html-from-description">
               <a>Generate HTML from Description</a>
@@ -116,11 +111,33 @@ export default function Header() {
               <a>Fix invalid Code</a>
             </Link>
           </li>
+
+
+
           <li className={styles.navItem}>
             <Link href="/asdasdasdsad">
               <a>CSS from Description</a>
             </Link>
           </li>
+          <li className={styles.navItem}>
+            <Link href="/asdasdasdsad">
+              <a>Class from Description</a>
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/asdasdasdsad">
+              <a>Get Language from Code</a>
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/asdasdasdsad">
+              <a>MongoDB Query from Description</a>
+            </Link>
+          </li>
+  
+              {/*<a>Generate Code from Description</a>*/}
+           
+
         </ul>
       </nav>
     </header>
