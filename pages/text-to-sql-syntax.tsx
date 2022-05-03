@@ -9,16 +9,12 @@ import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 
-
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
       <h2>From Text Description to SQL Syntax</h2>
       {/* Write three sentences about this tool  */}
-      <p>
-        Get SQL Syntax from text. Its easy and
-        fast
-      </p>
+      <p>Get SQL Syntax from text. Its easy and fast</p>
     </div>
   )
 }
@@ -57,7 +53,6 @@ export default function translate() {
   }
 
   const buttonPress = () => {
-    
     if (textup === "") {
       alert("Please enter some code")
       return
@@ -107,7 +102,7 @@ export default function translate() {
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
         <h1>From Text Description to SQL Syntax:</h1>
-        
+
         <p>
           <textarea
             value={textup}
@@ -178,7 +173,7 @@ export default function translate() {
 
       <Layout>
         <h1>From Text Description to SQL Syntax:</h1>
-       
+
         <p>
           <textarea
             value={textup}
@@ -204,7 +199,10 @@ export default function translate() {
           <button onClick={buttonPress}>Generate SQL Command</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea placeholder="SELECT * FROM customers WHERE city = 'Los Angeles' AND age >= 30 AND age <= 40" value={content}></textarea>
+          <textarea
+            placeholder="SELECT * FROM customers WHERE city = 'Los Angeles' AND age >= 30 AND age <= 40"
+            value={content}
+          ></textarea>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

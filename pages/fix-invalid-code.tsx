@@ -12,9 +12,9 @@ import Script from "next/script"
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
-      <h2>From Code to Explanation</h2>
+      <h2>Fix invalid Code</h2>
       {/* Write three sentences about this tool  */}
-      <p>From Code to Explanation. Its easy and fast.</p>
+      <p>Fix Code. Its easy and fast</p>
     </div>
   )
 }
@@ -30,7 +30,7 @@ export default function translate() {
 
   // Fetch content from protected route
   const fetchData = async () => {
-    const res = await fetch("/api/examples/code-to-explanation", {
+    const res = await fetch("/api/examples/invalidcode", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,10 +80,10 @@ export default function translate() {
     return (
       <Layout>
         <Head>
-          <title>From Code to Explanation</title>
+          <title>From Text Description to SQL Syntax</title>
           <meta
             name="description"
-            content="Generate function from description for any Programming Language"
+            content="Fix invalid Code"
           />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="INDEX" />
@@ -101,27 +101,12 @@ export default function translate() {
 
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
-        <h1>From Code to Explanation:</h1>
+        <h1>Fix invalid Code:</h1>
 
         <p>
           <textarea
             value={textup}
-            placeholder="function quicksort(array) {
-              if (array.length <= 1) {
-                return array;
-              }
-            
-              var pivot = array[0];
-              
-              var left = []; 
-              var right = [];
-            
-              for (var i = 1; i < array.length; i++) {
-                array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
-              }
-            
-              return quicksort(left).concat(pivot, quicksort(right));
-            };"
+            placeholder="function sayHello(() {{ console.log('Hello''') }"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -140,13 +125,13 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPressLogin}>
-            Sign in to Generate Explanation
-          </button>
+          <button onClick={buttonPressLogin}>Sign in to Fix Code</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
-            placeholder="This function is a quicksort algorithm. The quicksort algorithm is a sorting algorithm that sorts an array by selecting a pivot element from the array and partitioning the other elements into two subarrays, one of which contains elements less than the pivot and the other of which contains elements greater than the pivot. The algorithm then sorts the subarrays and combines them to produce the sorted array."
+            placeholder="function sayHello() {
+                console.log('Hello');
+            }"
             value={content}
           ></textarea>
         </p>
@@ -161,7 +146,7 @@ export default function translate() {
   return (
     <>
       <Head>
-        <title>From Code to Explanation</title>
+        <title>Fix invalid Code</title>
         <meta name="description" content="Generate function from description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="INDEX" />
@@ -189,27 +174,12 @@ export default function translate() {
       />
 
       <Layout>
-        <h1>From Code to Explanation:</h1>
+        <h1>Fix invalid Code:</h1>
 
         <p>
           <textarea
             value={textup}
-            placeholder="function quicksort(array) {
-              if (array.length <= 1) {
-                return array;
-              }
-            
-              var pivot = array[0];
-              
-              var left = []; 
-              var right = [];
-            
-              for (var i = 1; i < array.length; i++) {
-                array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
-              }
-            
-              return quicksort(left).concat(pivot, quicksort(right));
-            };"
+            placeholder= "function sayHello(() {{ console.log('Hello''') }"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -228,11 +198,13 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Generate Explanation</button>
+          <button onClick={buttonPress}>Fix Code</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
-            placeholder="This function is a quicksort algorithm. The quicksort algorithm is a sorting algorithm that sorts an array by selecting a pivot element from the array and partitioning the other elements into two subarrays, one of which contains elements less than the pivot and the other of which contains elements greater than the pivot. The algorithm then sorts the subarrays and combines them to produce the sorted array."
+            placeholder="function sayHello() {
+                console.log('Hello');
+            }"
             value={content}
           ></textarea>
         </p>

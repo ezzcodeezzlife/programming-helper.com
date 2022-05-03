@@ -5,9 +5,8 @@ body {
   padding: 0 1rem 1rem 1rem;
   max-width: 680px;
   margin: 0 auto;
-  background: 			#fdfdfb;
+  background: #fdfdfb;
   color: #333;
-
 }
 
 li,
@@ -45,7 +44,6 @@ textarea {
   font-size: 1rem;
   resize: vertical;
   box-shadow: inset 0 0 0 1px rgb(220, 231, 255);
-  
 }
 
 button {
@@ -57,5 +55,4 @@ button {
   font-size: 1rem;
   cursor: pointer;
   margin: 0.5rem;
-  
 }

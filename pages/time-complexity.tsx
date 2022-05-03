@@ -9,16 +9,12 @@ import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 
-
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
       <h2>Time complexity from any function any language</h2>
       {/* Write three sentences about this tool  */}
-      <p>
-        Get Time complexity. Its easy and
-        fast
-      </p>
+      <p>Get Time complexity. Its easy and fast</p>
     </div>
   )
 }
@@ -57,7 +53,6 @@ export default function translate() {
   }
 
   const buttonPress = () => {
-    
     if (textup === "") {
       alert("Please enter some code")
       return
@@ -107,7 +102,7 @@ export default function translate() {
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
         <h1>Time complexity from any function any language:</h1>
-        
+
         <p>
           <textarea
             value={textup}
@@ -134,13 +129,12 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPressLogin}>Sign in to Generate Time Complexity</button>
+          <button onClick={buttonPressLogin}>
+            Sign in to Generate Time Complexity
+          </button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea
-            placeholder="O(n)"
-            value={content}
-          ></textarea>
+          <textarea placeholder="O(n)" value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -182,7 +176,7 @@ export default function translate() {
 
       <Layout>
         <h1>Time complexity from any function any language:</h1>
-       
+
         <p>
           <textarea
             value={textup}

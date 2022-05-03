@@ -84,7 +84,6 @@
   margin-bottom: 2rem;
   padding: 0;
   list-style: none;
-  
 }
 
 .navItem {
@@ -94,7 +93,7 @@
   border-radius: 0.3rem;
   background-color: #f2f2f2;
   color: rgb(255, 255, 255);
- 
+
   font-size: 1rem;
   line-height: 1.4rem;
   font-weight: 500;
