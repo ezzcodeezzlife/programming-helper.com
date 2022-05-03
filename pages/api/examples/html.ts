@@ -55,7 +55,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           // add sending user id to the request
           openai
             .createCompletion("text-davinci-002", {
-              prompt: "<html>\n<head></head>\n<body>\n\n " + req.body.textup + "\n\n",
+              prompt: "<html>\n<head></head>\n<body>\n\n <!--" + req.body.textup + " HTML without php code -->" + "\n\n",
               suffix: "\n\n</body>\n</html>",
               temperature: 0.7,
               max_tokens: 250,

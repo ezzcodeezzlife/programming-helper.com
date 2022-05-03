@@ -106,7 +106,7 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="Generate a div that is centered"
+            placeholder="a div that is centered"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -177,7 +177,7 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="Generate a div that is centered"
+            placeholder="a div that is centered"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
