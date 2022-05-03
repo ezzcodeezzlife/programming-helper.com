@@ -25,6 +25,15 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   //console.log(req.body.textup)
   //console.log(req.body.selectedOption.value)
 
+  console.log(
+    "#### Generate a function in " +
+      req.body.selectedOption.value +
+      " that does the following: " +
+      req.body.textup +
+      " \n    \n ### " +
+      "\n\n"
+  )
+
   console.log("content length", req.body.textup.length)
   if (req.body.textup.length > 1000) {
     res.status(400).json({
@@ -54,18 +63,21 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           // add sending user id to the request
           openai
-            .createCompletion("text-davinci-002", {
+            .createCompletion("text-curie-001", {
+              //text-davinci-002,
               prompt:
-                "<html>\n<head></head>\n<body>\n\n <!--" +
+                "#### Generate a Class in " +
+                req.body.selectedOption.value +
+                " that does the following: " +
                 req.body.textup +
-                " HTML -->" +
+                " \n    \n ### " +
                 "\n\n",
-              suffix: "\n\n</body>\n</html>",
               temperature: 0.7,
               max_tokens: 250,
               top_p: 1,
               frequency_penalty: 0,
               presence_penalty: 0,
+              stop: ["###"],
               user: user?.email,
             })
             .then((response: any) => {

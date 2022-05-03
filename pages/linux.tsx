@@ -12,9 +12,9 @@ import Script from "next/script"
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
-      <h2>Fix invalid Code</h2>
+      <h2>Linux Command from Description</h2>
       {/* Write three sentences about this tool  */}
-      <p>Fix Code. Its easy and fast</p>
+      <p>Linux Command from Description. Its easy and fast</p>
     </div>
   )
 }
@@ -30,7 +30,7 @@ export default function translate() {
 
   // Fetch content from protected route
   const fetchData = async () => {
-    const res = await fetch("/api/examples/invalidcode", {
+    const res = await fetch("/api/examples/linux", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export default function translate() {
     return (
       <Layout>
         <Head>
-          <title>From Text Description to SQL Syntax</title>
+          <title>Linux Command from Description</title>
           <meta name="description" content="Fix invalid Code" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="INDEX" />
@@ -98,12 +98,12 @@ export default function translate() {
 
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
-        <h1>Fix invalid Code:</h1>
+        <h1>Linux Command from Description:</h1>
 
         <p>
           <textarea
             value={textup}
-            placeholder="function sayHello(() {{ console.log('Hello''') }"
+            placeholder="delete all files from images folder that start with the letter p"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -122,13 +122,13 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPressLogin}>Sign in to Fix Code</button>
+          <button onClick={buttonPressLogin}>
+            Sign in to Get Linux Command from Description
+          </button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
-            placeholder="function sayHello() {
-                console.log('Hello');
-            }"
+            placeholder="rm -r /path/to/folder/images/p*"
             value={content}
           ></textarea>
         </p>
@@ -171,12 +171,12 @@ export default function translate() {
       />
 
       <Layout>
-        <h1>Fix invalid Code:</h1>
+        <h1>Linux Command from Description:</h1>
 
         <p>
           <textarea
             value={textup}
-            placeholder="function sayHello(() {{ console.log('Hello''') }"
+            placeholder="delete all files from images folder that start with the letter p"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -195,13 +195,13 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Fix Code</button>
+          <button onClick={buttonPress}>
+            Get Linux Command from Description
+          </button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
-            placeholder="function sayHello() {
-                console.log('Hello');
-            }"
+            placeholder="rm -r /path/to/folder/images/p*"
             value={content}
           ></textarea>
         </p>

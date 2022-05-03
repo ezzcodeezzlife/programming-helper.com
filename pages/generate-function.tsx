@@ -235,7 +235,10 @@ export default function translate() {
           <button onClick={buttonPress}>Generate Function</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea value={content}></textarea>
+          <textarea
+            placeholder="function add(a, b){ return a + b }"
+            value={content}
+          ></textarea>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

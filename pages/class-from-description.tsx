@@ -9,14 +9,28 @@ import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 
+const options = [
+  { value: "Python", label: "Python" },
+  { value: "Javascript", label: "Javascript" },
+  { value: "C++", label: "C++" },
+  { value: "Go", label: "Go" },
+  { value: "TypeScript", label: "TypeScript" },
+  { value: "Rust", label: "Rust" },
+  { value: "Java", label: "Java" },
+  { value: "PHP", label: "PHP" },
+  { value: "C", label: "C" },
+  { value: "Swift", label: "Swift" },
+  { value: "C#", label: "C#" },
+  { value: "Elixir", label: "Elixir" },
+  { value: "Haskell", label: "Haskell" },
+  { value: "Scala", label: "Scala" },
+  { value: "Kotlin", label: "Kotlin" },
+  { value: "R", label: "R" },
+  { value: "Ruby", label: "Ruby" },
+]
+
 export const Bottomtext = () => {
-  return (
-    <div className="bottom-text">
-      <h2>Fix invalid Code</h2>
-      {/* Write three sentences about this tool  */}
-      <p>Fix Code. Its easy and fast</p>
-    </div>
-  )
+  return <></>
 }
 
 export default function translate() {
@@ -30,7 +44,7 @@ export default function translate() {
 
   // Fetch content from protected route
   const fetchData = async () => {
-    const res = await fetch("/api/examples/invalidcode", {
+    const res = await fetch("/api/examples/class", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,6 +67,10 @@ export default function translate() {
   }
 
   const buttonPress = () => {
+    if (selectedOption === undefined) {
+      alert("Please select a language")
+      return
+    }
     if (textup === "") {
       alert("Please enter some code")
       return
@@ -80,8 +98,11 @@ export default function translate() {
     return (
       <Layout>
         <Head>
-          <title>From Text Description to SQL Syntax</title>
-          <meta name="description" content="Fix invalid Code" />
+          <title>Generate Class from description</title>
+          <meta
+            name="description"
+            content="Generate function from description for any Programming Language"
+          />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="INDEX" />
           <meta name="robots" content="FOLLOW" />
@@ -98,12 +119,16 @@ export default function translate() {
 
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
-        <h1>Fix invalid Code:</h1>
-
+        <h1>Generate Class from description:</h1>
+        <Select
+          isSearchable={false}
+          options={options}
+          onChange={handleChange}
+        />
         <p>
           <textarea
             value={textup}
-            placeholder="function sayHello(() {{ console.log('Hello''') }"
+            placeholder="a vector class"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -122,13 +147,13 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPressLogin}>Sign in to Fix Code</button>
+          <button onClick={buttonPressLogin}>Sign in to Generate Class</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
-            placeholder="function sayHello() {
-                console.log('Hello');
-            }"
+            placeholder={
+              "class Vector(object): \n def __init__(self,x,y): \n self.x = x \n self.y = y"
+            }
             value={content}
           ></textarea>
         </p>
@@ -143,7 +168,7 @@ export default function translate() {
   return (
     <>
       <Head>
-        <title>Fix invalid Code</title>
+        <title>Generate Class from description</title>
         <meta name="description" content="Generate function from description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="INDEX" />
@@ -171,12 +196,17 @@ export default function translate() {
       />
 
       <Layout>
-        <h1>Fix invalid Code:</h1>
-
+        <h1>Generate Class from description:</h1>
+        <Select
+          isSearchable={false}
+          placeholder="Select Language ..."
+          options={options}
+          onChange={handleChange}
+        />
         <p>
           <textarea
             value={textup}
-            placeholder="function sayHello(() {{ console.log('Hello''') }"
+            placeholder={"a vector class"}
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -195,13 +225,13 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Fix Code</button>
+          <button onClick={buttonPress}>Generate Class</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
-            placeholder="function sayHello() {
-                console.log('Hello');
-            }"
+            placeholder={
+              "class Vector(object): \n def __init__(self,x,y): \n self.x = x \n self.y = y"
+            }
             value={content}
           ></textarea>
         </p>

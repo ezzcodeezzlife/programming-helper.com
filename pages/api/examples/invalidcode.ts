@@ -53,11 +53,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           console.log("usermail:", user?.email)
 
           // add sending user id to the request
-          openai.createEdit("code-davinci-edit-001", {
-            input: "" + req.body.textup,
-            instruction: "Fix the code",
-            temperature: 0,
-            top_p: 1,
+          openai
+            .createEdit("code-davinci-edit-001", {
+              input: "" + req.body.textup,
+              instruction: "Fix the code",
+              temperature: 0,
+              top_p: 1,
               user: user?.email,
             })
             .then((response: any) => {

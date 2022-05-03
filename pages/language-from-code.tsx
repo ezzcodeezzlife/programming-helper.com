@@ -12,9 +12,7 @@ import Script from "next/script"
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
-      <h2>Fix invalid Code</h2>
-      {/* Write three sentences about this tool  */}
-      <p>Fix Code. Its easy and fast</p>
+      <></>
     </div>
   )
 }
@@ -30,7 +28,7 @@ export default function translate() {
 
   // Fetch content from protected route
   const fetchData = async () => {
-    const res = await fetch("/api/examples/invalidcode", {
+    const res = await fetch("/api/examples/language-from-code", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +78,7 @@ export default function translate() {
     return (
       <Layout>
         <Head>
-          <title>From Text Description to SQL Syntax</title>
+          <title>Get Language from Code</title>
           <meta name="description" content="Fix invalid Code" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="INDEX" />
@@ -103,7 +101,7 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="function sayHello(() {{ console.log('Hello''') }"
+            placeholder="function sayHello() { console.log('Hello'); }"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -122,15 +120,12 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPressLogin}>Sign in to Fix Code</button>
+          <button onClick={buttonPressLogin}>
+            Sign in to Get Language from Code
+          </button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea
-            placeholder="function sayHello() {
-                console.log('Hello');
-            }"
-            value={content}
-          ></textarea>
+          <textarea placeholder="JavaScript" value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -171,12 +166,12 @@ export default function translate() {
       />
 
       <Layout>
-        <h1>Fix invalid Code:</h1>
+        <h1>Get Language from Code:</h1>
 
         <p>
           <textarea
             value={textup}
-            placeholder="function sayHello(() {{ console.log('Hello''') }"
+            placeholder="function sayHello() { console.log('Hello'); }"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -195,15 +190,10 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Fix Code</button>
+          <button onClick={buttonPress}>Get Language from Code</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea
-            placeholder="function sayHello() {
-                console.log('Hello');
-            }"
-            value={content}
-          ></textarea>
+          <textarea placeholder="JavaScript" value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

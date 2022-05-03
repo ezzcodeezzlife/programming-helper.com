@@ -111,61 +111,55 @@ export default function Header() {
               <a>Fix invalid Code</a>
             </Link>
           </li>
-
-         
-
           <li className={styles.navItem}>
-            <Link href="/asdasdasdsad">
+            <Link href="/css-from-description">
               <a>CSS from Description</a>
             </Link>
           </li>
+
           <li className={styles.navItem}>
-            <Link href="/asdasdasdsad">
+            <Link href="/class-from-description">
               <a>Class from Description</a>
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/asdasdasdsad">
+            <Link href="/language-from-code">
               <a>Get Language from Code</a>
             </Link>
           </li>
+          {/* 
           <li className={styles.navItem}>
-            <Link href="/asdasdasdsad">
+            <Link href="/mongodb">
               <a>MongoDB Query from Description</a>
             </Link>
           </li>
-          <li className={styles.navItem}>
-            <Link href="/asdasdasdsad">
+          
+
+           <li className={styles.navItem}>
+            <Link href="/datastructures">
               <a>Datastructures</a>
             </Link>
           </li>
-
-          <li className={styles.navItem}>
-            <Link href="/asdasdasdsad">
+ <li className={styles.navItem}>
+            <Link href="/algorithms">
               <a>Algorithms</a>
             </Link>
           </li>
+          */}
 
           <li className={styles.navItem}>
-            <Link href="/asdasdasdsad">
+            <Link href="/linux">
               <a>Linux Command</a>
             </Link>
           </li>
 
           <li className={styles.navItem}>
-            <Link href="/asdasdasdsad">
+            <Link href="/regex">
               <a>Regex from Description</a>
             </Link>
           </li>
 
-
-
-      
-      
-  
-              {/*<a>Generate Code from Description</a>*/}
-           
-
+          {/*<a>Generate Code from Description</a>*/}
         </ul>
       </nav>
     </header>

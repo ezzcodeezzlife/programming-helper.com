@@ -53,14 +53,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           console.log("usermail:", user?.email)
 
           // add sending user id to the request
+
           openai
             .createCompletion("text-davinci-002", {
               prompt:
-                "<html>\n<head></head>\n<body>\n\n <!--" +
+                "Get the programming language the following code is written in:\n\n " +
                 req.body.textup +
-                " HTML -->" +
-                "\n\n",
-              suffix: "\n\n</body>\n</html>",
+                "\n\nThe language is ",
               temperature: 0.7,
               max_tokens: 250,
               top_p: 1,

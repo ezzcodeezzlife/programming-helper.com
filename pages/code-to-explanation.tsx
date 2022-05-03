@@ -106,7 +106,7 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="function quicksort(array) {
+            placeholder={`function quicksort(array) { 
               if (array.length <= 1) {
                 return array;
               }
@@ -121,7 +121,7 @@ export default function translate() {
               }
             
               return quicksort(left).concat(pivot, quicksort(right));
-            };"
+            };`}
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -194,7 +194,7 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="function quicksort(array) {
+            placeholder={`function quicksort(array) { 
               if (array.length <= 1) {
                 return array;
               }
@@ -209,7 +209,7 @@ export default function translate() {
               }
             
               return quicksort(left).concat(pivot, quicksort(right));
-            };"
+            };`}
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()

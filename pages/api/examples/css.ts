@@ -56,11 +56,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           openai
             .createCompletion("text-davinci-002", {
               prompt:
-                "<html>\n<head></head>\n<body>\n\n <!--" +
+                "CSS Code that is the following: " +
                 req.body.textup +
-                " HTML -->" +
-                "\n\n",
-              suffix: "\n\n</body>\n</html>",
+                "\n\n\n\n",
               temperature: 0.7,
               max_tokens: 250,
               top_p: 1,

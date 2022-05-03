@@ -12,9 +12,9 @@ import Script from "next/script"
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
-      <h2>Fix invalid Code</h2>
+      <h2>CSS from Description</h2>
       {/* Write three sentences about this tool  */}
-      <p>Fix Code. Its easy and fast</p>
+      <p>CSS from Description Its easy and fast</p>
     </div>
   )
 }
@@ -30,7 +30,7 @@ export default function translate() {
 
   // Fetch content from protected route
   const fetchData = async () => {
-    const res = await fetch("/api/examples/invalidcode", {
+    const res = await fetch("/api/examples/css", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,8 +80,11 @@ export default function translate() {
     return (
       <Layout>
         <Head>
-          <title>From Text Description to SQL Syntax</title>
-          <meta name="description" content="Fix invalid Code" />
+          <title>CSS from Description</title>
+          <meta
+            name="description"
+            content="Generate function from description for any Programming Language"
+          />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="INDEX" />
           <meta name="robots" content="FOLLOW" />
@@ -98,12 +101,12 @@ export default function translate() {
 
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
-        <h1>Fix invalid Code:</h1>
+        <h1>CSS from Description:</h1>
 
         <p>
           <textarea
             value={textup}
-            placeholder="function sayHello(() {{ console.log('Hello''') }"
+            placeholder="black text with pink shadow to the left side"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -122,13 +125,15 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPressLogin}>Sign in to Fix Code</button>
+          <button onClick={buttonPressLogin}>
+            Sign in for CSS from Description
+          </button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
-            placeholder="function sayHello() {
-                console.log('Hello');
-            }"
+            placeholder="color: black;
+
+            text-shadow: -1px 0px 0px pink;"
             value={content}
           ></textarea>
         </p>
@@ -143,7 +148,7 @@ export default function translate() {
   return (
     <>
       <Head>
-        <title>Fix invalid Code</title>
+        <title>CSS from Description</title>
         <meta name="description" content="Generate function from description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="INDEX" />
@@ -171,12 +176,12 @@ export default function translate() {
       />
 
       <Layout>
-        <h1>Fix invalid Code:</h1>
+        <h1>CSS from Description:</h1>
 
         <p>
           <textarea
             value={textup}
-            placeholder="function sayHello(() {{ console.log('Hello''') }"
+            placeholder="black text with pink shadow to the left side"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -195,13 +200,13 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Fix Code</button>
+          <button onClick={buttonPress}>Generate CSS</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
-            placeholder="function sayHello() {
-                console.log('Hello');
-            }"
+            placeholder="color: black;
+
+            text-shadow: -1px 0px 0px pink;"
             value={content}
           ></textarea>
         </p>
