@@ -134,6 +134,13 @@ export default function Header() {
                   <a>CSS from Description</a>
                 </Link>
               </li>
+
+              <li className={styles.navItem}>
+                <Link href="/meta">
+                  <a>Meta Tags from Description</a>
+                </Link>
+              </li>
+
             </ul>
 
             <ul className={styles.navTitle}>Helpers</ul>
