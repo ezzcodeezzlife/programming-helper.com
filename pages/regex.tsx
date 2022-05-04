@@ -34,10 +34,7 @@ export const Bottomtext = () => {
     <div className="bottom-text">
       <h2>Generate a Regex from Description</h2>
       {/* Write three sentences about this tool  */}
-      <p>
-        Generate a Regex from Description. Its easy and
-        fast
-      </p>
+      <p>Generate a Regex from Description. Its easy and fast</p>
     </div>
   )
 }
@@ -156,13 +153,12 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPressLogin}>Sign in to Generat Regex from Description</button>
+          <button onClick={buttonPressLogin}>
+            Sign in to Generat Regex from Description
+          </button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea
-            placeholder="/\.([^.]*)$/;"
-            value={content}
-          ></textarea>
+          <textarea placeholder="/\.([^.]*)$/;" value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -235,10 +231,7 @@ export default function translate() {
           <button onClick={buttonPress}>Generat Regex from Description</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea
-            placeholder="/\.([^.]*)$/;"
-            value={content}
-          ></textarea>
+          <textarea placeholder="/\.([^.]*)$/;" value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>
