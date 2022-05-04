@@ -47,9 +47,14 @@ textarea {
 }
 
 button {
-  background: #346df1;
+  background-color: #346df1;
+  border-color: #346df1;
   color: #fff;
-  border: 1px solid #ccc;
+  text-decoration: none;
+  padding: 0.7rem 1.4rem;
+  
+  background: #346df1;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 0.5rem;
   padding: 0.5rem;
   font-size: 1rem;

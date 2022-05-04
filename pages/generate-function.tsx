@@ -137,7 +137,7 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="Type description here (Example: Add two numbers and return them)"
+            placeholder="Add two numbers and return them"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
