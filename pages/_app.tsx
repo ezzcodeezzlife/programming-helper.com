@@ -15,6 +15,6 @@ const App = ({ Component, pageProps }: AppProps) => {
 export default process.env.PASSWORD_PROTECT
   ? withPasswordProtect(App, {
     // Options go here (optional)
-    loginApiUrl: "/login",
+    loginApiUrl: "/api/login",
   })
   : App;
