@@ -137,7 +137,7 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="Type or paste code here"
+            placeholder="console.log('Hello World')"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -159,7 +159,7 @@ export default function translate() {
           <button onClick={buttonPressLogin}>Sign in to Translate</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea value={content}></textarea>
+          <textarea placeholder='print("test")' value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -214,7 +214,7 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="Type or paste code here"
+            placeholder="console.log('Hello World')"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -236,7 +236,7 @@ export default function translate() {
           <button onClick={buttonPress}>Translate</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea value={content}></textarea>
+          <textarea placeholder='print("test")' value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

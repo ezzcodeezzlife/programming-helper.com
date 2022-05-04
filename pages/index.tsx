@@ -5,7 +5,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <>
-      <h1>Home</h1>
+        <h1>Home</h1>
         <p>Contact: appsplosion.help@gmail.com</p>
         <Link href="https://homepage-appsplosion.herokuapp.com/privacypolicy">
           Privacy Policy

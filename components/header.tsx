@@ -158,6 +158,21 @@ export default function Header() {
             </ul>
 
             {/* 
+             <li className={styles.navItem}>
+            <Link href="/asdasdasd">
+              <a>Linux Command to explanation</a>
+            </Link>
+          </li>
+
+
+          <li className={styles.navItem}>
+            <Link href="/asdasdasd">
+              <a>Regex to explanation</a>
+            </Link>
+          </li>
+          
+
+
           <li className={styles.navItem}>
             <Link href="/mongodb">
               <a>MongoDB Query from Description</a>
