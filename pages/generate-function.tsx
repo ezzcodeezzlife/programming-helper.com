@@ -8,7 +8,9 @@ import { NextSeo } from "next-seo"
 import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition"
 
 const options = [
   { value: "Python", label: "Python" },
@@ -56,11 +58,13 @@ export default function translate() {
     transcript,
     listening,
     resetTranscript,
-    browserSupportsSpeechRecognition
-  } = useSpeechRecognition();
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition()
 
   if (!browserSupportsSpeechRecognition) {
-    console.log("Sorry, your browser doesn't support speech recognition. Try Chrome or Firefox!");
+    console.log(
+      "Sorry, your browser doesn't support speech recognition. Try Chrome or Firefox!"
+    )
   }
 
   // Fetch content from protected route
@@ -88,7 +92,6 @@ export default function translate() {
   }
 
   const buttonPress = () => {
-    
     if (selectedOption === undefined) {
       alert("Please select a language")
       return
@@ -103,12 +106,9 @@ export default function translate() {
     fetchData()
   }
 
-  
   const copyToClip = () => {
     navigator.clipboard.writeText(content)
   }
-
-
 
   const buttonPressLogin = () => {
     signIn()
@@ -231,8 +231,6 @@ export default function translate() {
           onChange={handleChange}
         />
         <p>
-        
-
           <textarea
             defaultValue={textup + "" + transcript}
             placeholder="Add two numbers and return them"
@@ -255,7 +253,7 @@ export default function translate() {
             <p id="counter">{count}</p>
           )}
 
-{/* 
+          {/* 
 
 <div>
       <p>Use Voice: {listening ? (<> <button style={{backgroundColor:"#e9e9e9"}}   onClick={SpeechRecognition.stopListening}>⏹️</button> </> ) : <button style={{backgroundColor:"#e9e9e9"}} onClick={SpeechRecognition.startListening}> 🔴</button>}
@@ -269,9 +267,6 @@ export default function translate() {
     </div>
 */}
 
-    
-
-
           <button onClick={buttonPress}>Generate Function</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
@@ -280,7 +275,9 @@ export default function translate() {
             value={content}
           ></textarea>
 
-        <button style={{backgroundColor: "grey"}} onClick={copyToClip}>Copy to Clipboard</button>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

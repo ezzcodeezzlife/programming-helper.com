@@ -1,7 +1,7 @@
 import { SessionProvider } from "next-auth/react"
 import type { AppProps } from "next/app"
 import "./styles.css"
-import { withPasswordProtect } from "@storyofams/next-password-protect";
+import { withPasswordProtect } from "@storyofams/next-password-protect"
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -14,7 +14,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 // Before: export default App;
 export default process.env.PASSWORD_PROTECT
   ? withPasswordProtect(App, {
-    // Options go here (optional)
-    loginApiUrl: "/api/login",
-  })
-  : App;
+      // Options go here (optional)
+      loginApiUrl: "/api/login",
+    })
+  : App

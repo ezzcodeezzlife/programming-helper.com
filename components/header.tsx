@@ -140,7 +140,6 @@ export default function Header() {
                   <a>Meta Tags from Description</a>
                 </Link>
               </li>
-
             </ul>
 
             <ul className={styles.navTitle}>Helpers</ul>
@@ -168,7 +167,6 @@ export default function Header() {
                   <a>Git Command from Description</a>
                 </Link>
               </li>
-
             </ul>
 
             {/* 

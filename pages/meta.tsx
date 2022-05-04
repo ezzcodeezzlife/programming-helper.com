@@ -200,9 +200,7 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>
-            Get Meta Tags Description
-          </button>
+          <button onClick={buttonPress}>Get Meta Tags Description</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea

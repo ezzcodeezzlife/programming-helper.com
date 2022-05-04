@@ -1,6 +1,6 @@
 ## Getting Started
 
-###  Clone the repository and install dependencies
+### Clone the repository and install dependencies
 
 ```
 git clone 'xx'
@@ -8,7 +8,7 @@ cd xx
 npm install
 ```
 
-###  Configure your local environment
+### Configure your local environment
 
 Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
 
@@ -18,7 +18,7 @@ cp .env.local.example .env.local
 
 Add details for one or more providers (e.g. Google, Twitter, GitHub, Email, etc).
 
-###  Start the application
+### Start the application
 
 To run your site locally, use:
 

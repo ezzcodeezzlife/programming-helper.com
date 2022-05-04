@@ -54,13 +54,17 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           // add sending user id to the request
 
-          openai.createCompletion("text-davinci-002", {
-            prompt: "A Git command that does the following: " + req.body.textup +"\n\n\n\n\n\n",
-            temperature: 0.7,
-            max_tokens: 250,
-            top_p: 1,
-            frequency_penalty: 0,
-            presence_penalty: 0,
+          openai
+            .createCompletion("text-davinci-002", {
+              prompt:
+                "A Git command that does the following: " +
+                req.body.textup +
+                "\n\n\n\n\n\n",
+              temperature: 0.7,
+              max_tokens: 250,
+              top_p: 1,
+              frequency_penalty: 0,
+              presence_penalty: 0,
               user: user?.email,
             })
             .then((response: any) => {
