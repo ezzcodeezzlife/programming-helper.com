@@ -155,9 +155,21 @@ export default function Header() {
                   <a>Get time complexity</a>
                 </Link>
               </li>
+
+              <li className={styles.navItem}>
+                <Link href="/git">
+                  <a>Git Command from Description</a>
+                </Link>
+              </li>
+
             </ul>
 
             {/* 
+
+            explain linux command
+            explain git command
+
+
              <li className={styles.navItem}>
             <Link href="/asdasdasd">
               <a>Linux Command to explanation</a>
