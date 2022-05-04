@@ -3,8 +3,8 @@
 ###  Clone the repository and install dependencies
 
 ```
-git clone https://github.com/nextauthjs/next-auth-example.git
-cd next-auth-example
+git clone 'xx'
+cd xx
 npm install
 ```
 
