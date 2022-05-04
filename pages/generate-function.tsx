@@ -76,6 +76,7 @@ export default function translate() {
   }
 
   const buttonPress = () => {
+    
     if (selectedOption === undefined) {
       alert("Please select a language")
       return
@@ -89,6 +90,13 @@ export default function translate() {
     console.log("button pressed", textup)
     fetchData()
   }
+
+  
+  const copyToClip = () => {
+    navigator.clipboard.writeText(content)
+  }
+
+
 
   const buttonPressLogin = () => {
     signIn()
@@ -239,6 +247,8 @@ export default function translate() {
             placeholder="function add(a, b){ return a + b }"
             value={content}
           ></textarea>
+
+        <button style={{backgroundColor: "grey"}} onClick={copyToClip}>Copy to Clipboard</button>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

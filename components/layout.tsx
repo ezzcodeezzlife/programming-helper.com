@@ -44,6 +44,7 @@ export default function Layout({ children }: Props) {
           paddingBottom: "1rem",
           borderRadius: "10px",
           border: "2px solid #f2f2ff",
+          marginBottom: "3rem",
         }}
       >
         <main>{children}</main>
