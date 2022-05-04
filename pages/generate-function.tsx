@@ -255,8 +255,10 @@ export default function translate() {
             <p id="counter">{count}</p>
           )}
 
+{/* 
+
 <div>
-      <p>Use Voice: {listening ?<> <button style={{backgroundColor:"#e9e9e9"}}   onClick={SpeechRecognition.stopListening}>⏹️</button> <span>listening ...</span> </> : <button style={{backgroundColor:"#e9e9e9"}} onClick={SpeechRecognition.startListening}>🔴</button>}
+      <p>Use Voice: {listening ? (<> <button style={{backgroundColor:"#e9e9e9"}}   onClick={SpeechRecognition.stopListening}>⏹️</button> </> ) : <button style={{backgroundColor:"#e9e9e9"}} onClick={SpeechRecognition.startListening}> 🔴</button>}
       
       <button style={{backgroundColor:"#e9e9e9", color:"black"}} onClick={resetTranscript}>Reset</button>
       </p>
@@ -265,6 +267,8 @@ export default function translate() {
       
        <p>{transcript}</p> 
     </div>
+*/}
+
     
 
 
