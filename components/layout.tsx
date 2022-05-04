@@ -35,7 +35,10 @@ export default function Layout({ children }: Props) {
       />
 
       <Header />
+
+      <div style={{backgroundColor: "#f5faff", padding: "1rem", borderRadius: "10px"}}>
       <main>{children}</main>
+      </div>
     </>
   )
 }
