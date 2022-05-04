@@ -8,6 +8,7 @@ import { NextSeo } from "next-seo"
 import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 
 const options = [
   { value: "Python", label: "Python" },
@@ -50,6 +51,17 @@ export default function translate() {
   const [selectedOption, setSelectedOption] = useState()
   const [requestloading, setRequestloading] = useState(false)
   const [count, setCount] = useState(0)
+
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition
+  } = useSpeechRecognition();
+
+  if (!browserSupportsSpeechRecognition) {
+    console.log("Sorry, your browser doesn't support speech recognition. Try Chrome or Firefox!");
+  }
 
   // Fetch content from protected route
   const fetchData = async () => {
@@ -219,8 +231,10 @@ export default function translate() {
           onChange={handleChange}
         />
         <p>
+        
+
           <textarea
-            value={textup}
+            defaultValue={textup + "" + transcript}
             placeholder="Add two numbers and return them"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
@@ -240,6 +254,20 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
+
+<div>
+      <p>Use Voice: {listening ?<> <button style={{backgroundColor:"#e9e9e9"}}   onClick={SpeechRecognition.stopListening}>⏹️</button> <span>listening ...</span> </> : <button style={{backgroundColor:"#e9e9e9"}} onClick={SpeechRecognition.startListening}>🔴</button>}
+      
+      <button style={{backgroundColor:"#e9e9e9", color:"black"}} onClick={resetTranscript}>Reset</button>
+      </p>
+      
+      
+      
+       <p>{transcript}</p> 
+    </div>
+    
+
+
           <button onClick={buttonPress}>Generate Function</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
