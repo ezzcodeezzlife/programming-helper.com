@@ -110,6 +110,11 @@ export default function Header() {
                   <a>Get Language from Code</a>
                 </Link>
               </li>
+              <li className={styles.navItem}>
+                <Link href="/docstring">
+                  <a>Function from Docstring</a>
+                </Link>
+              </li>
             </ul>
 
             <ul className={styles.navTitle}>Database</ul>
@@ -171,7 +176,6 @@ export default function Header() {
 
             {/* 
 
-            explain linux command
             explain git command
 
 
@@ -209,7 +213,7 @@ export default function Header() {
           </li>
           */}
 
-            {/*<a>Generate Code from Description</a>*/}
+       
           </ul>
         </nav>
       </header>

@@ -8,6 +8,7 @@ import { NextSeo } from "next-seo"
 import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
+import Link from "next/link"
 
 const options = [
   { value: "Python", label: "Python" },
@@ -232,6 +233,8 @@ export default function translate() {
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea placeholder="/\.([^.]*)$/;" value={content}></textarea>
+
+          <Link href={"https://regex101.com/"}>Test the Regex here.</Link>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>
