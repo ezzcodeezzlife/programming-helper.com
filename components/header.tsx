@@ -155,6 +155,14 @@ export default function Header() {
                 </Link>
               </li>
 
+                  
+              <li className={styles.navItem}>
+                <Link href="/asdasdasd">
+                  <a>Regex to Explanation</a>
+                </Link>
+              </li>
+              
+
               <li className={styles.navItem}>
                 <Link href="/linux">
                   <a>Linux Command</a>
@@ -172,6 +180,8 @@ export default function Header() {
                   <a>Git Command from Description</a>
                 </Link>
               </li>
+
+             
             </ul>
 
             {/* 
@@ -184,15 +194,6 @@ export default function Header() {
               <a>Linux Command to explanation</a>
             </Link>
           </li>
-
-
-          <li className={styles.navItem}>
-            <Link href="/asdasdasd">
-              <a>Regex to explanation</a>
-            </Link>
-          </li>
-          
-
 
           <li className={styles.navItem}>
             <Link href="/mongodb">
@@ -211,7 +212,9 @@ export default function Header() {
               <a>Algorithms</a>
             </Link>
           </li>
-          */}
+         
+         
+         */}
 
        
           </ul>
