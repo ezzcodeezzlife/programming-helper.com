@@ -12,7 +12,6 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition"
 
-
 const options = [
   { value: "Python", label: "Python" },
   { value: "Javascript", label: "Javascript" },
@@ -184,6 +183,9 @@ export default function translate() {
             placeholder="function add(a, b){ return a + b }"
             value={content}
           ></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -275,6 +277,9 @@ export default function translate() {
             placeholder="function add(a, b){ return a + b }"
             value={content}
           ></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
 
           <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
             Copy to Clipboard

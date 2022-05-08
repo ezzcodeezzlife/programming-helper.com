@@ -9,9 +9,7 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <>
-
-    
-<Script
+      <Script
         id="Adsense-id"
         data-ad-client="ca-pub-8251732556629149"
         async
@@ -21,7 +19,7 @@ export default function Layout({ children }: Props) {
         }}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-      
+
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-WMLR3PFFXE"
         strategy="afterInteractive"
@@ -35,7 +33,6 @@ export default function Layout({ children }: Props) {
           gtag('config', 'G-WMLR3PFFXE');
         `}
       </Script>
-
 
       <Header />
 

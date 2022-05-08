@@ -66,6 +66,10 @@ export default function translate() {
       .finally(() => setRequestloading(false))
   }
 
+  const copyToClip = () => {
+    navigator.clipboard.writeText(content)
+  }
+
   const buttonPress = () => {
     if (selectedOption === undefined) {
       alert("Please select a language")
@@ -156,6 +160,10 @@ export default function translate() {
             }
             value={content}
           ></textarea>
+
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -234,6 +242,10 @@ export default function translate() {
             }
             value={content}
           ></textarea>
+
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

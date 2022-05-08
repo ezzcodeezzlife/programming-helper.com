@@ -88,6 +88,10 @@ export default function translate() {
     fetchData()
   }
 
+  const copyToClip = () => {
+    navigator.clipboard.writeText(content)
+  }
+
   const buttonPressLogin = () => {
     signIn()
   }
@@ -148,6 +152,9 @@ export default function translate() {
               setCount(e.target.value.length)
             }}
           ></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
 
           {count > 1000 ? (
             <p id="counter">Too much! +{count - 1000}</p>
@@ -233,6 +240,9 @@ export default function translate() {
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea placeholder="/\.([^.]*)$/;" value={content}></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
 
           <Link href={"https://regex101.com/"}>Test the Regex here.</Link>
         </p>

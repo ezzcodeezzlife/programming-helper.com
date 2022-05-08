@@ -63,6 +63,10 @@ export default function translate() {
     fetchData()
   }
 
+  const copyToClip = () => {
+    navigator.clipboard.writeText(content)
+  }
+
   const buttonPressLogin = () => {
     signIn()
   }
@@ -235,6 +239,10 @@ export default function translate() {
             placeholder="This function is a quicksort algorithm. The quicksort algorithm is a sorting algorithm that sorts an array by selecting a pivot element from the array and partitioning the other elements into two subarrays, one of which contains elements less than the pivot and the other of which contains elements greater than the pivot. The algorithm then sorts the subarrays and combines them to produce the sorted array."
             value={content}
           ></textarea>
+
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

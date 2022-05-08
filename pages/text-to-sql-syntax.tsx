@@ -67,6 +67,10 @@ export default function translate() {
     signIn()
   }
 
+  const copyToClip = () => {
+    navigator.clipboard.writeText(content)
+  }
+
   const handleChange = (selectedOption: any) => {
     setSelectedOption(selectedOption)
     console.log(`Option selected:`, selectedOption)
@@ -132,6 +136,9 @@ export default function translate() {
             placeholder="SELECT * FROM customers WHERE city = 'Los Angeles' AND age >= 30 AND age <= 40"
             value={content}
           ></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -203,6 +210,9 @@ export default function translate() {
             placeholder="SELECT * FROM customers WHERE city = 'Los Angeles' AND age >= 30 AND age <= 40"
             value={content}
           ></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

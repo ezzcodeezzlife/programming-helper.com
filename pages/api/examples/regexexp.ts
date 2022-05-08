@@ -57,7 +57,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           openai
             .createCompletion("text-davinci-002", {
               prompt:
-                "Please explain the following Regex: " + "\n\n" + 
+                "Please explain the following Regex: " +
+                "\n\n" +
                 req.body.textup +
                 "\n\n\n\n\n\n\n",
               temperature: 0.7,

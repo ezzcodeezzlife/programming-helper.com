@@ -155,13 +155,11 @@ export default function Header() {
                 </Link>
               </li>
 
-                  
               <li className={styles.navItem}>
                 <Link href="/regex-explanation">
                   <a>Regex to Explanation</a>
                 </Link>
               </li>
-              
 
               <li className={styles.navItem}>
                 <Link href="/linux">
@@ -180,8 +178,6 @@ export default function Header() {
                   <a>Git Command from Description</a>
                 </Link>
               </li>
-
-             
             </ul>
 
             {/* 
@@ -215,8 +211,6 @@ export default function Header() {
          
          
          */}
-
-       
           </ul>
         </nav>
       </header>

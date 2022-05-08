@@ -61,6 +61,10 @@ export default function translate() {
     fetchData()
   }
 
+  const copyToClip = () => {
+    navigator.clipboard.writeText(content)
+  }
+
   const buttonPressLogin = () => {
     signIn()
   }
@@ -126,6 +130,9 @@ export default function translate() {
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea placeholder="JavaScript" value={content}></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -194,6 +201,9 @@ export default function translate() {
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea placeholder="JavaScript" value={content}></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

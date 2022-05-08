@@ -63,6 +63,10 @@ export default function translate() {
     fetchData()
   }
 
+  const copyToClip = () => {
+    navigator.clipboard.writeText(content)
+  }
+
   const buttonPressLogin = () => {
     signIn()
   }
@@ -97,11 +101,8 @@ export default function translate() {
           <meta property="og:url" content="PERMALINK" />
 
           <meta property="og:site_name" content="SITE NAME" />
-          
         </Head>
 
-
-       
         <h1>Regex to explanation:</h1>
 
         <p>
@@ -135,6 +136,9 @@ export default function translate() {
             placeholder="The Regex is used to match an email address. The email address must start with a lowercase letter or a number, followed by one or more characters (including periods, underscores, and/or hyphens), followed by an @ symbol, followed by one or more lowercase letters or numbers (again, including periods, underscores, and/or hyphens), followed by a period, followed by two to four lowercase letters. The i at the end makes the match case-insensitive."
             value={content}
           ></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -146,7 +150,6 @@ export default function translate() {
   // If session exists, display content
   return (
     <>
-   
       <Head>
         <title>Regex to explanation</title>
         <meta name="description" content="Generate function from description" />
@@ -200,29 +203,28 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>
-            Get Regex explanation
-          </button>
+          <button onClick={buttonPress}>Get Regex explanation</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
           <textarea
             placeholder="The Regex is used to match an email address. The email address must start with a lowercase letter or a number, followed by one or more characters (including periods, underscores, and/or hyphens), followed by an @ symbol, followed by one or more lowercase letters or numbers (again, including periods, underscores, and/or hyphens), followed by a period, followed by two to four lowercase letters. The i at the end makes the match case-insensitive."
             value={content}
           ></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
 
         <ins
-      className="adsbygoogle"
-      style={{ display: "block" }}
-      data-ad-client="ca-pub-8251732556629149"
-      data-ad-slot="5616933772"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
-    <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-8251732556629149"
+          data-ad-slot="5616933772"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </Layout>
     </>
   )

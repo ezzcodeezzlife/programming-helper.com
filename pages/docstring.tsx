@@ -73,6 +73,10 @@ export default function translate() {
       .finally(() => setRequestloading(false))
   }
 
+  const copyToClip = () => {
+    navigator.clipboard.writeText(content)
+  }
+
   const buttonPress = () => {
     if (selectedOption === undefined) {
       alert("Please select a language")
@@ -142,8 +146,7 @@ export default function translate() {
 * @param  {Number} b     second number
 * @return {Number}       first and second number added
 */
-           `
-                    }
+           `}
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -167,10 +170,16 @@ export default function translate() {
           </button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea placeholder={`function addNumbers(a: number, b: number): number { 
+          <textarea
+            placeholder={`function addNumbers(a: number, b: number): number { 
     return a + b; 
 }
-          `} value={content}></textarea>
+          `}
+            value={content}
+          ></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -227,8 +236,7 @@ export default function translate() {
 * @param  {Number} a     first number
 * @param  {Number} b     second number
 * @return {Number}       first and second number added
-*/`
-        }
+*/`}
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -250,12 +258,17 @@ export default function translate() {
           <button onClick={buttonPress}>Generate Code from Docstring</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea placeholder={`function addNumbers(a: number, b: number): number { 
+          <textarea
+            placeholder={`function addNumbers(a: number, b: number): number { 
     return a + b; 
 }
-          `} value={content}></textarea>
+          `}
+            value={content}
+          ></textarea>
 
-          
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

@@ -72,6 +72,10 @@ export default function translate() {
     console.log(`Option selected:`, selectedOption)
   }
 
+  const copyToClip = () => {
+    navigator.clipboard.writeText(content)
+  }
+
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null
 
@@ -131,6 +135,9 @@ export default function translate() {
             placeholder="git checkout -b testing"
             value={content}
           ></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -204,6 +211,9 @@ export default function translate() {
             placeholder="git checkout -b testing"
             value={content}
           ></textarea>
+          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
+            Copy to Clipboard
+          </button>
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>
