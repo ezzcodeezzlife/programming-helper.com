@@ -117,36 +117,7 @@ export default function Header() {
               </li>
             </ul>
 
-            <ul className={styles.navTitle}>Database</ul>
-            <ul>
-              <li className={styles.navItem}>
-                <Link href="/text-to-sql-syntax">
-                  <a>Text Description to SQL Command</a>
-                </Link>
-              </li>
-            </ul>
-
-            <ul className={styles.navTitle}>Web</ul>
-            <ul>
-              <li className={styles.navItem}>
-                <Link href="/generate-html-from-description">
-                  <a>Generate HTML from Description</a>
-                </Link>
-              </li>
-
-              <li className={styles.navItem}>
-                <Link href="/css-from-description">
-                  <a>CSS from Description</a>
-                </Link>
-              </li>
-
-              <li className={styles.navItem}>
-                <Link href="/meta">
-                  <a>Meta Tags from Description</a>
-                </Link>
-              </li>
-            </ul>
-
+            
             <ul className={styles.navTitle}>Helpers</ul>
             <ul>
               <li className={styles.navItem}>
@@ -176,6 +147,37 @@ export default function Header() {
               <li className={styles.navItem}>
                 <Link href="/git">
                   <a>Git Command from Description</a>
+                </Link>
+              </li>
+            </ul>
+
+
+            <ul className={styles.navTitle}>Database</ul>
+            <ul>
+              <li className={styles.navItem}>
+                <Link href="/text-to-sql-syntax">
+                  <a>Text Description to SQL Command</a>
+                </Link>
+              </li>
+            </ul>
+
+            <ul className={styles.navTitle}>Web</ul>
+            <ul>
+              <li className={styles.navItem}>
+                <Link href="/generate-html-from-description">
+                  <a>Generate HTML from Description</a>
+                </Link>
+              </li>
+
+              <li className={styles.navItem}>
+                <Link href="/css-from-description">
+                  <a>CSS from Description</a>
+                </Link>
+              </li>
+
+              <li className={styles.navItem}>
+                <Link href="/meta">
+                  <a>Meta Tags from Description</a>
                 </Link>
               </li>
             </ul>

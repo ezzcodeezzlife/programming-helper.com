@@ -269,9 +269,7 @@ export default function translate() {
             Copy to Clipboard
           </button>
 
-          <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
-            Copy to Clipboard
-          </button>
+          
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>

@@ -201,6 +201,7 @@ export default function translate() {
             placeholder='<div style="width:50px; height:50px; background:red; margin:auto;"></div>'
             value={content}
           ></textarea>
+          
           <button style={{ backgroundColor: "grey" }} onClick={copyToClip}>
             Copy to Clipboard
           </button>
