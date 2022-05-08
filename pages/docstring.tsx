@@ -33,9 +33,9 @@ const options = [
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
-      <h2>Generate a Regex from Description</h2>
+      <h2>Generate Code from Docstring</h2>
       {/* Write three sentences about this tool  */}
-      <p>Generate a Regex from Description. Its easy and fast</p>
+      <p>Generate Code from Docstring. Its easy and fast</p>
     </div>
   )
 }
@@ -51,7 +51,7 @@ export default function translate() {
 
   // Fetch content from protected route
   const fetchData = async () => {
-    const res = await fetch("/api/examples/regex", {
+    const res = await fetch("/api/examples/docstring", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default function translate() {
     return (
       <Layout>
         <Head>
-          <title>Generate a Regex from Description</title>
+          <title>Generate Code from Docstring</title>
           <meta
             name="description"
             content="Generate function from description for any Programming Language"
@@ -126,7 +126,7 @@ export default function translate() {
 
           <meta property="og:site_name" content="SITE NAME" />
         </Head>
-        <h1>Generate a Regex from Description:</h1>
+        <h1>Generate Code from Docstring:</h1>
         <Select
           isSearchable={false}
           options={options}
@@ -135,7 +135,15 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="get all characters behind the last ."
+            placeholder={`
+/**
+* Add two numbers.
+* @param  {Number} a     first number
+* @param  {Number} b     second number
+* @return {Number}       first and second number added
+*/
+           `
+                    }
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -155,11 +163,14 @@ export default function translate() {
             <p id="counter">{count}</p>
           )}
           <button onClick={buttonPressLogin}>
-            Sign in to Generate Regex from Description
+            Sign in to Generate Code from Docstring
           </button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea placeholder="/\.([^.]*)$/;" value={content}></textarea>
+          <textarea placeholder={`function addNumbers(a: number, b: number): number { 
+    return a + b; 
+}
+          `} value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -172,7 +183,7 @@ export default function translate() {
   return (
     <>
       <Head>
-        <title>Generate a Regex from Description</title>
+        <title>Generate Code from Docstring</title>
         <meta name="description" content="Generate function from description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="INDEX" />
@@ -200,7 +211,7 @@ export default function translate() {
       />
 
       <Layout>
-        <h1>Generate a Regex from Description:</h1>
+        <h1>Generate Code from Docstring:</h1>
         <Select
           isSearchable={false}
           placeholder="Select Language ..."
@@ -210,7 +221,14 @@ export default function translate() {
         <p>
           <textarea
             value={textup}
-            placeholder="get all characters behind the last ."
+            placeholder={`
+/**
+* Add two numbers.
+* @param  {Number} a     first number
+* @param  {Number} b     second number
+* @return {Number}       first and second number added
+*/`
+        }
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -229,12 +247,15 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Generat Regex from Description</button>
+          <button onClick={buttonPress}>Generate Code from Docstring</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea placeholder="/\.([^.]*)$/;" value={content}></textarea>
+          <textarea placeholder={`function addNumbers(a: number, b: number): number { 
+    return a + b; 
+}
+          `} value={content}></textarea>
 
-          <Link href={"https://regex101.com/"}>Test the Regex here.</Link>
+          
         </p>
         <span>AI Service - Results may vary</span>
       </Layout>
