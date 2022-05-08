@@ -29,18 +29,6 @@ const options = [
   { value: "Ruby", label: "Ruby" },
 ]
 
-export const Bottomtext = () => {
-  return (
-    <div className="bottom-text">
-      <h2>Transalte any programming language to any other language</h2>
-      {/* Write three sentences about this tool  */}
-      <p>
-        With this Tool you can translate your code or functions to any other
-        programming language. Its easy and fast{" "}
-      </p>
-    </div>
-  )
-}
 
 export default function translate() {
   const { data: session, status } = useSession()
@@ -170,7 +158,6 @@ export default function translate() {
         </p>
         <span>AI Service - Results may vary</span>
 
-        <Bottomtext />
       </Layout>
     )
   }

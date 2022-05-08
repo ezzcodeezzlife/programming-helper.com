@@ -29,9 +29,7 @@ const options = [
   { value: "Ruby", label: "Ruby" },
 ]
 
-export const Bottomtext = () => {
-  return <></>
-}
+
 
 export default function translate() {
   const { data: session, status } = useSession()
@@ -167,7 +165,7 @@ export default function translate() {
         </p>
         <span>AI Service - Results may vary</span>
 
-        <Bottomtext />
+   
       </Layout>
     )
   }

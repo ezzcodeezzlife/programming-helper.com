@@ -32,18 +32,6 @@ const options = [
   { value: "Ruby", label: "Ruby" },
 ]
 
-export const Bottomtext = () => {
-  return (
-    <div className="bottom-text">
-      <h2>Generate a fuction just by describing what is should do</h2>
-      {/* Write three sentences about this tool  */}
-      <p>
-        Generate a function just by describing what is should do. Its easy and
-        fast
-      </p>
-    </div>
-  )
-}
 
 export default function translate() {
   const { data: session, status } = useSession()
@@ -189,7 +177,7 @@ export default function translate() {
         </p>
         <span>AI Service - Results may vary</span>
 
-        <Bottomtext />
+      
       </Layout>
     )
   }

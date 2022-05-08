@@ -9,15 +9,7 @@ import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 
-export const Bottomtext = () => {
-  return (
-    <div className="bottom-text">
-      <h2>CSS from Description</h2>
-      {/* Write three sentences about this tool  */}
-      <p>CSS from Description Its easy and fast</p>
-    </div>
-  )
-}
+
 
 export default function translate() {
   const { data: session, status } = useSession()
@@ -147,7 +139,7 @@ export default function translate() {
         </p>
         <span>AI Service - Results may vary</span>
 
-        <Bottomtext />
+  
       </Layout>
     )
   }
