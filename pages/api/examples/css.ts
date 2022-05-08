@@ -54,7 +54,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           // add sending user id to the request
           openai
-            .createCompletion("text-davinci-002", {
+            .createCompletion("text-curie-001", {
               prompt:
                 "CSS Code that is the following: " +
                 req.body.textup +
