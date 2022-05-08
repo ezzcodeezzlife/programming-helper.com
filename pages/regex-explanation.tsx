@@ -97,7 +97,11 @@ export default function translate() {
           <meta property="og:url" content="PERMALINK" />
 
           <meta property="og:site_name" content="SITE NAME" />
+          
         </Head>
+
+
+       
         <h1>Regex to explanation:</h1>
 
         <p>
@@ -142,6 +146,7 @@ export default function translate() {
   // If session exists, display content
   return (
     <>
+   
       <Head>
         <title>Regex to explanation</title>
         <meta name="description" content="Generate function from description" />
@@ -206,6 +211,18 @@ export default function translate() {
           ></textarea>
         </p>
         <span>AI Service - Results may vary</span>
+
+        <ins
+      className="adsbygoogle"
+      style={{ display: "block" }}
+      data-ad-client="ca-pub-8251732556629149"
+      data-ad-slot="5616933772"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
       </Layout>
     </>
   )
