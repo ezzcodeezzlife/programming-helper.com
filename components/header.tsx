@@ -110,6 +110,11 @@ export default function Header() {
                   <a>Get Language from Code</a>
                 </Link>
               </li>
+              <li className={styles.navItem}>
+                <Link href="/docstring">
+                  <a>Function from Docstring</a>
+                </Link>
+              </li>
             </ul>
 
             <ul className={styles.navTitle}>Database</ul>
@@ -150,6 +155,14 @@ export default function Header() {
                 </Link>
               </li>
 
+                  
+              <li className={styles.navItem}>
+                <Link href="/regex-explanation">
+                  <a>Regex to Explanation</a>
+                </Link>
+              </li>
+              
+
               <li className={styles.navItem}>
                 <Link href="/linux">
                   <a>Linux Command</a>
@@ -167,11 +180,12 @@ export default function Header() {
                   <a>Git Command from Description</a>
                 </Link>
               </li>
+
+             
             </ul>
 
             {/* 
 
-            explain linux command
             explain git command
 
 
@@ -180,15 +194,6 @@ export default function Header() {
               <a>Linux Command to explanation</a>
             </Link>
           </li>
-
-
-          <li className={styles.navItem}>
-            <Link href="/asdasdasd">
-              <a>Regex to explanation</a>
-            </Link>
-          </li>
-          
-
 
           <li className={styles.navItem}>
             <Link href="/mongodb">
@@ -207,9 +212,11 @@ export default function Header() {
               <a>Algorithms</a>
             </Link>
           </li>
-          */}
+         
+         
+         */}
 
-            {/*<a>Generate Code from Description</a>*/}
+       
           </ul>
         </nav>
       </header>

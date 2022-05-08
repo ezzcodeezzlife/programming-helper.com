@@ -28,7 +28,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   console.log(
     "#### Generate a function in " +
       req.body.selectedOption.value +
-      " that does the following: " +
+      " that accomplishes the following: " +
       req.body.textup +
       " \n    \n ### " +
       "\n\n"

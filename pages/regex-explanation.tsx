@@ -8,34 +8,13 @@ import { NextSeo } from "next-seo"
 import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
-import Link from "next/link"
-
-const options = [
-  { value: "Python", label: "Python" },
-  { value: "Javascript", label: "Javascript" },
-  { value: "C++", label: "C++" },
-  { value: "Go", label: "Go" },
-  { value: "TypeScript", label: "TypeScript" },
-  { value: "Rust", label: "Rust" },
-  { value: "Java", label: "Java" },
-  { value: "PHP", label: "PHP" },
-  { value: "C", label: "C" },
-  { value: "Swift", label: "Swift" },
-  { value: "C#", label: "C#" },
-  { value: "Elixir", label: "Elixir" },
-  { value: "Haskell", label: "Haskell" },
-  { value: "Scala", label: "Scala" },
-  { value: "Kotlin", label: "Kotlin" },
-  { value: "R", label: "R" },
-  { value: "Ruby", label: "Ruby" },
-]
 
 export const Bottomtext = () => {
   return (
     <div className="bottom-text">
-      <h2>Generate a Regex from Description</h2>
+      <h2>Regex to explanation.</h2>
       {/* Write three sentences about this tool  */}
-      <p>Generate a Regex from Description. Its easy and fast</p>
+      <p>Regex to explanation. Its easy and fast</p>
     </div>
   )
 }
@@ -51,7 +30,7 @@ export default function translate() {
 
   // Fetch content from protected route
   const fetchData = async () => {
-    const res = await fetch("/api/examples/regex", {
+    const res = await fetch("/api/examples/regexexp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,10 +53,6 @@ export default function translate() {
   }
 
   const buttonPress = () => {
-    if (selectedOption === undefined) {
-      alert("Please select a language")
-      return
-    }
     if (textup === "") {
       alert("Please enter some code")
       return
@@ -105,11 +80,8 @@ export default function translate() {
     return (
       <Layout>
         <Head>
-          <title>Generate a Regex from Description</title>
-          <meta
-            name="description"
-            content="Generate function from description for any Programming Language"
-          />
+          <title>Regex to explanation</title>
+          <meta name="description" content="Fix invalid Code" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="INDEX" />
           <meta name="robots" content="FOLLOW" />
@@ -125,17 +97,17 @@ export default function translate() {
           <meta property="og:url" content="PERMALINK" />
 
           <meta property="og:site_name" content="SITE NAME" />
+          
         </Head>
-        <h1>Generate a Regex from Description:</h1>
-        <Select
-          isSearchable={false}
-          options={options}
-          onChange={handleChange}
-        />
+
+
+       
+        <h1>Regex to explanation:</h1>
+
         <p>
           <textarea
             value={textup}
-            placeholder="get all characters behind the last ."
+            placeholder=" /^([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4})$/i;"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -155,11 +127,14 @@ export default function translate() {
             <p id="counter">{count}</p>
           )}
           <button onClick={buttonPressLogin}>
-            Sign in to Generate Regex from Description
+            Sign in to use Regex to explanation
           </button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea placeholder="/\.([^.]*)$/;" value={content}></textarea>
+          <textarea
+            placeholder="The Regex is used to match an email address. The email address must start with a lowercase letter or a number, followed by one or more characters (including periods, underscores, and/or hyphens), followed by an @ symbol, followed by one or more lowercase letters or numbers (again, including periods, underscores, and/or hyphens), followed by a period, followed by two to four lowercase letters. The i at the end makes the match case-insensitive."
+            value={content}
+          ></textarea>
         </p>
         <span>AI Service - Results may vary</span>
 
@@ -171,8 +146,9 @@ export default function translate() {
   // If session exists, display content
   return (
     <>
+   
       <Head>
-        <title>Generate a Regex from Description</title>
+        <title>Regex to explanation</title>
         <meta name="description" content="Generate function from description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="INDEX" />
@@ -200,17 +176,12 @@ export default function translate() {
       />
 
       <Layout>
-        <h1>Generate a Regex from Description:</h1>
-        <Select
-          isSearchable={false}
-          placeholder="Select Language ..."
-          options={options}
-          onChange={handleChange}
-        />
+        <h1>Regex to explanation:</h1>
+
         <p>
           <textarea
             value={textup}
-            placeholder="get all characters behind the last ."
+            placeholder=" /^([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4})$/i;"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
                 e.preventDefault()
@@ -229,14 +200,29 @@ export default function translate() {
           ) : (
             <p id="counter">{count}</p>
           )}
-          <button onClick={buttonPress}>Generate Regex from Description</button>
+          <button onClick={buttonPress}>
+            Get Regex explanation
+          </button>
           {requestloading ? <p>Loading...</p> : <></>}
 
-          <textarea placeholder="/\.([^.]*)$/;" value={content}></textarea>
-
-          <Link href={"https://regex101.com/"}>Test the Regex here.</Link>
+          <textarea
+            placeholder="The Regex is used to match an email address. The email address must start with a lowercase letter or a number, followed by one or more characters (including periods, underscores, and/or hyphens), followed by an @ symbol, followed by one or more lowercase letters or numbers (again, including periods, underscores, and/or hyphens), followed by a period, followed by two to four lowercase letters. The i at the end makes the match case-insensitive."
+            value={content}
+          ></textarea>
         </p>
         <span>AI Service - Results may vary</span>
+
+        <ins
+      className="adsbygoogle"
+      style={{ display: "block" }}
+      data-ad-client="ca-pub-8251732556629149"
+      data-ad-slot="5616933772"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
       </Layout>
     </>
   )
