@@ -1,6 +1,7 @@
 import Header from "./header"
 import type { ReactChildren } from "react"
 import Script from "next/script"
+import Head from "next/head"
 
 interface Props {
   children: React.ReactNode
@@ -9,6 +10,7 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <>
+    <Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-WMLR3PFFXE"
         strategy="afterInteractive"
@@ -33,7 +35,7 @@ export default function Layout({ children }: Props) {
         }}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-
+      </Head>
       <Header />
 
       <div
