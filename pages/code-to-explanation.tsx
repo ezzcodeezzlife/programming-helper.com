@@ -9,8 +9,6 @@ import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 
-
-
 export default function translate() {
   const { data: session, status } = useSession()
   const loading = status === "loading"
@@ -147,8 +145,6 @@ export default function translate() {
           ></textarea>
         </p>
         <span>AI Service - Results may vary</span>
-
-    
       </Layout>
     )
   }

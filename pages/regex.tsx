@@ -159,8 +159,6 @@ export default function translate() {
           <textarea placeholder="/\.([^.]*)$/;" value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
-
-     
       </Layout>
     )
   }

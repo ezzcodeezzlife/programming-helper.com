@@ -134,8 +134,6 @@ export default function translate() {
           <textarea placeholder="O(n)" value={content}></textarea>
         </p>
         <span>AI Service - Results may vary</span>
-
-    
       </Layout>
     )
   }

@@ -29,8 +29,6 @@ const options = [
   { value: "Ruby", label: "Ruby" },
 ]
 
-
-
 export default function translate() {
   const { data: session, status } = useSession()
   const loading = status === "loading"
@@ -164,8 +162,6 @@ export default function translate() {
           </button>
         </p>
         <span>AI Service - Results may vary</span>
-
-   
       </Layout>
     )
   }

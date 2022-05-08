@@ -117,7 +117,6 @@ export default function Header() {
               </li>
             </ul>
 
-            
             <ul className={styles.navTitle}>Helpers</ul>
             <ul>
               <li className={styles.navItem}>
@@ -150,7 +149,6 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
-
 
             <ul className={styles.navTitle}>Database</ul>
             <ul>
