@@ -5,8 +5,8 @@
 ### Clone the repository and install dependencies
 
 ```
-git clone 'xx'
-cd xx
+git clone https://github.com/ezzcodeezzlife/openaiwebsite.git
+cd openaiwebsite
 npm install
 ```
 
