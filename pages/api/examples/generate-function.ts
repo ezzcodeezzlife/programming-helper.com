@@ -66,7 +66,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .createCompletion("text-davinci-002", {
               //text-davinci-002,
               prompt:
-                "#### Generate a function in " +
+                "Generate a function in " +
                 req.body.selectedOption.value +
                 " that does the following: " +
                 req.body.textup +

@@ -63,10 +63,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           // add sending user id to the request
           openai
-            .createCompletion("text-curie-001", {
+            .createCompletion("code-davinci-002", {
               //text-davinci-002,
               prompt:
-                "#### Generate a Class in " +
+                "Generate a Class in " +
                 req.body.selectedOption.value +
                 " that does the following: " +
                 req.body.textup +

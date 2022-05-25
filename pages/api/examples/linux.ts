@@ -57,7 +57,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           openai
             .createCompletion("text-davinci-002", {
               prompt:
-                "a linux command that does the following: " +
+                "a bash command that does the following: " +
                 req.body.textup +
                 "\n\n\n\n\n\n\n",
               temperature: 0.7,

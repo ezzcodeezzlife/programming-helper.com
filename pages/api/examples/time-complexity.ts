@@ -65,17 +65,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .createCompletion("text-curie-001", {
               //text-davinci-002,
               prompt:
-                "##### What is the time complexity of this function? " +
+                "What is the time complexity of this function? " +
                 " \n### \n    \n  " +
                 req.body.textup +
-                " \n    \n### The time complexity is " +
+                " \n    \n The time complexity is " +
                 "\n\n",
               temperature: 0.7,
               max_tokens: 250,
               top_p: 1,
               frequency_penalty: 0,
               presence_penalty: 0,
-              stop: ["###"],
               user: user?.email,
             })
             .then((response: any) => {

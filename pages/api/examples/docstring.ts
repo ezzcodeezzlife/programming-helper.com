@@ -56,7 +56,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           openai
             .createCompletion("text-curie-001", {
               prompt:
-                "#### Generate a function in " +
+                "Generate a function in " +
                 req.body.selectedOption.value +
                 " that implements the following docstring: " +
                 req.body.textup +

@@ -57,7 +57,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .createCompletion("text-curie-001", {
               //text-davinci-002,
               prompt:
-                "#### Explain this function please \n \n" +
+                "Explain this function please \n \n" +
                 req.body.textup +
                 " \n \n" +
                 "###" +

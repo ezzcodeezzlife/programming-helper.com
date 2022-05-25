@@ -61,7 +61,7 @@ export default function translate() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ textup: textup, selectedOption: selectedOption }),
+      body: JSON.stringify({ textup: textup + "" + transcript, selectedOption: selectedOption }),
     })
       .then(
         (response) => response.json(),
@@ -220,7 +220,7 @@ export default function translate() {
         />
         <p>
           <textarea
-            defaultValue={textup + "" + transcript}
+            value={textup + "" + transcript}
             placeholder="Add two numbers and return them"
             onKeyDown={(e) => {
               if (e.key === "Tab") {
@@ -241,20 +241,18 @@ export default function translate() {
             <p id="counter">{count}</p>
           )}
 
-          {/* 
-
+      
+{/*
 <div>
-      <p>Use Voice: {listening ? (<> <button style={{backgroundColor:"#e9e9e9"}}   onClick={SpeechRecognition.stopListening}>⏹️</button> </> ) : <button style={{backgroundColor:"#e9e9e9"}} onClick={SpeechRecognition.startListening}> 🔴</button>}
+      <p>Use Voice: {listening ? (<> <button style={{backgroundColor:"#e9e9e9"}}   onClick={(event) =>  SpeechRecognition.stopListening()}>⏹️</button> </> ) : <button style={{backgroundColor:"#e9e9e9"}} onClick={(event) => SpeechRecognition.startListening()}> 🔴</button>}
       
-      <button style={{backgroundColor:"#e9e9e9", color:"black"}} onClick={resetTranscript}>Reset</button>
+      <button style={{backgroundColor:"#e9e9e9", color:"black"}} onClick={(event) => resetTranscript}>Reset</button>
       </p>
-      
-      
       
        <p>{transcript}</p> 
     </div>
-*/}
 
+*/}
           <button onClick={buttonPress}>Generate Function</button>
           {requestloading ? <p>Loading...</p> : <></>}
 
