@@ -45,11 +45,11 @@ export default NextAuth({
     //clientId: process.env.TWITTER_ID,
     //clientSecret: process.env.TWITTER_SECRET,
     //}),
-    //Auth0Provider({
-    //clientId: process.env.AUTH0_ID,
-    //clientSecret: process.env.AUTH0_SECRET,
-    //issuer: process.env.AUTH0_ISSUER,
-    //}),
+    Auth0Provider({
+    clientId: process.env.AUTH0_ID,
+    clientSecret: process.env.AUTH0_SECRET,
+    issuer: process.env.AUTH0_ISSUER,
+    }),
   ],
   theme: {
     colorScheme: "light",
