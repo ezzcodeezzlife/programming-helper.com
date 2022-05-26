@@ -2,8 +2,8 @@ const LRU = require("lru-cache")
 
 const rateLimit = (options) => {
   const tokenCache = new LRU({
-    max: parseInt(options.uniqueTokenPerInterval || 500, 10),
-    maxAge: parseInt(options.interval || 60000, 10),
+    max: parseInt(options.uniqueTokenPerInterval || 500, 10) ,
+    maxAge: parseInt(options.interval || 60000, 10) * 3,
   })
 
   return {
