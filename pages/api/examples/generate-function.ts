@@ -1,9 +1,14 @@
+
 // This is an example of to protect an API route
 import { getSession } from "next-auth/react"
 import type { NextApiRequest, NextApiResponse } from "next"
 import rateLimit from "../../../utils/rate-limit"
 import { env } from "process"
 import { MongoClient } from "mongodb";
+const options = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+};
 const client = new MongoClient(process.env.MONGO_URI!);
 
 interface Userpromt {

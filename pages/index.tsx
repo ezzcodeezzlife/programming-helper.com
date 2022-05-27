@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Link from "next/link"
 import { FaGithub, FaReadme, FaDonate } from "react-icons/fa"
 
-export default function IndexPage() {
+export default function IndexPage() { //{ data }
   return (
     <Layout>
       <>
@@ -29,7 +29,21 @@ export default function IndexPage() {
         <Link href="https://www.paypal.com/donate/?hosted_button_id=GDCZM8ZTUQCDE">
           Donate
         </Link>
+
+        
+        
+
       </>
     </Layout>
   )
+}
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  //const res = await fetch(`https://.../data`)
+  //const data = await res.json()
+
+  // Pass data to the page via props
+  //return { props: { data } }
 }
