@@ -3,6 +3,14 @@ import { getSession } from "next-auth/react"
 import type { NextApiRequest, NextApiResponse } from "next"
 import rateLimit from "../../../utils/rate-limit"
 import { env } from "process"
+import { MongoClient } from "mongodb";
+const client = new MongoClient(process.env.MONGO_URI!);
+
+interface Userpromt {
+  input: string;
+  output: string;
+  createdAt: string;
+}
 
 const limiter = rateLimit({
   interval: 60 * 1000, // 60 seconds
@@ -80,11 +88,32 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               stop: ["###"],
               user: user?.email,
             })
-            .then((response: any) => {
+            .then(async (response: any) => {
               console.log(response.data.choices[0].text)
               //res.status(200).json(response.data)
               try {
                 res.status(200).json({ data: response.data.choices[0].text })
+                
+                
+                
+                  try {
+                    await client.connect();
+                    const database = client.db("myFirstDatabase");
+                    // Specifying a Schema is optional, but it enables type hints on
+                    // finds and inserts
+                    const Userpromt = database.collection<Userpromt>("userpromts");
+                    const result = await Userpromt.insertOne({
+                      input: req.body.textup,
+                      output: response.data.choices[0].text,
+                      createdAt: new Date().toISOString(),
+                    });
+                    console.log(`A document was inserted with the _id: ${result.insertedId}`);
+                  } finally {
+                    await client.close();
+                  }
+                
+              
+
               } catch (err) {
                 console.log(err)
               }
@@ -93,6 +122,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               console.log(error)
               res.status(500).json(error)
             })
+
+            
         } else {
           res.status(400).json({
             message: "Please under 1000 chars",
