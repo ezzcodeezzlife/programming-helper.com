@@ -76,7 +76,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           // add sending user id to the request
           openai
-            .createCompletion("text-davinci-002", {
+            .createCompletion("code-davinci-002", {
               //text-davinci-002,
               prompt:
                 "Generate a function in " +

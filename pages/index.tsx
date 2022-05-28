@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Link from "next/link"
 import { FaGithub, FaReadme, FaDonate } from "react-icons/fa"
 
-export default function IndexPage() { //{ data }
+export default function IndexPage() {
   return (
     <Layout>
       <>
@@ -38,12 +38,3 @@ export default function IndexPage() { //{ data }
   )
 }
 
-// This gets called on every request
-export async function getServerSideProps() {
-  // Fetch data from external API
-  //const res = await fetch(`https://.../data`)
-  //const data = await res.json()
-
-  // Pass data to the page via props
-  //return { props: { data } }
-}
