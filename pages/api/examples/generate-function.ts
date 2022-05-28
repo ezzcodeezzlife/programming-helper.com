@@ -30,7 +30,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  await limiter.check(res, 3, "CACHE_TOKEN") // 8 requests per minute
+  await limiter.check(res, 6, "CACHE_TOKEN") // 8 requests per minute
 
   const session = await getSession({ req })
 
