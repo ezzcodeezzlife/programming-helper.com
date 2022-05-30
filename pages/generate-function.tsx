@@ -261,10 +261,11 @@ export default function translate() {
       />
 
       <Layout>
-      <center>
+        <div className="flex flex-col my-auto items-center ">
+      
       <div className="xl:w-1/2 px-4 my-12 self-center">
       
-        <h1 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Create function from description:</h1>
+        <h1 className="p-4 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Create function from description:</h1>
         <Select
         className="m-4 "
           isSearchable={false}
@@ -325,7 +326,10 @@ export default function translate() {
         <span>AI Service - Results may vary</span>
 
         </div>
-        </center>
+       
+       
+       
+       </div>
 
        
 
