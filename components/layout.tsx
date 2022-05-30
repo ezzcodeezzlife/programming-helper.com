@@ -13,7 +13,7 @@ export default function Layout({ children }: Props) {
         id="Adsense-id"
         data-ad-client="ca-pub-8251732556629149"
         async
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         onError={(e) => {
           console.error("Script failed to load", e)
         }}
@@ -44,7 +44,6 @@ export default function Layout({ children }: Props) {
           paddingBottom: "1rem",
           borderRadius: "10px",
           border: "2px solid #f2f2ff",
-          marginBottom: "30rem",
         }}
       >
         <main>{children}</main>
