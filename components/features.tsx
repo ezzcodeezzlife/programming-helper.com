@@ -1,3 +1,5 @@
+
+import { useSession } from "next-auth/react"
 import {
   AnnotationIcon,
   DatabaseIcon,
@@ -11,6 +13,8 @@ import {
 } from "@heroicons/react/outline"
 
 export default function Features(props: any) {
+  const { data: session, status } = useSession()
+
   const features = [
     {
       name: "Function from Description",

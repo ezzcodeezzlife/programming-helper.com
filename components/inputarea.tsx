@@ -143,6 +143,8 @@ const options = [
 
 export default function Inputarea(props: any) {
   const { data: session, status } = useSession()
+
+  
   const loading = status === "loading"
   const [content, setContent] = useState("")
   const [textup, setTextup] = useState("")
