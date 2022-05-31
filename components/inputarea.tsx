@@ -236,13 +236,13 @@ export default function Inputarea(props: any) {
               {props.title}
             </h1>
             <Select
-              className="m-4 "
+              className="my-4 mr-4 xl:w-1/3"
               isSearchable={false}
               placeholder="Select language.."
               options={options}
               onChange={handleChange}
             />
-            <p>
+            
               <textarea
                 value={textup + "" + transcript}
                 placeholder={props.placeholdertop}
@@ -258,7 +258,7 @@ export default function Inputarea(props: any) {
                   setCount(e.target.value.length)
                 }}
               ></textarea>
-
+<p>
               {count > 1000 ? (
                 <p id="counter">Too much! +{count - 1000}</p>
               ) : (
