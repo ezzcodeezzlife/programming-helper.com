@@ -2,7 +2,6 @@ import Link from "next/link"
 import { signIn, signOut, useSession } from "next-auth/react"
 import styles from "./header.module.css"
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap"
-
 import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
 import {
@@ -199,12 +198,19 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ")
 }
 
+
+
 // The approach used in this component shows how to build a sign in and sign out
 // component that works on pages which support both client and server side
 // rendering, and avoids any flash incorrect content on initial page load.s
 export default function Header() {
-  const { data: session, status } = useSession()
-  const loading = status === "loading"
+   // When rendering client side don't display anything until loading is complete
+   const { data: session, status } = useSession()
+   const loading = status === "loading"
+   
+   if (typeof window !== "undefined" && loading) return null
+
+
 
   return (
     <>

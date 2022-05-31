@@ -226,7 +226,7 @@ export default function Inputarea(props: any) {
   // If session exists, display content
   return (
     <>
-      <Seocomponent title={props.tile} apipath={props.apipath}></Seocomponent>
+      <Seocomponent title={props.title} apipath={props.apipath}></Seocomponent>
       
 
       <Layout>

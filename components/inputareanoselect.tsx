@@ -74,7 +74,7 @@ export default function translate(props: any) {
   return (
     <>
       
-      <Seocomponent title={props.tile} apipath={props.apipath}></Seocomponent>
+      <Seocomponent title={props.title} apipath={props.apipath}></Seocomponent>
       
       <Layout>
         <div className="flex flex-col my-auto items-center">
