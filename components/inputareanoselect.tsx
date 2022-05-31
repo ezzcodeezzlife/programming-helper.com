@@ -100,7 +100,7 @@ export default function translate(props:any) {
       />
 
       <Layout>
-        <div className="flex flex-col my-auto items-center ">
+        <div className="flex flex-col my-auto items-center">
       
       <div className="xl:w-1/2 px-4 my-12 self-center">
       
