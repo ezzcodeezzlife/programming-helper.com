@@ -9,9 +9,8 @@ import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 
-import Inputarea from '../components/inputarea'
+import Inputarea from "../components/inputarea"
 import Features from "../components/features"
-
 
 export default function translate() {
   const { data: session, status } = useSession()
@@ -21,12 +20,12 @@ export default function translate() {
   if (typeof window !== "undefined" && loading) return null
 
   // If no session exists, display access denied message
-  
+
   // If session exists, display content
   return (
     <>
-      <Inputarea 
-        title="Class from description:" 
+      <Inputarea
+        title="Class from description:"
         placeholdertop="a vector class"
         placeholderbot={`class Vector(object): 
         def __init__(self,x,y): 
@@ -35,7 +34,7 @@ export default function translate() {
         buttontext="Generate Class from description"
         apipath="class"
       ></Inputarea>
-       
+
       <Features></Features>
     </>
   )

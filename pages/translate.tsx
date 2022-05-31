@@ -9,9 +9,8 @@ import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 
-import Inputarea from '../components/inputarea'
+import Inputarea from "../components/inputarea"
 import Features from "../components/features"
-
 
 export default function translate() {
   const { data: session, status } = useSession()
@@ -21,18 +20,18 @@ export default function translate() {
   if (typeof window !== "undefined" && loading) return null
 
   // If no session exists, display access denied message
-  
+
   // If session exists, display content
   return (
     <>
-      <Inputarea 
-        title="Translate to:" 
+      <Inputarea
+        title="Translate to:"
         placeholdertop="console.log('Hello World')"
         placeholderbot='print("test")'
         buttontext="Translate"
         apipath="protected"
       ></Inputarea>
-       
+
       <Features></Features>
     </>
   )

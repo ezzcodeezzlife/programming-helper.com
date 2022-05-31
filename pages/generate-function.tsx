@@ -12,30 +12,29 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition"
 
-import Inputarea from '../components/inputarea'
+import Inputarea from "../components/inputarea"
 import Features from "../components/features"
 
 export default function translate() {
   const { data: session, status } = useSession()
   const loading = status === "loading"
 
-
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null
 
   // If no session exists, display access denied message
-  
+
   // If session exists, display content
   return (
     <>
-      <Inputarea 
-        title="Create function from description:" 
+      <Inputarea
+        title="Create function from description:"
         placeholdertop="Add two numbers and return them"
         placeholderbot="function add(a, b){ return a + b }"
         buttontext="Generate Function"
         apipath="generate-function"
       ></Inputarea>
-       
+
       <Features></Features>
     </>
   )

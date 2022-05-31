@@ -9,7 +9,7 @@ import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 
-export default function translate(props:any) {
+export default function translate(props: any) {
   const { data: session, status } = useSession()
   const loading = status === "loading"
   const [content, setContent] = useState("")
@@ -101,36 +101,35 @@ export default function translate(props:any) {
 
       <Layout>
         <div className="flex flex-col my-auto items-center">
-      
-      <div className="xl:w-1/2 px-4 my-12 self-center">
-      
-        <h1 className="p-4 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{props.title}</h1>
-        
-        <p>
-          <textarea
-            value={textup + "" }
-            placeholder={props.placeholdertop}
-            onKeyDown={(e) => {
-              if (e.key === "Tab") {
-                e.preventDefault()
-                // add tab to content
-                setTextup(textup + "\t")
-              }
-            }}
-            onChange={(e) => {
-              setTextup(e.target.value)
-              setCount(e.target.value.length)
-            }}
-          ></textarea>
+          <div className="xl:w-1/2 px-4 my-12 self-center">
+            <h1 className="p-4 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              {props.title}
+            </h1>
 
-          {count > 1000 ? (
-            <p id="counter">Too much! +{count - 1000}</p>
-          ) : (
-            <p id="counter">{count}</p>
-          )}
+            <p>
+              <textarea
+                value={textup + ""}
+                placeholder={props.placeholdertop}
+                onKeyDown={(e) => {
+                  if (e.key === "Tab") {
+                    e.preventDefault()
+                    // add tab to content
+                    setTextup(textup + "\t")
+                  }
+                }}
+                onChange={(e) => {
+                  setTextup(e.target.value)
+                  setCount(e.target.value.length)
+                }}
+              ></textarea>
 
-      
-{/*
+              {count > 1000 ? (
+                <p id="counter">Too much! +{count - 1000}</p>
+              ) : (
+                <p id="counter">{count}</p>
+              )}
+
+              {/*
 <div>
       <p>Use Voice: {listening ? (<> <button style={{backgroundColor:"#e9e9e9"}}   onClick={(event) =>  SpeechRecognition.stopListening()}>⏹️</button> </> ) : <button style={{backgroundColor:"#e9e9e9"}} onClick={(event) => SpeechRecognition.startListening()}> 🔴</button>}
       
@@ -140,31 +139,44 @@ export default function translate(props:any) {
        <p>{transcript}</p> 
     </div>
 
-*/}       
-          {!session ? (<button className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={buttonPressLogin}>Sign in - {props.buttontext}</button>) : (<button className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={buttonPress}>     {requestloading ? (<>Loading...</>) : (<>{props.buttontext}</>)}    </button>)}
-          
-       
-          <textarea
-            placeholder={props.placeholderbot}
-            value={content}
-          ></textarea>
-          <button   className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4  hover:border-blue-500 rounded"style={{ backgroundColor: "grey" }} onClick={copyToClip}>
-            Copy to Clipboard
-          </button>
-        </p>
-        <span>AI Service - Results may vary</span>
+*/}
+              {!session ? (
+                <button
+                  className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+                  onClick={buttonPressLogin}
+                >
+                  Sign in - {props.buttontext}
+                </button>
+              ) : (
+                <button
+                  className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+                  onClick={buttonPress}
+                >
+                  {" "}
+                  {requestloading ? (
+                    <>Loading...</>
+                  ) : (
+                    <>{props.buttontext}</>
+                  )}{" "}
+                </button>
+              )}
 
+              <textarea
+                placeholder={props.placeholderbot}
+                value={content}
+              ></textarea>
+              <button
+                className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4  hover:border-blue-500 rounded"
+                style={{ backgroundColor: "grey" }}
+                onClick={copyToClip}
+              >
+                Copy to Clipboard
+              </button>
+            </p>
+            <span>AI Service - Results may vary</span>
+          </div>
         </div>
-       
-       
-       
-       </div>
-
-       
-
       </Layout>
-
-    
     </>
   )
 }

@@ -11,123 +11,113 @@ import Script from "next/script"
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition"
-import { AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
-
+import {
+  AnnotationIcon,
+  GlobeAltIcon,
+  LightningBoltIcon,
+  ScaleIcon,
+} from "@heroicons/react/outline"
 
 const features = [
   {
-    name: 'Function from Description',
+    name: "Function from Description",
     description:
-      'Generate a function just by describing what is needs to do. Choose of many programming languages.',
+      "Generate a function just by describing what is needs to do. Choose of many programming languages.",
     icon: GlobeAltIcon,
-    link: '/generate-function',
+    link: "/generate-function",
   },
   {
-    name: 'Code to Explanation',
-    description:
-      'Any code explained in plain english',
+    name: "Code to Explanation",
+    description: "Any code explained in plain english",
     icon: ScaleIcon,
-    link: '/code-to-explanation',
+    link: "/code-to-explanation",
   },
   {
-    name: 'Fix invalid Code',
+    name: "Fix invalid Code",
     description:
-      'To spot a missing character somewhere can be frustrating. This feature will help you to fix it.',
+      "To spot a missing character somewhere can be frustrating. This feature will help you to fix it.",
     icon: LightningBoltIcon,
-    link: '/fix-invalid-code',
+    link: "/fix-invalid-code",
   },
   {
-    name: 'Translate Languages',
-    description:
-      'Translate code to any programming language',
+    name: "Translate Languages",
+    description: "Translate code to any programming language",
     icon: AnnotationIcon,
-    link: '/translate',
+    link: "/translate",
   },
   {
-    name: 'Class from Description',
+    name: "Class from Description",
     description:
-      'Generate a class just by describing what is needs to do. Choose of many programming languages.',
+      "Generate a class just by describing what is needs to do. Choose of many programming languages.",
     icon: AnnotationIcon,
-    link: '/class-from-description',
+    link: "/class-from-description",
   },
   {
-    name: 'Get Language from Code',
-    description:
-      'Get the programming language from a code.',
+    name: "Get Language from Code",
+    description: "Get the programming language from a code.",
     icon: AnnotationIcon,
-    link: '/language-from-code',
+    link: "/language-from-code",
   },
   {
-    name: 'Function from Docstring',
-    description:
-      'Provide a docstring to generate the actual function.',
+    name: "Function from Docstring",
+    description: "Provide a docstring to generate the actual function.",
     icon: AnnotationIcon,
-    link: '/docstring',
+    link: "/docstring",
   },
   {
-    name: 'Regex from Description',
-    description:
-      'Create a regex from a describtion like "check for email".',
+    name: "Regex from Description",
+    description: 'Create a regex from a describtion like "check for email".',
     icon: AnnotationIcon,
-    link: '/regex',
+    link: "/regex",
   },
   {
-    name: 'Regex to Explanation',
-    description:
-      'Create a plain english explanation from a regex.',
+    name: "Regex to Explanation",
+    description: "Create a plain english explanation from a regex.",
     icon: AnnotationIcon,
-    link: '/regex-explanation',
+    link: "/regex-explanation",
   },
   {
-    name: 'Linux Command',
-    description:
-      'Get the linux commend from a description. ',
+    name: "Linux Command",
+    description: "Get the linux commend from a description. ",
     icon: AnnotationIcon,
-    link: '/linux',
+    link: "/linux",
   },
   {
-    name: 'Get time complexity',
-    description:
-      '',
+    name: "Get time complexity",
+    description: "",
     icon: AnnotationIcon,
-    link: '/time-complexity',
+    link: "/time-complexity",
   },
   {
-    name: 'Git Command from Description',
-    description:
-      'Find the Git Command you are looking for from a description.',
+    name: "Git Command from Description",
+    description: "Find the Git Command you are looking for from a description.",
     icon: AnnotationIcon,
-    link: '/git',
+    link: "/git",
   },
   {
-    name: 'Text Description to SQL Command',
-    description:
-      'Create a SQL command from a description.',
+    name: "Text Description to SQL Command",
+    description: "Create a SQL command from a description.",
     icon: AnnotationIcon,
-    link: '/text-to-sql-syntax',
+    link: "/text-to-sql-syntax",
   },
   {
-    name: 'Generate HTML from Description',
-    description:
-      '',
+    name: "Generate HTML from Description",
+    description: "",
     icon: AnnotationIcon,
-    link: '/generate-html-from-description',
+    link: "/generate-html-from-description",
   },
   {
-    name: 'Generate CSS from Description',
-    description:
-      '',
+    name: "Generate CSS from Description",
+    description: "",
     icon: AnnotationIcon,
-    link: '/css-from-description',
+    link: "/css-from-description",
   },
   {
-    name: 'Meta Tags from Description',
-    description:
-      '',
+    name: "Meta Tags from Description",
+    description: "",
     icon: AnnotationIcon,
-    link: '/meta',
-  }
-  
+    link: "/meta",
+  },
 ]
 
 const options = [
@@ -150,7 +140,7 @@ const options = [
   { value: "Ruby", label: "Ruby" },
 ]
 
-export default function Inputarea(props:any) {
+export default function Inputarea(props: any) {
   const { data: session, status } = useSession()
   const loading = status === "loading"
   const [content, setContent] = useState("")
@@ -179,7 +169,10 @@ export default function Inputarea(props:any) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ textup: textup + "" + transcript, selectedOption: selectedOption }),
+      body: JSON.stringify({
+        textup: textup + "" + transcript,
+        selectedOption: selectedOption,
+      }),
     })
       .then(
         (response) => response.json(),
@@ -228,7 +221,7 @@ export default function Inputarea(props:any) {
   if (typeof window !== "undefined" && loading) return null
 
   // If no session exists, display access denied message
-  
+
   // If session exists, display content
   return (
     <>
@@ -262,42 +255,41 @@ export default function Inputarea(props:any) {
 
       <Layout>
         <div className="flex flex-col my-auto items-center ">
-      
-      <div className="xl:w-1/2 px-4 my-12 self-center">
-      
-        <h1 className="p-4 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{props.title}</h1>
-        <Select
-        className="m-4 "
-          isSearchable={false}
-          placeholder="Select language.."
-          options={options}
-          onChange={handleChange}
-        />
-        <p>
-          <textarea
-            value={textup + "" + transcript}
-            placeholder={props.placeholdertop}
-            onKeyDown={(e) => {
-              if (e.key === "Tab") {
-                e.preventDefault()
-                // add tab to content
-                setTextup(textup + "\t")
-              }
-            }}
-            onChange={(e) => {
-              setTextup(e.target.value)
-              setCount(e.target.value.length)
-            }}
-          ></textarea>
+          <div className="xl:w-1/2 px-4 my-12 self-center">
+            <h1 className="p-4 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              {props.title}
+            </h1>
+            <Select
+              className="m-4 "
+              isSearchable={false}
+              placeholder="Select language.."
+              options={options}
+              onChange={handleChange}
+            />
+            <p>
+              <textarea
+                value={textup + "" + transcript}
+                placeholder={props.placeholdertop}
+                onKeyDown={(e) => {
+                  if (e.key === "Tab") {
+                    e.preventDefault()
+                    // add tab to content
+                    setTextup(textup + "\t")
+                  }
+                }}
+                onChange={(e) => {
+                  setTextup(e.target.value)
+                  setCount(e.target.value.length)
+                }}
+              ></textarea>
 
-          {count > 1000 ? (
-            <p id="counter">Too much! +{count - 1000}</p>
-          ) : (
-            <p id="counter">{count}</p>
-          )}
+              {count > 1000 ? (
+                <p id="counter">Too much! +{count - 1000}</p>
+              ) : (
+                <p id="counter">{count}</p>
+              )}
 
-      
-{/*
+              {/*
 <div>
       <p>Use Voice: {listening ? (<> <button style={{backgroundColor:"#e9e9e9"}}   onClick={(event) =>  SpeechRecognition.stopListening()}>⏹️</button> </> ) : <button style={{backgroundColor:"#e9e9e9"}} onClick={(event) => SpeechRecognition.startListening()}> 🔴</button>}
       
@@ -307,31 +299,44 @@ export default function Inputarea(props:any) {
        <p>{transcript}</p> 
     </div>
 
-*/}       
-          {!session ? (<button className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={buttonPressLogin}>Sign in - {props.buttontext}</button>) : (<button className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={buttonPress}>     {requestloading ? (<>Loading...</>) : (<>{props.buttontext}</>)}    </button>)}
-          
-       
-          <textarea
-            placeholder={props.placeholderbot}
-            value={content}
-          ></textarea>
-          <button   className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4  hover:border-blue-500 rounded"style={{ backgroundColor: "grey" }} onClick={copyToClip}>
-            Copy to Clipboard
-          </button>
-        </p>
-        <span>AI Service - Results may vary</span>
+*/}
+              {!session ? (
+                <button
+                  className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+                  onClick={buttonPressLogin}
+                >
+                  Sign in - {props.buttontext}
+                </button>
+              ) : (
+                <button
+                  className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+                  onClick={buttonPress}
+                >
+                  {" "}
+                  {requestloading ? (
+                    <>Loading...</>
+                  ) : (
+                    <>{props.buttontext}</>
+                  )}{" "}
+                </button>
+              )}
 
+              <textarea
+                placeholder={props.placeholderbot}
+                value={content}
+              ></textarea>
+              <button
+                className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4  hover:border-blue-500 rounded"
+                style={{ backgroundColor: "grey" }}
+                onClick={copyToClip}
+              >
+                Copy to Clipboard
+              </button>
+            </p>
+            <span>AI Service - Results may vary</span>
+          </div>
         </div>
-       
-       
-       
-       </div>
-
-       
-
       </Layout>
-
-    
     </>
   )
 }

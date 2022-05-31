@@ -8,24 +8,23 @@ import { NextSeo } from "next-seo"
 import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
-import Inputareanoselect from '../components/inputareanoselect'
+import Inputareanoselect from "../components/inputareanoselect"
 import Features from "../components/features"
 
 export default function translate() {
   const { data: session, status } = useSession()
   const loading = status === "loading"
 
-
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null
 
   // If no session exists, display access denied message
-  
+
   // If session exists, display content
   return (
     <>
-      <Inputareanoselect 
-        title="Meta Tags from Description" 
+      <Inputareanoselect
+        title="Meta Tags from Description"
         placeholdertop="A site about cat images"
         placeholderbot={`<meta name="description" content="A site about cat images">
             
@@ -36,7 +35,7 @@ export default function translate() {
         buttontext="Get Meta Tags"
         apipath="meta"
       ></Inputareanoselect>
-       
+
       <Features></Features>
     </>
   )
