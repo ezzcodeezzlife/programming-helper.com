@@ -17,6 +17,7 @@ import {
   LightningBoltIcon,
   ScaleIcon,
 } from "@heroicons/react/outline"
+import Seocomponent from "./seocomponent"
 
 const features = [
   {
@@ -225,33 +226,8 @@ export default function Inputarea(props: any) {
   // If session exists, display content
   return (
     <>
-      <Head>
-        <title>Generate function from description</title>
-        <meta name="description" content="Generate function from description" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="INDEX" />
-        <meta name="robots" content="FOLLOW" />
-        <meta property="og:type" content="article" />
-
-        <meta property="og:title" content="TITLE OF YOUR POST OR PAGE" />
-
-        <meta property="og:description" content="DESCRIPTION OF PAGE CONTENT" />
-
-        <meta property="og:url" content="PERMALINK" />
-
-        <meta property="og:site_name" content="SITE NAME" />
-      </Head>
-      <NextSeo
-        title="Generate function from description"
-        description="Generate function from description"
-        canonical="https://aiservice.vercel.app/generate-function"
-        openGraph={{
-          title: "Generate function from description",
-          description: "Generate function from description",
-          url: "https://aiservice.vercel.app/generate-function",
-          site_name: "Generate function from description",
-        }}
-      />
+      <Seocomponent title={props.tile} apipath={props.apipath}></Seocomponent>
+      
 
       <Layout>
         <div className="flex flex-col my-auto items-center ">

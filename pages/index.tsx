@@ -16,9 +16,11 @@ import {
 
 import Typed from "react-typed"
 import FeaturesHero from "../components/featuresHero"
+import Seocomponent from "../components/seocomponent"
+
 
 const navigation = [
-  { name: "Features", href: "/generate-function" },
+  { name: "Features", href: "#features" },
   { name: "Application", href: "/generate-function" },
   { name: "GitHub", href: "https://github.com/ezzcodeezzlife/openaiwebsite" },
 ]
@@ -128,6 +130,7 @@ const features = [
 export default function Example() {
   return (
     <>
+    <Seocomponent title="Generate Code just by typing a text description. AI will help you to generate the code in a few seconds." apipath=""></Seocomponent>
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -285,9 +288,13 @@ export default function Example() {
                 <Typed
                   className="text-indigo-400"
                   strings={[
-                    " Code from a text description",
-                    " Docstring from Code",
-                    " Regex from a text description",
+                    "Code from a text description",
+                    "SQL from a text description",
+                    "a explanation for your code",
+                    "Docstring from Code",
+                    "Regex from a text description",
+                    "HTML from a description",
+                    "Linux command from a description",
                   ]}
                   typeSpeed={50}
                   backSpeed={25}
