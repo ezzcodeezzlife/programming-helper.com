@@ -24,7 +24,7 @@ const limiter = rateLimit({
 const { Configuration, OpenAIApi } = require("openai")
 
 const configuration = new Configuration({
-  apiKey: env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 })
 const openai = new OpenAIApi(configuration)
 
@@ -36,7 +36,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   //console.log(req.body)
   //console.log(req.body.textup)
   //console.log(req.body.selectedOption.value)
-
+  console.log(process.env.OPENAI_API_KEY)
+  console.log(session)
   console.log(
     "#### Generate a function in " +
       req.body.selectedOption.value +
