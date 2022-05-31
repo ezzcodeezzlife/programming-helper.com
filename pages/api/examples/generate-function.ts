@@ -17,10 +17,10 @@ interface Userpromt {
 }
 
 const limiter = rateLimit({
-  interval: 60 * 1000, // 60 seconds
+  interval: 60 * 1000, // 60 seconds 
   uniqueTokenPerInterval: 500, // Max 500 users per second
 })
-
+//test
 const { Configuration, OpenAIApi } = require("openai")
 
 const configuration = new Configuration({
