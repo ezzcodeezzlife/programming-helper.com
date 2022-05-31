@@ -126,6 +126,7 @@ const features = [
     link: "/meta",
   },
 ]
+import Logo from './logo.svg';
 
 export default function Example() {
   return (
@@ -157,7 +158,7 @@ export default function Example() {
                         <img
                           alt="Workflow"
                           className="h-8 w-auto sm:h-10"
-                          src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                          src="https://www.svgrepo.com/show/68023/logo.svg"
                         />
                       </a>
                       <div className="-mr-2 flex items-center md:hidden">
