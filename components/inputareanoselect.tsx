@@ -83,7 +83,7 @@ export default function translate(props: any) {
               {props.title}
             </h1>
 
-            <p>
+            
               <textarea
                 value={textup + ""}
                 placeholder={props.placeholdertop}
@@ -99,7 +99,7 @@ export default function translate(props: any) {
                   setCount(e.target.value.length)
                 }}
               ></textarea>
-
+<p>
               {count > 1000 ? (
                 <p id="counter">Too much! +{count - 1000}</p>
               ) : (
