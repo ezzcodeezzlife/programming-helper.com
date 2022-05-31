@@ -38,14 +38,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   //console.log(req.body.selectedOption.value)
   console.log(process.env.OPENAI_API_KEY)
   console.log(session)
-  console.log(
-    "#### Generate a function in " +
-      req.body.selectedOption.value +
-      " that accomplishes the following: " +
-      req.body.textup +
-      " \n    \n ### " +
-      "\n\n"
-  )
 
   console.log("content length", req.body.textup.length)
   if (req.body.textup.length > 1000) {
@@ -96,6 +88,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .then(async (response: any) => {
               console.log(response.data.choices[0].text)
               //res.status(200).json(response.data)
+              console.log("Response:" , response.data.choices[0])
               try {
                 res.status(200).json({ data: response.data.choices[0].text })
 
