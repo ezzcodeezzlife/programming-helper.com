@@ -26,13 +26,13 @@ export default function seocomponent(props: any) {
         <NextSeo
           title={props.title}
           description={"A tool for programming and much more. Generate Code just by typing a text description. AI will help you to generate the code in a few seconds." + props.title}
-          canonical= {"https://aiservice.vercel.app/" + props.apipath}
+          canonical= {"https://www.programming-helper.com/" + props.apipath}
           openGraph={{
             title: props.title,
             type: "website",
             locale: "en_US",
             description: "A tool for programming and much more. Generate Code just by typing a text description. AI will help you to generate the code in a few seconds." + props.title,
-            url: "https://aiservice.vercel.app/" + props.apipath,
+            url: "https://www.programming-helper.com/" + props.apipath,
             site_name: props.title,
             images: [
               { 
