@@ -9,7 +9,7 @@ import Head from "next/head"
 import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 import Seocomponent from "./seocomponent"
-
+import Typed from "react-typed"
 
 export default function translate(props: any) {
   const { data: session, status } = useSession()
@@ -19,6 +19,7 @@ export default function translate(props: any) {
   const [selectedOption, setSelectedOption] = useState()
   const [requestloading, setRequestloading] = useState(false)
   const [count, setCount] = useState(0)
+  const [copytext, setCopytext] = useState("Copy to Clipboard")
 
   // Fetch content from protected route
   const fetchData = async () => {
@@ -66,7 +67,20 @@ export default function translate(props: any) {
 
   const copyToClip = () => {
     navigator.clipboard.writeText(content)
+    setCopytext("Copied!")
+    setTimeout(() => {
+      setCopytext("Copy to Clipboard")
+    }, 1000);
   }
+
+  useEffect(() => {
+    // Update the document title using the browser API
+
+    if(localStorage.getItem(props.apipath)) {
+      setTextup(localStorage.getItem(props.apipath))
+    }
+    
+  });
 
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null
@@ -96,6 +110,7 @@ export default function translate(props: any) {
                 }}
                 onChange={(e) => {
                   setTextup(e.target.value)
+                  localStorage.setItem(props.apipath, e.target.value)
                   setCount(e.target.value.length)
                 }}
               ></textarea>
@@ -131,7 +146,14 @@ export default function translate(props: any) {
                 >
                   {" "}
                   {requestloading ? (
-                    <>Loading...</>
+                    <>Loading...<Typed
+                    strings={[
+                      "...",
+                    ]}
+                    typeSpeed={50}
+                    backSpeed={25}
+                    loop
+                  /></>
                   ) : (
                     <>{props.buttontext}</>
                   )}{" "}
@@ -139,6 +161,7 @@ export default function translate(props: any) {
               )}
 
               <textarea
+                readOnly
                 placeholder={props.placeholderbot}
                 value={content}
               ></textarea>
@@ -147,10 +170,12 @@ export default function translate(props: any) {
                 style={{ backgroundColor: "grey" }}
                 onClick={copyToClip}
               >
-                Copy to Clipboard
+                {copytext}
               </button>
             </p>
+            {/*
             <span>AI Service - Results may vary</span>
+          */ }
           </div>
         </div>
       </Layout>

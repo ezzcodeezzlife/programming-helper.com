@@ -54,7 +54,7 @@ export default NextAuth({
   theme: {
     colorScheme: "light",
     brandColor: "#5c5fff", // Hex color code
-    logo: "https://homepage-appsplosion.herokuapp.com/public/images/logo.jpg", // URL or base64 data URI
+    logo: "https://www.svgrepo.com/show/68023/logo.svg", // URL or base64 data URI
   },
   callbacks: {
     async jwt({ token }) {

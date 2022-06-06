@@ -18,6 +18,7 @@ import {
   ScaleIcon,
 } from "@heroicons/react/outline"
 import Seocomponent from "./seocomponent"
+import Typed from "react-typed"
 
 const features = [
   {
@@ -151,6 +152,7 @@ export default function Inputarea(props: any) {
   const [selectedOption, setSelectedOption] = useState()
   const [requestloading, setRequestloading] = useState(false)
   const [count, setCount] = useState(0)
+  const [copytext, setCopytext] = useState("Copy to Clipboard")
 
   const {
     transcript,
@@ -209,6 +211,10 @@ export default function Inputarea(props: any) {
 
   const copyToClip = () => {
     navigator.clipboard.writeText(content)
+    setCopytext("Copied!")
+    setTimeout(() => {
+      setCopytext("Copy to Clipboard")
+    }, 1000);
   }
 
   const buttonPressLogin = () => {
@@ -220,6 +226,14 @@ export default function Inputarea(props: any) {
     console.log(`Option selected:`, selectedOption)
   }
 
+  useEffect(() => {
+    // Update the document title using the browser API
+
+    if(localStorage.getItem(props.apipath)) {
+      setTextup(localStorage.getItem(props.apipath))
+    }
+    
+  });
 
   // If no session exists, display access denied message
 
@@ -255,6 +269,7 @@ export default function Inputarea(props: any) {
                 }}
                 onChange={(e) => {
                   setTextup(e.target.value)
+                  localStorage.setItem(props.apipath, e.target.value)
                   setCount(e.target.value.length)
                 }}
               ></textarea>
@@ -290,7 +305,14 @@ export default function Inputarea(props: any) {
                 >
                   {" "}
                   {requestloading ? (
-                    <>Loading...</>
+                    <>Loading<Typed
+                    strings={[
+                      "...",
+                    ]}
+                    typeSpeed={50}
+                    backSpeed={25}
+                    loop
+                  /></>
                   ) : (
                     <>{props.buttontext}</>
                   )}{" "}
@@ -298,6 +320,7 @@ export default function Inputarea(props: any) {
               )}
 
               <textarea
+                readOnly
                 placeholder={props.placeholderbot}
                 value={content}
               ></textarea>
@@ -306,10 +329,12 @@ export default function Inputarea(props: any) {
                 style={{ backgroundColor: "grey" }}
                 onClick={copyToClip}
               >
-                Copy to Clipboard
+                {copytext}
               </button>
             </p>
+            {/*
             <span>AI Service - Results may vary</span>
+            */ }
           </div>
         </div>
       </Layout>
