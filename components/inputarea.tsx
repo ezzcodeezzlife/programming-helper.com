@@ -223,6 +223,7 @@ export default function Inputarea(props: any) {
 
   const handleChange = (selectedOption: any) => {
     setSelectedOption(selectedOption)
+    localStorage.setItem("language", JSON.stringify(selectedOption))
     console.log(`Option selected:`, selectedOption)
   }
 
@@ -230,10 +231,14 @@ export default function Inputarea(props: any) {
     // Update the document title using the browser API
 
     if(localStorage.getItem(props.apipath)) {
-      setTextup(localStorage.getItem(props.apipath))
+      setTextup(localStorage.getItem(props.apipath) || "" )
+    }
+    if(localStorage.getItem("language")) {
+      const selection = localStorage.getItem("language") || ""
+      setSelectedOption(JSON.parse(selection))
     }
     
-  });
+  },[]);
 
   // If no session exists, display access denied message
 

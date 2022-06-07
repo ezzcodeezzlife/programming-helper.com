@@ -77,7 +77,7 @@ export default function translate(props: any) {
     // Update the document title using the browser API
 
     if(localStorage.getItem(props.apipath)) {
-      setTextup(localStorage.getItem(props.apipath))
+      setTextup(localStorage.getItem(props.apipath)|| "")
     }
     
   });
