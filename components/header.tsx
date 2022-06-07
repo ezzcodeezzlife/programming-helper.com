@@ -198,19 +198,15 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ")
 }
 
-
-
 // The approach used in this component shows how to build a sign in and sign out
 // component that works on pages which support both client and server side
 // rendering, and avoids any flash incorrect content on initial page load.s
 export default function Header() {
-   // When rendering client side don't display anything until loading is complete
-   const { data: session, status } = useSession()
-   const loading = status === "loading"
-   
-   if (typeof window !== "undefined" && loading) return null
+  // When rendering client side don't display anything until loading is complete
+  const { data: session, status } = useSession()
+  const loading = status === "loading"
 
-
+  if (typeof window !== "undefined" && loading) return null
 
   return (
     <>

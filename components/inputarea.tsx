@@ -19,6 +19,7 @@ import {
 } from "@heroicons/react/outline"
 import Seocomponent from "./seocomponent"
 import Typed from "react-typed"
+import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react"
 
 const features = [
   {
@@ -146,7 +147,6 @@ const options = [
 export default function Inputarea(props: any) {
   const { data: session, status } = useSession()
 
-  
   const loading = status === "loading"
   const [content, setContent] = useState("")
   const [textup, setTextup] = useState("")
@@ -215,7 +215,7 @@ export default function Inputarea(props: any) {
     setCopytext("Copied!")
     setTimeout(() => {
       setCopytext("Copy to Clipboard")
-    }, 1000);
+    }, 1000)
   }
 
   const buttonPressLogin = () => {
@@ -231,15 +231,14 @@ export default function Inputarea(props: any) {
   useEffect(() => {
     // Update the document title using the browser API
 
-    if(localStorage.getItem(props.apipath)) {
-      setTextup(localStorage.getItem(props.apipath) || "" )
+    if (localStorage.getItem(props.apipath)) {
+      setTextup(localStorage.getItem(props.apipath) || "")
     }
-    if(localStorage.getItem("language")) {
+    if (localStorage.getItem("language")) {
       const selection = localStorage.getItem("language") || ""
       setSelectedOption(JSON.parse(selection))
     }
-    
-  },[]);
+  }, [])
 
   // If no session exists, display access denied message
 
@@ -247,7 +246,6 @@ export default function Inputarea(props: any) {
   return (
     <>
       <Seocomponent title={props.title} apipath={props.apipath}></Seocomponent>
-      
 
       <Layout>
         <div className="flex flex-col my-auto items-center ">
@@ -258,28 +256,30 @@ export default function Inputarea(props: any) {
             <Select
               className="my-4 mr-4 xl:w-1/3"
               isSearchable={false}
-              placeholder={selectedOption ? selectedOption['value'] : "Select language.."}
+              placeholder={
+                selectedOption ? selectedOption["value"] : "Select language.."
+              }
               options={options}
               onChange={handleChange}
             />
-            
-              <textarea
-                value={textup + "" + transcript}
-                placeholder={props.placeholdertop}
-                onKeyDown={(e) => {
-                  if (e.key === "Tab") {
-                    e.preventDefault()
-                    // add tab to content
-                    setTextup(textup + "\t")
-                  }
-                }}
-                onChange={(e) => {
-                  setTextup(e.target.value)
-                  localStorage.setItem(props.apipath, e.target.value)
-                  setCount(e.target.value.length)
-                }}
-              ></textarea>
-<p>
+
+            <textarea
+              value={textup + "" + transcript}
+              placeholder={props.placeholdertop}
+              onKeyDown={(e) => {
+                if (e.key === "Tab") {
+                  e.preventDefault()
+                  // add tab to content
+                  setTextup(textup + "\t")
+                }
+              }}
+              onChange={(e) => {
+                setTextup(e.target.value)
+                localStorage.setItem(props.apipath, e.target.value)
+                setCount(e.target.value.length)
+              }}
+            ></textarea>
+            <p>
               {count > 1000 ? (
                 <p id="counter">Too much! +{count - 1000}</p>
               ) : (
@@ -311,14 +311,15 @@ export default function Inputarea(props: any) {
                 >
                   {" "}
                   {requestloading ? (
-                    <>Loading<Typed
-                    strings={[
-                      "...",
-                    ]}
-                    typeSpeed={50}
-                    backSpeed={25}
-                    loop
-                  /></>
+                    <>
+                      Loading
+                      <Typed
+                        strings={["..."]}
+                        typeSpeed={50}
+                        backSpeed={25}
+                        loop
+                      />
+                    </>
                   ) : (
                     <>{props.buttontext}</>
                   )}{" "}
@@ -330,6 +331,17 @@ export default function Inputarea(props: any) {
                 placeholder={props.placeholderbot}
                 value={content}
               ></textarea>
+
+              {/*
+              <Editor
+              className="border-grey border-2 p-1 rounded-lg"
+              height="30vh"
+              theme="vs"
+              defaultLanguage="javascript"
+              defaultValue={props.placeholderbot}
+              value={content}
+            />
+            */}
               <button
                 className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4  hover:border-blue-500 rounded"
                 style={{ backgroundColor: "grey" }}
@@ -340,7 +352,7 @@ export default function Inputarea(props: any) {
             </p>
             {/*
             <span>AI Service - Results may vary</span>
-            */ }
+            */}
           </div>
         </div>
       </Layout>

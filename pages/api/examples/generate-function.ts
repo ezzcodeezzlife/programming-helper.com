@@ -17,7 +17,7 @@ interface Userpromt {
 }
 
 const limiter = rateLimit({
-  interval: 60 * 1000, // 60 seconds 
+  interval: 60 * 1000, // 60 seconds
   uniqueTokenPerInterval: 500, // Max 500 users per second
 })
 //test
@@ -88,7 +88,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .then(async (response: any) => {
               console.log(response.data.choices[0].text)
               //res.status(200).json(response.data)
-              console.log("Response:" , response.data.choices[0])
+              console.log("Response:", response.data.choices[0])
               try {
                 res.status(200).json({ data: response.data.choices[0].text })
 

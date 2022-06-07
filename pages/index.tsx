@@ -18,7 +18,6 @@ import Typed from "react-typed"
 import FeaturesHero from "../components/featuresHero"
 import Seocomponent from "../components/seocomponent"
 
-
 const navigation = [
   { name: "Features", href: "#features" },
   { name: "Application", href: "/generate-function" },
@@ -126,12 +125,15 @@ const features = [
     link: "/meta",
   },
 ]
-import Logo from './logo.svg';
+import Logo from "./logo.svg"
 
 export default function Example() {
   return (
     <>
-    <Seocomponent title="Generate Code just by typing a text description. AI will help you to generate the code in a few seconds." apipath=""></Seocomponent>
+      <Seocomponent
+        title="Generate Code just by typing a text description. AI will help you to generate the code in a few seconds."
+        apipath=""
+      ></Seocomponent>
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -281,7 +283,7 @@ export default function Example() {
 
       <div className="pt-16	">
         <div id="features" className="pt-12 bg-white">
-          <div    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:text-center">
               <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
                 Feauture Preview

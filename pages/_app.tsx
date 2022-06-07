@@ -7,7 +7,7 @@ import Script from "next/script"
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-    <Script
+      <Script
         id="Adsense-id"
         data-ad-client="ca-pub-8251732556629149"
         async
@@ -31,9 +31,9 @@ const App = ({ Component, pageProps }: AppProps) => {
           gtag('config', 'G-WMLR3PFFXE');
         `}
       </Script>
-    <SessionProvider session={pageProps.session} refetchInterval={0}>
-      <Component {...pageProps} />
-    </SessionProvider>
+      <SessionProvider session={pageProps.session} refetchInterval={0}>
+        <Component {...pageProps} />
+      </SessionProvider>
     </>
   )
 }

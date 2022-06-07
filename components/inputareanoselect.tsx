@@ -70,26 +70,24 @@ export default function translate(props: any) {
     setCopytext("Copied!")
     setTimeout(() => {
       setCopytext("Copy to Clipboard")
-    }, 1000);
+    }, 1000)
   }
 
   useEffect(() => {
     // Update the document title using the browser API
 
-    if(localStorage.getItem(props.apipath)) {
-      setTextup(localStorage.getItem(props.apipath)|| "")
+    if (localStorage.getItem(props.apipath)) {
+      setTextup(localStorage.getItem(props.apipath) || "")
     }
-    
-  });
+  })
 
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null
 
   return (
     <>
-      
       <Seocomponent title={props.title} apipath={props.apipath}></Seocomponent>
-      
+
       <Layout>
         <div className="flex flex-col my-auto items-center">
           <div className="xl:w-1/2 px-4 my-12 self-center">
@@ -97,24 +95,23 @@ export default function translate(props: any) {
               {props.title}
             </h1>
 
-            
-              <textarea
-                value={textup + ""}
-                placeholder={props.placeholdertop}
-                onKeyDown={(e) => {
-                  if (e.key === "Tab") {
-                    e.preventDefault()
-                    // add tab to content
-                    setTextup(textup + "\t")
-                  }
-                }}
-                onChange={(e) => {
-                  setTextup(e.target.value)
-                  localStorage.setItem(props.apipath, e.target.value)
-                  setCount(e.target.value.length)
-                }}
-              ></textarea>
-<p>
+            <textarea
+              value={textup + ""}
+              placeholder={props.placeholdertop}
+              onKeyDown={(e) => {
+                if (e.key === "Tab") {
+                  e.preventDefault()
+                  // add tab to content
+                  setTextup(textup + "\t")
+                }
+              }}
+              onChange={(e) => {
+                setTextup(e.target.value)
+                localStorage.setItem(props.apipath, e.target.value)
+                setCount(e.target.value.length)
+              }}
+            ></textarea>
+            <p>
               {count > 1000 ? (
                 <p id="counter">Too much! +{count - 1000}</p>
               ) : (
@@ -146,14 +143,15 @@ export default function translate(props: any) {
                 >
                   {" "}
                   {requestloading ? (
-                    <>Loading<Typed
-                    strings={[
-                      "...",
-                    ]}
-                    typeSpeed={50}
-                    backSpeed={25}
-                    loop
-                  /></>
+                    <>
+                      Loading
+                      <Typed
+                        strings={["..."]}
+                        typeSpeed={50}
+                        backSpeed={25}
+                        loop
+                      />
+                    </>
                   ) : (
                     <>{props.buttontext}</>
                   )}{" "}
@@ -175,7 +173,7 @@ export default function translate(props: any) {
             </p>
             {/*
             <span>AI Service - Results may vary</span>
-          */ }
+          */}
           </div>
         </div>
       </Layout>
