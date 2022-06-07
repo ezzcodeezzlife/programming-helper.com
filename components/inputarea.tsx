@@ -140,6 +140,7 @@ const options = [
   { value: "Kotlin", label: "Kotlin" },
   { value: "R", label: "R" },
   { value: "Ruby", label: "Ruby" },
+  { value: "Dart", label: "Dart" },
 ]
 
 export default function Inputarea(props: any) {

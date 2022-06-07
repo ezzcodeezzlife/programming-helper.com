@@ -146,7 +146,7 @@ export default function translate(props: any) {
                 >
                   {" "}
                   {requestloading ? (
-                    <>Loading...<Typed
+                    <>Loading<Typed
                     strings={[
                       "...",
                     ]}

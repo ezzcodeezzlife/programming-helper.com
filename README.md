@@ -1,4 +1,4 @@
-[aiservice.vercel.app/](https://aiservice.vercel.app/)
+[programming-helper.com/](https://www.programming-helper.com/)
 
 ## Getting Started
 
