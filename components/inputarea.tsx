@@ -257,7 +257,7 @@ export default function Inputarea(props: any) {
             <Select
               className="my-4 mr-4 xl:w-1/3"
               isSearchable={false}
-              placeholder="Select language.."
+              placeholder={textup||"Select language.."}
               options={options}
               onChange={handleChange}
             />
