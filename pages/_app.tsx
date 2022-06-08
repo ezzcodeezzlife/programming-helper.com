@@ -17,6 +17,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         }}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
+      <meta name="propeller" content="16835aec6473836849046ebbbac20fbc"></meta>
 
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-WMLR3PFFXE"
