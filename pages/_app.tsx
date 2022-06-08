@@ -4,6 +4,8 @@ import { withPasswordProtect } from "@storyofams/next-password-protect"
 import "../styles/globals.css"
 import "./styles.css"
 import Script from "next/script"
+import Head from "next/head"
+
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
@@ -17,8 +19,14 @@ const App = ({ Component, pageProps }: AppProps) => {
         }}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-      <meta name="propeller" content="16835aec6473836849046ebbbac20fbc"></meta>
 
+      <Head>
+      <meta name="propeller" content="16835aec6473836849046ebbbac20fbc"></meta>
+      </Head>
+      <Script>
+      {`<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',5150157,document.body||document.documentElement)</script> `}
+      </Script>
+      
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-WMLR3PFFXE"
         strategy="afterInteractive"
