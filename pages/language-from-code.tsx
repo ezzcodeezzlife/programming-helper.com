@@ -24,10 +24,10 @@ export default function translate() {
   return (
     <>
       <Inputareanoselect
-        title="Get lanaguage from code"
+        title="Get language from code"
         placeholdertop="function sayHello() { console.log('Hello'); }"
         placeholderbot="JavaScript"
-        buttontext="Get lanaguage"
+        buttontext="Get language"
         apipath="language-from-code"
       ></Inputareanoselect>
 
