@@ -29,6 +29,14 @@ const App = ({ Component, pageProps }: AppProps) => {
         console.error("Script failed to load", e)
       }}
       >
+      {`<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',5150157,document.body||document.documentElement)</script> `}
+      </Script>
+      <Script
+      strategy="beforeInteractive"
+      onError={(e) => {
+        console.error("Script failed to load", e)
+      }}
+      >
       {`(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',5150157,document.body||document.documentElement)`}
       </Script>
       
