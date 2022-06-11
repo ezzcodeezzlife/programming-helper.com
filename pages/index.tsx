@@ -296,7 +296,7 @@ export default function Example() {
                   strings={[
                     "Code from a text description",
                     "SQL from a text description",
-                    "a explanation for your code",
+                    "an explanation for your code",
                     "Docstring from Code",
                     "Regex from a text description",
                     "HTML from a description",
