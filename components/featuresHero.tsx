@@ -59,7 +59,7 @@ export default function Features(props: any) {
     },
     {
       name: "Regex from Description",
-      description: 'Create a regex from a describtion like "check for email".',
+      description: 'Create a regex from a description like "check for email".',
       icon: CodeIcon,
       link: "/regex",
     },
