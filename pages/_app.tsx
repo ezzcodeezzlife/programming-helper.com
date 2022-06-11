@@ -44,6 +44,11 @@ const App = ({ Component, pageProps }: AppProps) => {
           gtag('config', 'G-WMLR3PFFXE');
         `}
       </Script>
+
+      <Head>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+
       <SessionProvider session={pageProps.session} refetchInterval={0}>
         <Component {...pageProps} />
       </SessionProvider>
