@@ -22,6 +22,7 @@ const navigation = [
   { name: "Features", href: "#features" },
   { name: "Application", href: "/generate-function" },
   { name: "GitHub", href: "https://github.com/ezzcodeezzlife/openaiwebsite" },
+  { name: "Privacy Policy", href: "https://homepage-appsplosion.herokuapp.com/privacypolicy" },
 ]
 
 const features = [
@@ -203,8 +204,8 @@ export default function Example() {
                       <div>
                         <img
                           className="h-8 w-auto"
-                          src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                          alt=""
+                          src="https://www.svgrepo.com/show/68023/logo.svg"
+                          alt="logo"
                         />
                       </div>
                       <div className="-mr-2">
