@@ -20,6 +20,24 @@ export default function Features(props: any) {
       link: "/generate-function",
     },
     {
+      name: "Text Description to SQL Command",
+      description: "Create a SQL command from a description.",
+      icon: DatabaseIcon,
+      link: "/text-to-sql-syntax",
+    },
+    {
+      name: "Translate Languages",
+      description: "Translate code to any programming language",
+      icon: TranslateIcon,
+      link: "/translate",
+    },
+    {
+      name: "Generate HTML from Description",
+      description: "Generate small HTML from Description",
+      icon: CodeIcon,
+      link: "/generate-html-from-description",
+    },
+    {
       name: "Code to Explanation",
       description: "Any code explained in plain english",
       icon: CodeIcon,
@@ -32,12 +50,7 @@ export default function Features(props: any) {
       icon: LightningBoltIcon,
       link: "/fix-invalid-code",
     },
-    {
-      name: "Translate Languages",
-      description: "Translate code to any programming language",
-      icon: TranslateIcon,
-      link: "/translate",
-    },
+   
     {
       name: "Class from Description",
       description:
@@ -45,18 +58,7 @@ export default function Features(props: any) {
       icon: CodeIcon,
       link: "/class-from-description",
     },
-    {
-      name: "Get Language from Code",
-      description: "Get the programming language from a code.",
-      icon: TranslateIcon,
-      link: "/language-from-code",
-    },
-    {
-      name: "Function from Docstring",
-      description: "Provide a docstring to generate the actual function.",
-      icon: AnnotationIcon,
-      link: "/docstring",
-    },
+
     {
       name: "Regex from Description",
       description: 'Create a regex from a description like "check for email".',
@@ -69,18 +71,7 @@ export default function Features(props: any) {
       icon: CodeIcon,
       link: "/regex-explanation",
     },
-    {
-      name: "Linux Command",
-      description: "Get the linux command from a description. ",
-      icon: ChipIcon,
-      link: "/linux",
-    },
-    {
-      name: "Time complexity",
-      description: "Get time complexity",
-      icon: ClockIcon,
-      link: "/time-complexity",
-    },
+
     {
       name: "Git Command from Description",
       description:
@@ -89,17 +80,35 @@ export default function Features(props: any) {
       link: "/git",
     },
     {
-      name: "Text Description to SQL Command",
-      description: "Create a SQL command from a description.",
-      icon: DatabaseIcon,
-      link: "/text-to-sql-syntax",
+      name: "Linux Command",
+      description: "Get the linux command from a description. ",
+      icon: ChipIcon,
+      link: "/linux",
+    },
+  
+
+    {
+      name: "Get Language from Code",
+      description: "Get the programming language from a code.",
+      icon: TranslateIcon,
+      link: "/language-from-code",
     },
     {
-      name: "Generate HTML from Description",
-      description: "Generate small HTML from Description",
-      icon: CodeIcon,
-      link: "/generate-html-from-description",
+      name: "Function from Docstring",
+      description: "Provide a docstring to generate the actual function.",
+      icon: AnnotationIcon,
+      link: "/docstring",
     },
+    
+
+    {
+      name: "Time complexity",
+      description: "Get time complexity",
+      icon: ClockIcon,
+      link: "/time-complexity",
+    },
+
+   
     {
       name: "CSS from Description",
       description: "Generate CSS from Description",
@@ -121,7 +130,7 @@ export default function Features(props: any) {
           <a href={feature.link}>
             <div
               key={feature.name}
-              className="relative  hover:bg-slate-100 rounded-md py-2"
+              className="relative  hover:bg-slate-100 p-2 rounded-md py-2"
             >
               <dt>
                 <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
