@@ -10,6 +10,9 @@ import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 import Seocomponent from "./seocomponent"
 import Typed from "react-typed"
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition"
 
 export default function translate(props: any) {
   const { data: session, status } = useSession()
@@ -20,6 +23,20 @@ export default function translate(props: any) {
   const [requestloading, setRequestloading] = useState(false)
   const [count, setCount] = useState(0)
   const [copytext, setCopytext] = useState("Copy to Clipboard")
+  const [isChrome, setIsChrome] = useState(false)
+
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition
+  } = useSpeechRecognition();
+
+  useEffect(() => {
+    if (browserSupportsSpeechRecognition) {
+      setIsChrome(true)
+    }
+  }, [])
 
   // Fetch content from protected route
   const fetchData = async () => {
@@ -28,7 +45,9 @@ export default function translate(props: any) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ textup: textup, selectedOption: selectedOption }),
+      body: JSON.stringify({ 
+        textup: transcript? transcript : textup, 
+        selectedOption: selectedOption }),
     })
       .then(
         (response) => response.json(),
@@ -46,7 +65,7 @@ export default function translate(props: any) {
   }
 
   const buttonPress = () => {
-    if (textup === "") {
+    if (textup === "" && transcript === "") {
       alert("Please enter some code")
       return
     }
@@ -54,6 +73,7 @@ export default function translate(props: any) {
     setRequestloading(true)
     console.log("button pressed", textup)
     fetchData()
+    resetTranscript()
   }
 
   const buttonPressLogin = () => {
@@ -117,6 +137,53 @@ export default function translate(props: any) {
               ) : (
                 <p id="counter">{count}</p>
               )}
+
+              
+{isChrome ? (
+                <div>
+                  
+
+  
+                  <p className="py-1 px-4">
+                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">BETA</span>
+                    speech input:{" "}
+                    {listening ? (
+                      <>
+                        {" "}
+                        <button
+                        style={{ backgroundColor: "#e9e9e9" }}
+                          onClick={(event) => SpeechRecognition.stopListening()}
+                        >
+                          ⏹️ Listening
+                          <Typed
+                            strings={["..."]}
+                            typeSpeed={25}
+                            backSpeed={25}
+                            loop
+                          />{" "}
+                        </button>{" "}
+                      </>
+                    ) : (
+                      <button
+                        style={{ backgroundColor: "#e9e9e9" }}
+                        onClick={(event) => SpeechRecognition.startListening()}
+                      >
+                        {" "}
+                        🔴 {transcript ? "Reset" : ""}
+                      </button>
+                    )}
+                    <button
+                      style={{ backgroundColor: "#e9e9e9", color: "black" }}
+                      onClick={(event) => resetTranscript}
+                    ></button>
+                  </p>
+
+                  <p className="py-1 px-4 font-medium">{transcript}</p>
+                </div>
+              ) : (
+                <></>
+              )}
+
 
               {/*
 <div>
