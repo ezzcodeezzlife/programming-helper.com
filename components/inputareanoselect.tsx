@@ -38,6 +38,16 @@ export default function translate(props: any) {
     }
   }, [])
 
+  async function sendPost(data:any) {
+    const saved = await fetch(window.location.origin + "/api/posts/create", {
+      method: "POSt",
+      body: JSON.stringify({
+        ...data,
+        date: new Date(),
+      }),
+    });
+  }
+
   // Fetch content from protected route
   const fetchData = async () => {
     const res = await fetch("/api/examples/" + props.apipath, {
@@ -54,7 +64,14 @@ export default function translate(props: any) {
 
         (error) => console.log("An error occurred.", error)
       )
-      .then((res) => setContent(res.data.trim()))
+      .then((res) => {
+        setContent(res.data.trim())
+        sendPost({
+          title: transcript? transcript : textup,
+          content: res.data.trim(),
+        })
+
+      } )
       .catch((err) => {
         setContent(
           "Max 1000 characters. Please dont Spam requests. No Adult Content. Try again in a few seconds."
@@ -100,6 +117,9 @@ export default function translate(props: any) {
       setTextup(localStorage.getItem(props.apipath) || "")
     }
   })
+
+
+
 
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null

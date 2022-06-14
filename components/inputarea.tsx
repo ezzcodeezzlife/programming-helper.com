@@ -164,6 +164,17 @@ const {
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
 
+  async function sendPost(data:any) {
+    const saved = await fetch("/api/posts/create", {
+      method: "POSt",
+      body: JSON.stringify({
+        ...data,
+        date: new Date(),
+      }),
+    });
+  }
+
+
   useEffect(() => {
     if (browserSupportsSpeechRecognition) {
       setIsChrome(true)
@@ -187,7 +198,14 @@ const {
 
         (error) => console.log("An error occurred.", error)
       )
-      .then((res) => setContent(res.data.trim()))
+      .then((res) => {
+        setContent(res.data.trim())
+        sendPost({
+          title: transcript? transcript : textup,
+          content: res.data.trim() ,
+        })
+
+      } )
       .catch((err) => {
         setContent(
           "Max 1000 characters. Please dont Spam requests. No Adult Content. Try again in a few seconds."

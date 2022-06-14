@@ -90,25 +90,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               //res.status(200).json(response.data)
               console.log("Response:", response.data.choices[0])
               try {
-                res.status(200).json({ data: response.data.choices[0].text })
+                res.status(200).json({ data: response.data.choices[0].text })             
 
-                try {
-                  await client.connect()
-                  const database = client.db("myFirstDatabase")
-                  // Specifying a Schema is optional, but it enables type hints on
-                  // finds and inserts
-                  const Userpromt = database.collection<Userpromt>("userpromts")
-                  const result = await Userpromt.insertOne({
-                    input: req.body.textup,
-                    output: response.data.choices[0].text,
-                    createdAt: new Date().toISOString(),
-                  })
-                  console.log(
-                    `A document was inserted with the _id: ${result.insertedId}`
-                  )
-                } finally {
-                  await client.close()
-                }
               } catch (err) {
                 console.log(err)
               }
