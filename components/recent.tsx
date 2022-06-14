@@ -49,7 +49,7 @@ export default function Usuarios() {
     <>
     <div>
     
-    <div className="lg:text-center">
+    <div className="lg:text-center px-4 pb-4">
           <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">More from others</h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
             Get some ideas how others use this recently. You can also contribute to this.  
