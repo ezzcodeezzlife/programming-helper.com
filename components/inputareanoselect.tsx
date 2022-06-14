@@ -44,6 +44,7 @@ export default function translate(props: any) {
       body: JSON.stringify({
         ...data,
         date: new Date(),
+        feature: props.buttontext,
       }),
     });
   }

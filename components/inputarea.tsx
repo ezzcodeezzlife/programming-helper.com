@@ -170,6 +170,7 @@ const {
       body: JSON.stringify({
         ...data,
         date: new Date(),
+        feature: props.buttontext,
       }),
     });
   }
@@ -202,7 +203,8 @@ const {
         setContent(res.data.trim())
         sendPost({
           title: transcript? transcript : textup,
-          content: res.data.trim() ,
+          content: res.data.trim(),
+
         })
 
       } )

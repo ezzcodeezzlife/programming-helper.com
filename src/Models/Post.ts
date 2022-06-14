@@ -4,6 +4,7 @@ export interface IPost extends Document {
     title: string,
     date: string,
     content: string,
+    feature: string,
 }
 
 const PostSchema: Schema = new Schema({
@@ -15,7 +16,10 @@ const PostSchema: Schema = new Schema({
     },
     content: {
         type: String
-    }
+    },
+    feature: {
+        type: String
+    },
 })
 
 
