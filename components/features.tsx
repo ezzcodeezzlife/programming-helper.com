@@ -30,19 +30,19 @@ export default function Features(props: any) {
     },
     {
       name: "Translate Languages",
-      description: "Translate code to any programming language",
+      description: "Translate code to any programming language.",
       icon: TranslateIcon,
       link: "/translate",
     },
     {
       name: "Generate HTML from Description",
-      description: "Generate small HTML from Description",
+      description: "Generate small HTML from Description.",
       icon: CodeIcon,
       link: "/generate-html-from-description",
     },
     {
       name: "Code to Explanation",
-      description: "Any code explained in plain english",
+      description: "Any code explained in plain english.",
       icon: CodeIcon,
       link: "/code-to-explanation",
     },
@@ -53,6 +53,16 @@ export default function Features(props: any) {
       icon: LightningBoltIcon,
       link: "/fix-invalid-code",
     },
+
+    {
+      name: "Get Test for Code",
+      description:
+        "This feature will help you to create tests for your code.",
+      icon: LightningBoltIcon,
+      link: "/tests",
+    },
+
+
 
     {
       name: "Class from Description",
@@ -88,13 +98,6 @@ export default function Features(props: any) {
       icon: ChipIcon,
       link: "/linux",
     },
-
-    {
-      name: "Get Language from Code",
-      description: "Get the programming language from a code.",
-      icon: TranslateIcon,
-      link: "/language-from-code",
-    },
     {
       name: "Function from Docstring",
       description: "Provide a docstring to generate the actual function.",
@@ -103,21 +106,36 @@ export default function Features(props: any) {
     },
 
     {
+      name: "Add typing to code",
+      description: "This feature will help you to add typing to your code.",
+      icon: CodeIcon,
+      link: "/typings",
+    },
+
+    {
+      name: "Get Language from Code",
+      description: "Get the programming language from a code.",
+      icon: TranslateIcon,
+      link: "/language-from-code",
+    },
+    
+
+    {
       name: "Time complexity",
-      description: "Get time complexity",
+      description: "Get time complexity.",
       icon: ClockIcon,
       link: "/time-complexity",
     },
 
     {
       name: "CSS from Description",
-      description: "Generate CSS from Description",
+      description: "Generate CSS from Description.",
       icon: AnnotationIcon,
       link: "/css-from-description",
     },
     {
       name: "Meta Tags from Description",
-      description: "Generate Meta Tags from a Description",
+      description: "Generate Meta Tags from a Description.",
       icon: CodeIcon,
       link: "/meta",
     },
