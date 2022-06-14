@@ -1,9 +1,11 @@
-import { connect, ConnectionOptions } from "mongoose"
+import { connect } from "mongoose"
+
 const  MONGO_URI  = process.env.MONGO_URI as string
 
 console.log(MONGO_URI)
+/*eslint-disable */
 
-const options: ConnectionOptions = {
+const options = {
     useFindAndModify: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -11,3 +13,4 @@ const options: ConnectionOptions = {
 }
 
 export const connectToDatabase = () => connect(MONGO_URI, options)
+/*eslint-enable */
