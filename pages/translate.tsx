@@ -11,7 +11,7 @@ import Script from "next/script"
 
 import Inputarea from "../components/inputarea"
 import Features from "../components/features"
-
+import Recent from "../components/recent"
 export default function translate() {
   const { data: session, status } = useSession()
   const loading = status === "loading"
@@ -33,6 +33,7 @@ export default function translate() {
       ></Inputarea>
 
       <Features></Features>
+      <Recent></Recent>
     </>
   )
 }

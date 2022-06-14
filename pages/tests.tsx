@@ -10,6 +10,7 @@ import { signIn, signOut } from "next-auth/react"
 import Script from "next/script"
 import Inputareanoselect from "../components/inputareanoselect"
 import Features from "../components/features"
+import Recent from "../components/recent"
 
 export default function translate() {
   const { data: session, status } = useSession()
@@ -44,6 +45,7 @@ function getAboutUsLink(language){
       ></Inputareanoselect>
 
       <Features></Features>
+      <Recent></Recent>
     </>
   )
 }
