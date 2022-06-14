@@ -56,13 +56,10 @@ export default function Features(props: any) {
 
     {
       name: "Get Test for Code",
-      description:
-        "This feature will help you to create tests for your code.",
+      description: "This feature will help you to create tests for your code.",
       icon: LightningBoltIcon,
       link: "/tests",
     },
-
-
 
     {
       name: "Class from Description",
@@ -118,7 +115,6 @@ export default function Features(props: any) {
       icon: TranslateIcon,
       link: "/language-from-code",
     },
-    
 
     {
       name: "Time complexity",

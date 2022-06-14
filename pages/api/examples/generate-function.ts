@@ -90,8 +90,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               //res.status(200).json(response.data)
               console.log("Response:", response.data.choices[0])
               try {
-                res.status(200).json({ data: response.data.choices[0].text })             
-
+                res.status(200).json({ data: response.data.choices[0].text })
               } catch (err) {
                 console.log(err)
               }

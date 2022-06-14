@@ -1,27 +1,27 @@
-import Link from "next/link";
-import { IPost } from "../src/Models/Post";
-import { useEffect, useState } from "react";
-import Header from "../src/components/Header";
+import Link from "next/link"
+import { IPost } from "../src/Models/Post"
+import { useEffect, useState } from "react"
+import Header from "../src/components/Header"
 
 export default function Usuarios() {
-  const [posts, setPosts] = useState<IPost[]>([]);
+  const [posts, setPosts] = useState<IPost[]>([])
   useEffect(() => {
     const asyncGetPosts = async () => {
-      const { origin } = window.location;
-      const data = await fetch(origin + "/api/posts");
-      const posts = await data.json();
-      return posts;
-    };
+      const { origin } = window.location
+      const data = await fetch(origin + "/api/posts")
+      const posts = await data.json()
+      return posts
+    }
     if (window) {
       asyncGetPosts()
         .then((posts) => {
-          setPosts(posts);
+          setPosts(posts)
         })
         .catch((err) => {
-          console.log(err);
-        });
+          console.log(err)
+        })
     }
-  }, []);
+  }, [])
 
   const mappedPosts = posts.reverse().map((post, i) => (
     <div
@@ -35,7 +35,7 @@ export default function Usuarios() {
       <br />
       <p className="my-4">{post.content}</p>
     </div>
-  ));
+  ))
 
   return (
     <div>
@@ -56,5 +56,5 @@ export default function Usuarios() {
         {mappedPosts}
       </div>
     </div>
-  );
+  )
 }

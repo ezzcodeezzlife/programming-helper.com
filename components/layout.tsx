@@ -22,7 +22,6 @@ export default function Layout({ children }: Props) {
         }}
       >
         <main>{children}</main>
-
       </div>
       <div>
         {/*  <Script id="show-banner" strategy="lazyOnload">

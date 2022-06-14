@@ -1,26 +1,26 @@
 import mongoose, { Document, model, Model, Schema } from "mongoose"
 
 export interface IPost extends Document {
-    title: string,
-    date: string,
-    content: string,
-    feature: string,
+  title: string
+  date: string
+  content: string
+  feature: string
 }
 
 const PostSchema: Schema = new Schema({
-    title: {
-        type: String
-    },
-    date: {
-        type: String
-    },
-    content: {
-        type: String
-    },
-    feature: {
-        type: String
-    },
+  title: {
+    type: String,
+  },
+  date: {
+    type: String,
+  },
+  content: {
+    type: String,
+  },
+  feature: {
+    type: String,
+  },
 })
 
-
-export const Post: Model<IPost> = mongoose.models.Post || model("Post", PostSchema)
+export const Post: Model<IPost> =
+  mongoose.models.Post || model("Post", PostSchema)

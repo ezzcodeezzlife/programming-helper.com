@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 
 interface InputProps {
-  placeholder?: string;
-  name?: string;
-  value?: string | number | readonly string[];
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string
+  name?: string
+  value?: string | number | readonly string[]
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 /**
@@ -16,9 +16,9 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
     placeholder = "",
     onChange = () => null,
     name = "",
-  } = props;
-  function triggerOnChangeEvent(e :any) {
-    onChange(e);
+  } = props
+  function triggerOnChangeEvent(e: any) {
+    onChange(e)
   }
 
   return (
@@ -30,8 +30,8 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
       name={name}
       onChange={triggerOnChangeEvent}
     />
-  );
-};
+  )
+}
 
-<Input />;
-export default Input;
+;<Input />
+export default Input

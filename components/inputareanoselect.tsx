@@ -29,8 +29,8 @@ export default function translate(props: any) {
     transcript,
     listening,
     resetTranscript,
-    browserSupportsSpeechRecognition
-  } = useSpeechRecognition();
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition()
 
   useEffect(() => {
     if (browserSupportsSpeechRecognition) {
@@ -38,7 +38,7 @@ export default function translate(props: any) {
     }
   }, [])
 
-  async function sendPost(data:any) {
+  async function sendPost(data: any) {
     const saved = await fetch(window.location.origin + "/api/posts/create", {
       method: "POSt",
       body: JSON.stringify({
@@ -46,7 +46,7 @@ export default function translate(props: any) {
         date: new Date(),
         feature: props.buttontext,
       }),
-    });
+    })
   }
 
   // Fetch content from protected route
@@ -56,9 +56,10 @@ export default function translate(props: any) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 
-        textup: transcript? transcript : textup, 
-        selectedOption: selectedOption }),
+      body: JSON.stringify({
+        textup: transcript ? transcript : textup,
+        selectedOption: selectedOption,
+      }),
     })
       .then(
         (response) => response.json(),
@@ -68,11 +69,10 @@ export default function translate(props: any) {
       .then((res) => {
         setContent(res.data.trim())
         sendPost({
-          title: transcript? transcript : textup,
+          title: transcript ? transcript : textup,
           content: res.data.trim(),
         })
-
-      } )
+      })
       .catch((err) => {
         setContent(
           "Max 1000 characters. Please dont Spam requests. No Adult Content. Try again in a few seconds."
@@ -119,9 +119,6 @@ export default function translate(props: any) {
     }
   })
 
-
-
-
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null
 
@@ -159,20 +156,18 @@ export default function translate(props: any) {
                 <p id="counter">{count}</p>
               )}
 
-              
-{isChrome ? (
+              {isChrome ? (
                 <div>
-                  
-
-  
                   <p className="py-1 px-4">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">BETA</span>
+                    <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                      BETA
+                    </span>
                     speech input:{" "}
                     {listening ? (
                       <>
                         {" "}
                         <button
-                        style={{ backgroundColor: "#e9e9e9" }}
+                          style={{ backgroundColor: "#e9e9e9" }}
                           onClick={(event) => SpeechRecognition.stopListening()}
                         >
                           ⏹️ Listening
@@ -204,7 +199,6 @@ export default function translate(props: any) {
               ) : (
                 <></>
               )}
-
 
               {/*
 <div>

@@ -157,14 +157,14 @@ export default function Inputarea(props: any) {
   const [copytext, setCopytext] = useState("Copy to Clipboard")
   const [isChrome, setIsChrome] = useState(false)
 
-const {
+  const {
     transcript,
     listening,
     resetTranscript,
-    browserSupportsSpeechRecognition
-  } = useSpeechRecognition();
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition()
 
-  async function sendPost(data:any) {
+  async function sendPost(data: any) {
     const saved = await fetch("/api/posts/create", {
       method: "POSt",
       body: JSON.stringify({
@@ -172,9 +172,8 @@ const {
         date: new Date(),
         feature: props.buttontext,
       }),
-    });
+    })
   }
-
 
   useEffect(() => {
     if (browserSupportsSpeechRecognition) {
@@ -190,7 +189,7 @@ const {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        textup: transcript? transcript : textup,
+        textup: transcript ? transcript : textup,
         selectedOption: selectedOption,
       }),
     })
@@ -202,12 +201,10 @@ const {
       .then((res) => {
         setContent(res.data.trim())
         sendPost({
-          title: transcript? transcript : textup,
+          title: transcript ? transcript : textup,
           content: res.data.trim(),
-
         })
-
-      } )
+      })
       .catch((err) => {
         setContent(
           "Max 1000 characters. Please dont Spam requests. No Adult Content. Try again in a few seconds."
@@ -311,17 +308,16 @@ const {
 
               {isChrome ? (
                 <div>
-                  
-
-  
                   <p className="py-1 px-4">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">BETA</span>
+                    <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                      BETA
+                    </span>
                     speech input:{" "}
                     {listening ? (
                       <>
                         {" "}
                         <button
-                        style={{ backgroundColor: "#e9e9e9" }}
+                          style={{ backgroundColor: "#e9e9e9" }}
                           onClick={(event) => SpeechRecognition.stopListening()}
                         >
                           ⏹️ Listening
@@ -353,7 +349,6 @@ const {
               ) : (
                 <></>
               )}
-
 
               {!session ? (
                 <button
