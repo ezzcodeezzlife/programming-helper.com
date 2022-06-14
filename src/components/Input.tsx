@@ -17,7 +17,7 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
     onChange = () => null,
     name = "",
   } = props;
-  function triggerOnChangeEvent(e) {
+  function triggerOnChangeEvent(e :any) {
     onChange(e);
   }
 
