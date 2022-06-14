@@ -4,6 +4,12 @@ const  MONGO_URI  = process.env.MONGO_URI as string
 
 console.log(MONGO_URI)
 /*eslint-disable */
+type ConnectionOptions = {
+    useFindAndModify: boolean,
+    useUnifiedTopology: boolean,
+    useCreateIndex: boolean,
+    useNewUrlParser: boolean
+  };
 
 const options = {
     useFindAndModify: true,
