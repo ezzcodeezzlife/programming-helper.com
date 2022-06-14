@@ -154,20 +154,21 @@ export default function Inputarea(props: any) {
   const [requestloading, setRequestloading] = useState(false)
   const [count, setCount] = useState(0)
   const [copytext, setCopytext] = useState("Copy to Clipboard")
+  const [isChrome, setIsChrome] = useState(false)
 
-  const {
+const {
     transcript,
     listening,
     resetTranscript,
-    browserSupportsSpeechRecognition,
-  } = useSpeechRecognition()
+    browserSupportsSpeechRecognition
+  } = useSpeechRecognition();
 
-  if (!browserSupportsSpeechRecognition) {
-    console.log(
-      "Sorry, your browser doesn't support speech recognition. Try Chrome or Firefox!"
-    )
-  }
-
+  useEffect(() => {
+    if (browserSupportsSpeechRecognition) {
+      setIsChrome(true)
+    }
+  }, [])
+  
   // Fetch content from protected route
   const fetchData = async () => {
     const res = await fetch("/api/examples/" + props.apipath, {
@@ -200,7 +201,7 @@ export default function Inputarea(props: any) {
       alert("Please select a language")
       return
     }
-    if (textup === "") {
+    if (textup === "" && transcript === "") {
       alert("Please enter some code")
       return
     }
@@ -264,7 +265,7 @@ export default function Inputarea(props: any) {
             />
 
             <textarea
-              value={textup + "" + transcript}
+              value={textup}
               placeholder={props.placeholdertop}
               onKeyDown={(e) => {
                 if (e.key === "Tab") {
@@ -286,17 +287,48 @@ export default function Inputarea(props: any) {
                 <p id="counter">{count}</p>
               )}
 
-              {/*
-<div>
-      <p>Use Voice: {listening ? (<> <button style={{backgroundColor:"#e9e9e9"}}   onClick={(event) =>  SpeechRecognition.stopListening()}>⏹️</button> </> ) : <button style={{backgroundColor:"#e9e9e9"}} onClick={(event) => SpeechRecognition.startListening()}> 🔴</button>}
-      
-      <button style={{backgroundColor:"#e9e9e9", color:"black"}} onClick={(event) => resetTranscript}>Reset</button>
-      </p>
-      
-       <p>{transcript}</p> 
-    </div>
+              {isChrome ? (
+                <div>
+                  <p className="py-1 px-4">
+                    Speech input:{" "}
+                    {listening ? (
+                      <>
+                        {" "}
+                        <button
+                        style={{ backgroundColor: "#e9e9e9" }}
+                          onClick={(event) => SpeechRecognition.stopListening()}
+                        >
+                          ⏹️ Listening
+                          <Typed
+                            strings={["..."]}
+                            typeSpeed={25}
+                            backSpeed={25}
+                            loop
+                          />{" "}
+                        </button>{" "}
+                      </>
+                    ) : (
+                      <button
+                        style={{ backgroundColor: "#e9e9e9" }}
+                        onClick={(event) => SpeechRecognition.startListening()}
+                      >
+                        {" "}
+                        🔴 {transcript ? "Reset" : ""}
+                      </button>
+                    )}
+                    <button
+                      style={{ backgroundColor: "#e9e9e9", color: "black" }}
+                      onClick={(event) => resetTranscript}
+                    ></button>
+                  </p>
 
-*/}
+                  <p className="py-1 px-4 font-medium">{transcript}</p>
+                </div>
+              ) : (
+                <></>
+              )}
+
+
               {!session ? (
                 <button
                   className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"

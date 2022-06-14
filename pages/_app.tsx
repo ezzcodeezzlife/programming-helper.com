@@ -20,7 +20,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
 
-        {/*
+      {/*
       <Head>
       <meta name="propeller" content="16835aec6473836849046ebbbac20fbc"></meta>
       </Head>
@@ -30,7 +30,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         
       />
         */}
-      
+
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-WMLR3PFFXE"
         strategy="afterInteractive"
@@ -47,9 +47,23 @@ const App = ({ Component, pageProps }: AppProps) => {
 
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
-          <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/images/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/images/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/images/favicon-16x16.png"
+        />
       </Head>
 
       <SessionProvider session={pageProps.session} refetchInterval={0}>

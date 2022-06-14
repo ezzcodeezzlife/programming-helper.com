@@ -22,7 +22,10 @@ const navigation = [
   { name: "Features", href: "#features" },
   { name: "Application", href: "/generate-function" },
   { name: "GitHub", href: "https://github.com/ezzcodeezzlife/openaiwebsite" },
-  { name: "Privacy Policy", href: "https://homepage-appsplosion.herokuapp.com/privacypolicy" },
+  {
+    name: "Privacy Policy",
+    href: "https://homepage-appsplosion.herokuapp.com/privacypolicy",
+  },
 ]
 
 const features = [

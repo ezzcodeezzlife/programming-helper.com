@@ -53,7 +53,7 @@ export default function Features(props: any) {
       icon: LightningBoltIcon,
       link: "/fix-invalid-code",
     },
-   
+
     {
       name: "Class from Description",
       description:
@@ -88,7 +88,6 @@ export default function Features(props: any) {
       icon: ChipIcon,
       link: "/linux",
     },
-  
 
     {
       name: "Get Language from Code",
@@ -102,7 +101,6 @@ export default function Features(props: any) {
       icon: AnnotationIcon,
       link: "/docstring",
     },
-    
 
     {
       name: "Time complexity",
@@ -111,7 +109,6 @@ export default function Features(props: any) {
       link: "/time-complexity",
     },
 
-   
     {
       name: "CSS from Description",
       description: "Generate CSS from Description",
