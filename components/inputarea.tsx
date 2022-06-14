@@ -20,6 +20,7 @@ import {
 import Seocomponent from "./seocomponent"
 import Typed from "react-typed"
 import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react"
+import { transcode } from "buffer"
 
 const features = [
   {
@@ -168,7 +169,7 @@ const {
       setIsChrome(true)
     }
   }, [])
-  
+
   // Fetch content from protected route
   const fetchData = async () => {
     const res = await fetch("/api/examples/" + props.apipath, {
@@ -177,7 +178,7 @@ const {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        textup: textup + "" + transcript,
+        textup: transcript? transcript : textup,
         selectedOption: selectedOption,
       }),
     })
@@ -209,6 +210,7 @@ const {
     setRequestloading(true)
     console.log("button pressed", textup)
     fetchData()
+    resetTranscript()
   }
 
   const copyToClip = () => {
