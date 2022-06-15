@@ -34,17 +34,19 @@ export default function translate() {
   const [input, setInput] = useState("")
   const [messages, setMessages] = useState([
     {
-      message: "Hello! Im your personal assisant and you can ask me anything you want to know about tech programming and more..",
+      message:
+        "Hello! Im your personal assisant and you can ask me anything you want to know about tech programming and more..",
       user: "0",
     },
     {
-        message: "what is a binary tree?",
-        user: "1",
-      },
-      {
-        message: "A binary tree is a data structure that allows two nodes to be linked together by a path from the root ",
-        user: "0",
-      },
+      message: "what is a binary tree?",
+      user: "1",
+    },
+    {
+      message:
+        "A binary tree is a data structure that allows two nodes to be linked together by a path from the root ",
+      user: "0",
+    },
   ])
 
   const handleSubmit = async (event: any) => {
@@ -87,9 +89,7 @@ export default function translate() {
 
       copymes.push({
         //@ts-ignore
-        message: data.data
-          ? data.data
-          : data.message,
+        message: data.data ? data.data : data.message,
         //@ts-ignore
         user: "0",
         //@ts-ignore
@@ -107,8 +107,8 @@ export default function translate() {
   // If session exists, display content
   return (
     <>
-     <Seocomponent title="Chat with AI Helper" apipath="/chat"></Seocomponent>
-     {/*
+      <Seocomponent title="Chat with AI Helper" apipath="/chat"></Seocomponent>
+      {/*
      <Header />*/}
       {/*@ts-ignore*/}
       <center>
@@ -203,36 +203,34 @@ export default function translate() {
           </div>
           <div className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
             <div className="relative ">
-            <center>
-              <form className="" onSubmit={handleSubmit}>
-                <input
-                className=" bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                  type="text"
-                  value={input}
-                  onChange={(event) => setInput(event.target.value)}
-                  placeholder="Write your question.."
-                  className="w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3"
-                />
-                <span></span>
+              <center>
+                <form className="" onSubmit={handleSubmit}>
+                  <input
+                    className=" bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    type="text"
+                    value={input}
+                    onChange={(event) => setInput(event.target.value)}
+                    placeholder="Write your question.."
+                    className="w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3"
+                  />
+                  <span></span>
 
-                
-                <input 
-                  type="text"
-                  className="hidden"
-                  id="first"
-                  name="first"
-                  value=""
-                  onChange={(event) => setInput(event.target.value)}
-                  autoComplete="off"
-                />
-              
-                <button className="hidden" type="submit">
-                  Submit
-                </button>
-              </form>
+                  <input
+                    type="text"
+                    className="hidden"
+                    id="first"
+                    name="first"
+                    value=""
+                    onChange={(event) => setInput(event.target.value)}
+                    autoComplete="off"
+                  />
+
+                  <button className="hidden" type="submit">
+                    Submit
+                  </button>
+                </form>
               </center>
               <div className="absolute right-0 items-center inset-y-0  sm:flex">
-               
                 <button
                   onClick={handleSubmit}
                   type="button"
@@ -255,19 +253,19 @@ export default function translate() {
         </div>
 
         {!session && (
-                <>
-                  <a
-                    href={`/api/auth/signin`}
-                    className="text-white p-3 m-2 rounded-md bg-blue-600 hover:text-gray-100"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      signIn()
-                    }}
-                  >
-                    Sign In
-                  </a>
-                </>
-              )}
+          <>
+            <a
+              href={`/api/auth/signin`}
+              className="text-white p-3 m-2 rounded-md bg-blue-600 hover:text-gray-100"
+              onClick={(e) => {
+                e.preventDefault()
+                signIn()
+              }}
+            >
+              Sign In
+            </a>
+          </>
+        )}
         {/*@ts-ignore*/}
       </center>
 

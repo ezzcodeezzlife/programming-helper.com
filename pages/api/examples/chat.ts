@@ -89,7 +89,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       })
   } else {
     res.status(200).json({
-      message: "Please login to chat with me. I will answer all your questions. You can Sign In below.",
+      message:
+        "Please login to chat with me. I will answer all your questions. You can Sign In below.",
     })
   }
 }
