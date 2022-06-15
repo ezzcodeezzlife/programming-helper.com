@@ -14,6 +14,8 @@ import Features from "../components/features"
 import Recent from "../components/recent"
 import { Alert } from "react-bootstrap"
 import styles from "../components/header.module.css"
+import Seocomponent from "../components/seocomponent"
+import Header from "../components/header"
 
 //create your forceUpdate hook
 function useForceUpdate() {
@@ -105,9 +107,11 @@ export default function translate() {
   // If session exists, display content
   return (
     <>
+     <Seocomponent title="Chat with AI Helper" apipath="/chat"></Seocomponent>
+     <Header />
       {/*@ts-ignore*/}
       <center>
-        <div className=" flex-1 pb-16  justify-between flex flex-col h-screen xl:w-2/3 2xl:w-1/3">
+        <div className=" flex-1 pb-28  justify-between flex flex-col h-screen xl:w-2/3 2xl:w-1/3">
           <div className="flex sm:items-center justify-between py-3 border-b-2 border-gray-200">
             <div className="relative flex items-center space-x-4 pl-4">
               <div className="relative">
@@ -246,23 +250,12 @@ export default function translate() {
                 </button>
               </div>
             </div>
-          </div>
+            
         </div>
-
-        {!session && (
-                <>
-                  <a
-                    href={`/api/auth/signin`}
-                    className="text-white p-3 m-2 rounded-md bg-blue-600 hover:text-gray-100"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      signIn()
-                    }}
-                  >
-                    Sign In
-                  </a>
-                </>
-              )}
+          </div>
+          
+       
+      
         {/*@ts-ignore*/}
       </center>
 
