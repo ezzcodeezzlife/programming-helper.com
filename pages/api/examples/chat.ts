@@ -52,13 +52,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           console.log("usermail:", user?.email)
 
-        
-
           console.log("Chatmessage:", parsed.input)
           // add sending user id to the request
           openai
             .createCompletion("text-davinci-002", {
-              prompt: "kindly answer the question the in the context of computer programming. \n\n\n\n Q: " + parsed.input + "\n\n\n\n A:",
+              prompt:
+                "kindly answer the question the in the context of computer programming. \n\n\n\n Q: " +
+                parsed.input +
+                "\n\n\n\n A:",
               temperature: 0.9,
               max_tokens: 250,
               top_p: 1,
@@ -81,7 +82,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             })
         } else {
           res.status(200).json({
-            message: "I can not talk about this kind of topic. Please try another one.",
+            message:
+              "I can not talk about this kind of topic. Please try another one.",
           })
         }
       })

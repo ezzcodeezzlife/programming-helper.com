@@ -42,11 +42,11 @@ export default function translate() {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault()
-    if(input.length < 1) {
-        alert("Please enter a message")
-        return
+    if (input.length < 1) {
+      alert("Please enter a message")
+      return
     }
-     setInput("")
+    setInput("")
     //@ts-ignore
     const copymes = messages
     //@ts-ignore
@@ -76,12 +76,7 @@ export default function translate() {
       const data = await resdata.json()
       console.log(data)
 
-      const arr = [
-        "Hey there",
-        "Just sign in to chat with me",
-        "Login to chat",
-      ]
-      
+      const arr = ["Hey there", "Just sign in to chat with me", "Login to chat"]
 
       copymes.push({
         //@ts-ignore
@@ -153,14 +148,12 @@ export default function translate() {
                       </div>
 
                       {/*@ts-ignore*/}
-                     
-                          <img
-                            src="https://images.unsplash.com/photo-1535378620166-273708d44e4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1257&q=80"
-                            alt="My profile"
-                            className="w-6 h-6 rounded-full order-1"
-                          ></img>
-                     
-                  
+
+                      <img
+                        src="https://images.unsplash.com/photo-1535378620166-273708d44e4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1257&q=80"
+                        alt="My profile"
+                        className="w-6 h-6 rounded-full order-1"
+                      ></img>
                     </div>
                   </div>
                 ) : (
@@ -176,18 +169,21 @@ export default function translate() {
                           </div>
                         </div>
 
-                        {session? (<>
-                        
-                        <img 
-                          src={session.user.image}
-                          alt="My profile"
-                          className="w-6 h-6 rounded-full order-2"
-                        ></img></>) : ( <img
-                          src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144"
-                          alt="My profile"
-                          className="w-6 h-6 rounded-full order-2"
-                        ></img> ) }
-                       
+                        {session ? (
+                          <>
+                            <img
+                              src={session.user.image}
+                              alt="My profile"
+                              className="w-6 h-6 rounded-full order-2"
+                            ></img>
+                          </>
+                        ) : (
+                          <img
+                            src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144"
+                            alt="My profile"
+                            className="w-6 h-6 rounded-full order-2"
+                          ></img>
+                        )}
                       </div>
                     </div>
                   </>
@@ -282,12 +278,12 @@ export default function translate() {
                   </svg>
                 </button>
                 <button
-                 onClick={handleSubmit}
+                  onClick={handleSubmit}
                   type="button"
                   className="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none"
                 >
-                    {session ? <span className="font-bold">Send</span> : <></>}
-                  
+                  {session ? <span className="font-bold">Send</span> : <></>}
+
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
