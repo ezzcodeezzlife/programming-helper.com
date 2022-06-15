@@ -13,6 +13,7 @@ import Inputarea from "../components/inputarea"
 import Features from "../components/features"
 import Recent from "../components/recent"
 import { Alert } from "react-bootstrap"
+import styles from "../components/header.module.css"
 
 //create your forceUpdate hook
 function useForceUpdate() {
@@ -82,7 +83,7 @@ export default function translate() {
         //@ts-ignore
         message: data.data
           ? data.data
-          : "A automated content filter told me I can not talk about this topic. please try something else.",
+          : data.message,
         //@ts-ignore
         user: "0",
         //@ts-ignore
@@ -201,7 +202,7 @@ export default function translate() {
                   placeholder="Write your message!"
                   className="w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3"
                 />
-                <input
+                <input 
                   type="text"
                   id="first"
                   name="first"
@@ -297,6 +298,21 @@ export default function translate() {
             </div>
           </div>
         </div>
+
+        {!session && (
+                <>
+                  <a
+                    href={`/api/auth/signin`}
+                    className="text-white p-3 m-2 rounded-md bg-blue-600 hover:text-gray-100"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      signIn()
+                    }}
+                  >
+                    Sign In
+                  </a>
+                </>
+              )}
         {/*@ts-ignore*/}
       </center>
 
