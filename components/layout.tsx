@@ -1,8 +1,7 @@
 import Header from "./header"
 import type { ReactChildren } from "react"
 import Script from "next/script"
-import { SpeakerphoneIcon, XIcon } from '@heroicons/react/outline'
-
+import { SpeakerphoneIcon, XIcon } from "@heroicons/react/outline"
 
 interface Props {
   children: React.ReactNode
@@ -11,12 +10,6 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <>
-
-
-
-
-
-
       <Header />
 
       <div
@@ -29,8 +22,6 @@ export default function Layout({ children }: Props) {
           border: "2px solid #f2f2ff",
         }}
       >
-        
-
         <main>{children}</main>
       </div>
       <div>
@@ -39,8 +30,6 @@ export default function Layout({ children }: Props) {
            </Script>
          */}
       </div>
-
-     
     </>
   )
 }

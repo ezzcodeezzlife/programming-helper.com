@@ -2,7 +2,7 @@ import Link from "next/link"
 import { IPost } from "../src/Models/Post"
 import { useEffect, useState } from "react"
 import Header from "../src/components/Header"
-import { SpeakerphoneIcon, XIcon } from '@heroicons/react/outline'
+import { SpeakerphoneIcon, XIcon } from "@heroicons/react/outline"
 
 export default function Usuarios() {
   const [posts, setPosts] = useState<IPost[]>([])
@@ -52,7 +52,7 @@ export default function Usuarios() {
 
   return (
     <>
-     {/*
+      {/*
 
 <center>
 <div className=" bg-indigo-600 mb-16 mx-4 rounded-2xl    ">
@@ -90,10 +90,6 @@ export default function Usuarios() {
       
     </div></center>
 */}
-
-
-
-
 
       <div className="pb-12">
         <div className="lg:text-center px-4 pb-4">
