@@ -36,9 +36,13 @@ export default function translate() {
       user: "0",
     },
     {
-      message: "Hi there, I have a question:",
-      user: "1",
-    },
+        message: "what is a binary tree?",
+        user: "1",
+      },
+      {
+        message: "A binary tree is a data structure that allows two nodes to be linked together by a path from the root ",
+        user: "0",
+      },
   ])
 
   const handleSubmit = async (event: any) => {
@@ -201,7 +205,7 @@ export default function translate() {
                   type="text"
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
-                  placeholder="Write your message! ..."
+                  placeholder="Write your message.."
                   className="w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3"
                 />
                 <span></span>
