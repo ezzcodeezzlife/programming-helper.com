@@ -13,6 +13,7 @@ import Inputarea from "../components/inputarea"
 import Features from "../components/features"
 import Recent from "../components/recent"
 
+
 export default function translate() {
   const { data: session, status } = useSession()
   const loading = status === "loading"
@@ -26,7 +27,18 @@ export default function translate() {
   return (
     <>
 
-<div className="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen">
+
+
+
+
+
+
+
+
+
+
+
+<div className=" flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen">
 <div className="flex sm:items-center justify-between py-3 border-b-2 border-gray-200">
 <div className="relative flex items-center space-x-4 pl-4">
    <div className="relative">
@@ -124,6 +136,9 @@ export default function translate() {
 </div>
 </div>
 </div>
+
+
+<Features></Features>
 </>
   )
 }
