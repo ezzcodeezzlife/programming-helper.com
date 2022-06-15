@@ -16,13 +16,22 @@ import { Alert } from "react-bootstrap"
 import styles from "../components/header.module.css"
 import Seocomponent from "../components/seocomponent"
 import Header from "../components/header"
-
 //create your forceUpdate hook
 function useForceUpdate() {
   const [value, setValue] = useState(0) // integer state
   return () => setValue((value) => value + 1) // update state to force render
   // An function that increment 👆🏻 the previous state like here
   // is better than directly setting `value + 1`
+}
+async function sendPost(data: any) {
+  const saved = await fetch(window.location.origin + "/api/posts/create", {
+    method: "POSt",
+    body: JSON.stringify({
+      ...data,
+      date: new Date(),
+      feature: "Chat",
+    }),
+  })
 }
 
 export default function translate() {
@@ -85,6 +94,12 @@ export default function translate() {
       const data = await resdata.json()
       console.log(data)
 
+      if(session){
+      sendPost({
+        title: input,
+        content: data.data ? data.data : data.message,
+      })
+    }
       const arr = ["Hey there", "Just sign in to chat with me", "Login to chat"]
 
       copymes.push({
@@ -96,6 +111,9 @@ export default function translate() {
       })
       setMessages(copymes)
       forceUpdate()
+
+      
+
     })
   }
 
@@ -270,6 +288,7 @@ export default function translate() {
       </center>
 
       <Features></Features>
+      <Recent></Recent>
     </>
   )
 }
