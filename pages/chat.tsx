@@ -205,7 +205,7 @@ export default function translate() {
                   type="text"
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
-                  placeholder="Write your message.."
+                  placeholder="Write your question.."
                   className="w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3"
                 />
                 <span></span>
