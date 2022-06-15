@@ -35,7 +35,7 @@ export default function translate() {
             <circle cx="8" cy="8" r="8" fill="currentColor"></circle>
          </svg>
       </span>
-   <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80" alt="" className="w-10 sm:w-16 h-10 sm:h-16 rounded-full"></img>
+   <img src="https://images.unsplash.com/photo-1535378620166-273708d44e4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1257&q=80" alt="" className="w-10 sm:w-16 h-10 sm:h-16 rounded-full"></img>
    </div>
    <div className="flex flex-col leading-tight">
       <div className="text-2xl mt-1 flex items-center">
@@ -65,6 +65,24 @@ export default function translate() {
       <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
    </div>
 </div>
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+
 
 
 </div>
