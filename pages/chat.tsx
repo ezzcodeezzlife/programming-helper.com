@@ -36,9 +36,9 @@ export default function translate() {
 
 
 
-
-
-<div className=" flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen">
+{/*@ts-ignore*/}
+<center>
+<div className=" flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen 2xl:w-1/3">
 <div className="flex sm:items-center justify-between py-3 border-b-2 border-gray-200">
 <div className="relative flex items-center space-x-4 pl-4">
    <div className="relative">
@@ -51,9 +51,9 @@ export default function translate() {
    </div>
    <div className="flex flex-col leading-tight">
       <div className="text-2xl mt-1 flex items-center">
-         <span className="text-gray-700 mr-3">AI Helper</span>
+         <span className="mr-3 text-gray-800 font-bold tracking-wide">Programming Helper</span>
       </div>
-      <span className="text-lg text-gray-600">Automatic Bot</span>
+      <span className="text-lg text-indigo-600 tracking-wide">Automated AI Agent</span>
    </div>
 </div>
 <div className="flex items-center space-x-2">
@@ -94,6 +94,107 @@ export default function translate() {
       <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
    </div>
 </div>
+<div className="chat-message">
+   <div className="flex items-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">Can be verified on any platform using docker</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1"></img>
+   </div>
+</div>
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+<div className="chat-message">
+   <div className="flex items-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">Can be verified on any platform using docker</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1"></img>
+   </div>
+</div>
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+<div className="chat-message">
+   <div className="flex items-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">Can be verified on any platform using docker</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1"></img>
+   </div>
+</div>
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+
+<div className="chat-message">
+   <div className="flex items-end justify-end">
+      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+         <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"></img>
+   </div>
+</div>
+
+
 
 
 
@@ -136,7 +237,8 @@ export default function translate() {
 </div>
 </div>
 </div>
-
+{/*@ts-ignore*/}
+</center>
 
 <Features></Features>
 </>
