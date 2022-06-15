@@ -108,10 +108,11 @@ export default function translate() {
   return (
     <>
      <Seocomponent title="Chat with AI Helper" apipath="/chat"></Seocomponent>
-     <Header />
+     {/*
+     <Header />*/}
       {/*@ts-ignore*/}
       <center>
-        <div className=" flex-1 pb-28  justify-between flex flex-col h-screen xl:w-2/3 2xl:w-1/3">
+        <div className=" flex-1 pb-14  justify-between flex flex-col h-screen xl:w-2/3 2xl:w-1/3">
           <div className="flex sm:items-center justify-between py-3 border-b-2 border-gray-200">
             <div className="relative flex items-center space-x-4 pl-4">
               <div className="relative">
@@ -250,12 +251,23 @@ export default function translate() {
                 </button>
               </div>
             </div>
-            
-        </div>
           </div>
-          
-       
-      
+        </div>
+
+        {!session && (
+                <>
+                  <a
+                    href={`/api/auth/signin`}
+                    className="text-white p-3 m-2 rounded-md bg-blue-600 hover:text-gray-100"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      signIn()
+                    }}
+                  >
+                    Sign In
+                  </a>
+                </>
+              )}
         {/*@ts-ignore*/}
       </center>
 
