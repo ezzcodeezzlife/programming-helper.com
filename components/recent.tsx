@@ -52,8 +52,8 @@ export default function Usuarios() {
 
   return (
     <>
-      {/*
-
+    
+{/*@ts-ignore*/}
 <center>
 <div className=" bg-indigo-600 mb-16 mx-4 rounded-2xl    ">
       <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
@@ -87,9 +87,8 @@ export default function Usuarios() {
           </div>
         </div>
       </div>
-      
+      {/*@ts-ignore*/}
     </div></center>
-*/}
 
       <div className="pb-12">
         <div className="lg:text-center px-4 pb-4">
