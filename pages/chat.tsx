@@ -32,11 +32,11 @@ export default function translate() {
   const [input, setInput] = useState("")
   const [messages, setMessages] = useState([
     {
-      message: "Hello",
+      message: "Hello! Im your personal assisant and you can ask me anything you want to know about tech programming and more..",
       user: "0",
     },
     {
-      message: "Hi there I have a question about programming:",
+      message: "Hi there, I have a question:",
       user: "1",
     },
   ])
