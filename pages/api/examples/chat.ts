@@ -17,7 +17,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  await limiter.check(res, 8, "CACHE_TOKEN") // 8 requests per minute
+  await limiter.check(res, 4, "CACHE_TOKEN") // 8 requests per minute
 
   const session = await getSession({ req })
 
@@ -34,11 +34,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (session) {
     const { user } = session
+    const parsed = JSON.parse(req.body)
 
     openai
       .createCompletion("content-filter-alpha", {
         //text-davinci-002,
-        prompt: "<|endoftext|>" + req.body.textup + "\n--\nLabel:",
+        prompt: "<|endoftext|>" + parsed.input + "\n--\nLabel:",
         temperature: 0,
         max_tokens: 1,
         top_p: 0,
@@ -51,14 +52,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           console.log("usermail:", user?.email)
 
-          const parsed = JSON.parse(req.body)
+        
 
           console.log("Chatmessage:", parsed.input)
           // add sending user id to the request
           openai
             .createCompletion("text-davinci-002", {
-              prompt: "Q: " + parsed.input + "\n\n A:\n\n",
-              temperature: 0.7,
+              prompt: "kindly answer the question the in the context of computer programming. \n\n\n\n Q: " + parsed.input + "\n\n\n\n A:",
+              temperature: 0.9,
               max_tokens: 250,
               top_p: 1,
               frequency_penalty: 0,
@@ -79,14 +80,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               res.status(500).json(error)
             })
         } else {
-          res.status(400).json({
-            message: "Please under 1000 chars",
+          res.status(200).json({
+            message: "I can not talk about this kind of topic. Please try another one.",
           })
         }
       })
   } else {
     res.status(200).json({
-      message: "Please login to chat with me!",
+      message: "Please login to chat with me! Server Err",
     })
   }
 }

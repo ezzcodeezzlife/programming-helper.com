@@ -12,6 +12,7 @@ import Script from "next/script"
 import Inputarea from "../components/inputarea"
 import Features from "../components/features"
 import Recent from "../components/recent"
+import { Alert } from "react-bootstrap"
 
 //create your forceUpdate hook
 function useForceUpdate() {
@@ -34,13 +35,18 @@ export default function translate() {
       user: "0",
     },
     {
-      message: "back",
+      message: "Hi there I have a question about programming:",
       user: "1",
     },
   ])
 
   const handleSubmit = async (event: any) => {
     event.preventDefault()
+    if(input.length < 1) {
+        alert("Please enter a message")
+        return
+    }
+     setInput("")
     //@ts-ignore
     const copymes = messages
     //@ts-ignore
@@ -71,20 +77,17 @@ export default function translate() {
       console.log(data)
 
       const arr = [
-        ,
         "Hey there",
         "Just sign in to chat with me",
         "Login to chat",
       ]
-      function getRandomString(arr: string[]) {
-        return arr[Math.floor(Math.random() * 4)]
-      }
+      
 
       copymes.push({
         //@ts-ignore
         message: data.data
           ? data.data
-          : "Hello there, please Sign in to chat with me",
+          : "A automated content filter told me I can not talk about this topic. please try something else.",
         //@ts-ignore
         user: "0",
         //@ts-ignore
@@ -104,7 +107,7 @@ export default function translate() {
     <>
       {/*@ts-ignore*/}
       <center>
-        <div className=" flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen xl:w-2/3 2xl:w-1/3">
+        <div className=" flex-1   justify-between flex flex-col h-screen xl:w-2/3 2xl:w-1/3">
           <div className="flex sm:items-center justify-between py-3 border-b-2 border-gray-200">
             <div className="relative flex items-center space-x-4 pl-4">
               <div className="relative">
@@ -279,10 +282,12 @@ export default function translate() {
                   </svg>
                 </button>
                 <button
+                 onClick={handleSubmit}
                   type="button"
                   className="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none"
                 >
-                  <span className="font-bold">Send</span>
+                    {session ? <span className="font-bold">Send</span> : <></>}
+                  
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
