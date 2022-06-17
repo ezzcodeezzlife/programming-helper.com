@@ -44,7 +44,7 @@ export default function translate() {
   const [messages, setMessages] = useState([
     {
       message:
-        "Hello! Im your personal assisant and you can ask me anything you want to know about tech programming and more..",
+        "Hello! Im your personal assisant and you can ask me anything you want to know about programming and more..",
       user: "0",
     },
     {
