@@ -268,9 +268,9 @@ export default function translate() {
               </div>
               
             </div>
-            {/*
+          
             { session ? (<span className="text-slate-300 text-xs">If you want actual code, please use one of the features below</span>) : (<></>) }
-            */}
+          
           </div>
           
         </div>
