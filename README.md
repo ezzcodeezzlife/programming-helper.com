@@ -1,4 +1,4 @@
-[programming-helper.com/](https://www.programming-helper.com/)
+[programming-helper.com](https://www.programming-helper.com/)
 
 ## Getting Started
 
