@@ -100,8 +100,7 @@ export default function Usuarios() {
             More from others
           </h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Get some ideas how others use this recently. You can also contribute
-            to this.
+            Get some ideas how others used this recently.
           </p>
         </div>
 
