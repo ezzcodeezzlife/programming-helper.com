@@ -94,12 +94,12 @@ export default function translate() {
       const data = await resdata.json()
       console.log(data)
 
-      if(session){
-      sendPost({
-        title: input,
-        content: data.data ? data.data : data.message,
-      })
-    }
+      if (session) {
+        sendPost({
+          title: input,
+          content: data.data ? data.data : data.message,
+        })
+      }
       const arr = ["Hey there", "Just sign in to chat with me", "Login to chat"]
 
       copymes.push({
@@ -111,9 +111,6 @@ export default function translate() {
       })
       setMessages(copymes)
       forceUpdate()
-
-      
-
     })
   }
 
@@ -266,13 +263,16 @@ export default function translate() {
                   </svg>
                 </button>
               </div>
-              
             </div>
-          
-            { session ? (<span className="text-slate-300 text-xs">If you want actual code, please use one of the features below</span>) : (<></>) }
-          
+
+            {session ? (
+              <span className="text-slate-300 text-xs">
+                If you want actual code, please use one of the features below
+              </span>
+            ) : (
+              <></>
+            )}
           </div>
-          
         </div>
 
         {!session && (

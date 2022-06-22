@@ -157,6 +157,8 @@ export default function Inputarea(props: any) {
   const [copytext, setCopytext] = useState("Copy to Clipboard")
   const [isChrome, setIsChrome] = useState(false)
 
+  const [buttonPressed, setButtonPressed] = useState(false)
+
   const {
     transcript,
     listening,
@@ -228,6 +230,8 @@ export default function Inputarea(props: any) {
     console.log("button pressed", textup)
     fetchData()
     resetTranscript()
+
+    setButtonPressed(true)
   }
 
   const copyToClip = () => {
@@ -395,6 +399,7 @@ export default function Inputarea(props: any) {
               value={content}
             />
             */}
+
               <button
                 className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4  hover:border-blue-500 rounded"
                 style={{ backgroundColor: "grey" }}
@@ -402,6 +407,16 @@ export default function Inputarea(props: any) {
               >
                 {copytext}
               </button>
+
+              <br></br>
+              {buttonPressed ? (
+                <span className="text-sm text-zinc-400">
+                  Not happy with the result? Try a slightly different promt
+                </span>
+              ) : (
+                <></>
+              )}
+              <br></br>
             </p>
             {/*
             <span>AI Service - Results may vary</span>
