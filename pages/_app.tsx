@@ -19,7 +19,9 @@ const App = ({ Component, pageProps }: AppProps) => {
         }}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-    
+     
+     
+     {/* adcash
     <Head>
       <meta name="a.validate.02" content="xEkdV1LI-JAJY9zSmK5MVvVezGl0l2ChhAOD" />
     </Head>
@@ -31,11 +33,11 @@ const App = ({ Component, pageProps }: AppProps) => {
      type="text/javascript" 
      data-adel="atag" 
      src="//asacdn.com/script/atg.js" 
-     /*@ts-ignore*/
      czid="ikrtwx6cwe" 
      />
+    */}
 
-      {/*
+      {/* propeller ads
       <Head>
       <meta name="propeller" content="16835aec6473836849046ebbbac20fbc"></meta>
       </Head>
