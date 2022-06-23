@@ -23,6 +23,17 @@ const App = ({ Component, pageProps }: AppProps) => {
     <Head>
       <meta name="a.validate.02" content="xEkdV1LI-JAJY9zSmK5MVvVezGl0l2ChhAOD" />
     </Head>
+    
+    
+
+    <Script 
+    data-cfasync="false"
+     type="text/javascript" 
+     data-adel="atag" 
+     src="//asacdn.com/script/atg.js" 
+     /*@ts-ignore*/
+     czid="ikrtwx6cwe" 
+     />
 
       {/*
       <Head>
