@@ -19,7 +19,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         }}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-
+    
+    <Head>
+      <meta name="a.validate.02" content="dvsx7yljx7Ek_2ijTjrgPcDqp41wuNJheuTs" />
+    </Head>
+    
       {/*
       <Head>
       <meta name="propeller" content="16835aec6473836849046ebbbac20fbc"></meta>
