@@ -21,9 +21,9 @@ const App = ({ Component, pageProps }: AppProps) => {
       />
     
     <Head>
-      <meta name="a.validate.02" content="dvsx7yljx7Ek_2ijTjrgPcDqp41wuNJheuTs" />
+      <meta name="a.validate.02" content="xEkdV1LI-JAJY9zSmK5MVvVezGl0l2ChhAOD" />
     </Head>
-    
+
       {/*
       <Head>
       <meta name="propeller" content="16835aec6473836849046ebbbac20fbc"></meta>
