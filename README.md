@@ -5,7 +5,7 @@
 ### Clone the repository and install dependencies
 
 ```
-git clone https://github.com/ezzcodeezzlife/openaiwebsite.git
+git clone https://github.com/ezzcodeezzlife/programming-helper.com.git
 cd openaiwebsite
 npm install
 ```
