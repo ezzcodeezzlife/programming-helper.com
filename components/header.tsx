@@ -374,7 +374,7 @@ export default function Header() {
               )}
             </Popover>*/}
             </Popover.Group>
-            <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            <div className=" md:flex items-center justify-end md:flex-1 lg:w-0">
               {!session && (
                 <>
                   <a
