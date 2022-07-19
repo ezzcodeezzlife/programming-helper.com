@@ -8,7 +8,7 @@ export default async function getPosts(
 ) {
   try {
     await connectToDatabase()
-    const posts = await Post.find().limit(20)
+    const posts = await Post.find()
     res.json(posts)
   } catch (err) {
     console.log(err)

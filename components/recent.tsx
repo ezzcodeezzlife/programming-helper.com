@@ -30,7 +30,7 @@ export default function Usuarios() {
         <></>
       ) : (
         <div className="card m-2  border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
-          <div className="m-3">
+          <div className="m-3 overflow-hidden">
             <h2 className="text-lg mb-2">
               {" "}
               {post.title}

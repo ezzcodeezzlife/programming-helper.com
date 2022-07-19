@@ -17,6 +17,7 @@ import {
 import Typed from "react-typed"
 import FeaturesHero from "../components/featuresHero"
 import Seocomponent from "../components/seocomponent"
+import RecentSingle from "../components/recentSingle"
 
 const navigation = [
   { name: "Features", href: "#features" },
@@ -342,6 +343,15 @@ export default function Example() {
           </div>
         </div>
       </div>
+
+    <RecentSingle></RecentSingle>
+      
     </>
   )
+}
+
+export async function getServerSideProps(context: any) {
+  return {
+    props: {}, // will be passed to the page component as props
+  }
 }
