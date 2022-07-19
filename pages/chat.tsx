@@ -169,8 +169,11 @@ export default function translate() {
                           <span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-blue-600 text-white">
                             {message.message}
                           </span>
+                          <span onClick={() => console.log("click") } className="text-zinc-500">elaborate on this</span>
                         </div>
+                        
                       </div>
+                     
 
                       {/*@ts-ignore*/}
 
