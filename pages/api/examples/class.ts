@@ -44,7 +44,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (session) {
     const { user } = session
-
+    console.log(user)
     openai
       .createCompletion("content-filter-alpha", {
         //text-davinci-002,
