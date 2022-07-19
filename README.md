@@ -1,5 +1,48 @@
 [programming-helper.com](https://www.programming-helper.com/)
 
+
+## Programming
+
+Function from Description
+
+Code to Explanation
+
+Fix invalid Code
+
+Translate Languages
+
+Class from Description
+
+Get Language from Code
+
+Function from Docstring
+
+## Helpers
+
+Regex from Description
+
+Regex to Explanation
+
+Linux Command
+
+Get time complexity
+
+Git Command from Description
+
+## Database
+
+Text Description to SQL Command
+
+## Web
+
+Generate HTML from Description
+
+CSS from Description
+
+Meta Tags from Description
+
+
+
 ## Getting Started
 
 ### Clone the repository and install dependencies
