@@ -114,6 +114,30 @@ export default function translate() {
     })
   }
 
+  const elaborate = (message: string) => {
+    fetch("/api/examples/chatelaborate", {
+      method: "POST",
+      body: JSON.stringify({
+        input: message,
+      }),
+    }).then(async (resdata) => {
+      const data = await resdata.json()
+      console.log(data)
+
+      const mes = messages
+      mes.push({
+        message:
+          data.data ? data.data : data.message,
+        user: "0",
+      })
+
+      console.log(mes)
+      setMessages(mes)
+      forceUpdate()
+      console.log(messages)
+          
+    })}
+
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null
 
@@ -169,7 +193,7 @@ export default function translate() {
                           <span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-blue-600 text-white">
                             {message.message}
                           </span>
-                          <span onClick={() => console.log("click") } className="text-zinc-500">elaborate on this</span>
+                          <span onClick={() => elaborate(message.message) } className="text-zinc-500 cursor-pointer">elaborate on this</span>
                         </div>
                         
                       </div>
