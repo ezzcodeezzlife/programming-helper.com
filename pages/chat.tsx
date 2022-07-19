@@ -126,8 +126,7 @@ export default function translate() {
 
       const mes = messages
       mes.push({
-        message:
-          data.data ? data.data : data.message,
+        message: data.data ? data.data : data.message,
         user: "0",
       })
 
@@ -135,8 +134,8 @@ export default function translate() {
       setMessages(mes)
       forceUpdate()
       console.log(messages)
-          
-    })}
+    })
+  }
 
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null
@@ -193,11 +192,18 @@ export default function translate() {
                           <span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-blue-600 text-white">
                             {message.message}
                           </span>
-                          <span onClick={() => elaborate(message.message) } className="text-zinc-500 cursor-pointer">elaborate on this</span>
+                          {index == messages.length - 1 ? (
+                            <span
+                              onClick={() => elaborate(message.message)}
+                              className="text-zinc-500 cursor-pointer"
+                            >
+                              elaborate on this
+                            </span>
+                          ) : (
+                            <></>
+                          )}
                         </div>
-                        
                       </div>
-                     
 
                       {/*@ts-ignore*/}
 

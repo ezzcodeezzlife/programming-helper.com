@@ -1,6 +1,5 @@
 [programming-helper.com](https://www.programming-helper.com/)
 
-
 ## Programming
 
 Function from Description
@@ -40,8 +39,6 @@ Generate HTML from Description
 CSS from Description
 
 Meta Tags from Description
-
-
 
 ## Getting Started
 

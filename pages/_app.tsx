@@ -19,9 +19,8 @@ const App = ({ Component, pageProps }: AppProps) => {
         }}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-     
-     
-     {/* adcash
+
+      {/* adcash
     <Head>
       <meta name="a.validate.02" content="xEkdV1LI-JAJY9zSmK5MVvVezGl0l2ChhAOD" />
     </Head>
