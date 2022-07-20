@@ -344,8 +344,7 @@ export default function Example() {
         </div>
       </div>
 
-    <RecentSingle></RecentSingle>
-      
+      <RecentSingle></RecentSingle>
     </>
   )
 }

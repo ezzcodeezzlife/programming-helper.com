@@ -52,8 +52,6 @@ export default function Usuarios() {
 
   return (
     <>
-      
-
       <div className="pb-12">
         <div className="lg:text-center px-4 pb-4">
           <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
