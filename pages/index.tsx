@@ -19,6 +19,7 @@ import FeaturesHero from "../components/featuresHero"
 import Seocomponent from "../components/seocomponent"
 import RecentSingle from "../components/recentSingle"
 
+// @ts-ignore
 import AdSense from 'react-adsense';
 
 const navigation = [
