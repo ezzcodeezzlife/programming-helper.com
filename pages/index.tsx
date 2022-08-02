@@ -19,6 +19,8 @@ import FeaturesHero from "../components/featuresHero"
 import Seocomponent from "../components/seocomponent"
 import RecentSingle from "../components/recentSingle"
 
+import AdSense from 'react-adsense';
+
 const navigation = [
   { name: "Features", href: "#features" },
   { name: "Chat", href: "/chat" },
@@ -323,22 +325,20 @@ export default function Example() {
           </div>
         </div>
       </div>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<div id="test" style={{padding: 20, backgroundColor: "yellow"}}>
-      <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8251732556629149" crossOrigin="anonymous" 
-            strategy="afterInteractive">
-        {`
- <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-8251732556629149"
-      data-ad-slot="6693148006"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
- <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
- </script>
-        `}
-      </Script>
+<div id="test" style={{padding: 20, backgroundColor: "yellow", alignItems: "center"}}>
+      
+    
+    
+      <AdSense.Google
+  client='ca-pub-8251732556629149'
+  slot='6693148006'
+  style={{ display: 'block', height: '90px' }}
+  layout='display'
+  format='auto'
+/>
+    
     </div>
 
       <div className="bg-gray-50 m-6 my-14	rounded-xl">
@@ -363,7 +363,11 @@ export default function Example() {
       </div>
 
       <RecentSingle></RecentSingle>
+
+    
+
     </>
+    
   )
 }
 
