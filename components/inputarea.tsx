@@ -420,7 +420,6 @@ export default function Inputarea(props: any) {
               )}
               <br></br>
 
-            
               <AdSense.Google
                 client="ca-pub-8251732556629149"
                 slot="6693148006"
@@ -428,8 +427,6 @@ export default function Inputarea(props: any) {
                 layout="display"
                 format="auto"
               />
-         
-             
             </p>
             {/*
             <span>AI Service - Results may vary</span>
