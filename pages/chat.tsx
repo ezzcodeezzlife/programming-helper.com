@@ -16,6 +16,9 @@ import { Alert } from "react-bootstrap"
 import styles from "../components/header.module.css"
 import Seocomponent from "../components/seocomponent"
 import Header from "../components/header"
+// @ts-ignore
+import AdSense from "react-adsense"
+
 //create your forceUpdate hook
 function useForceUpdate() {
   const [value, setValue] = useState(0) // integer state
@@ -324,6 +327,18 @@ export default function translate() {
         )}
         {/*@ts-ignore*/}
       </center>
+      
+      {/*@ts-ignore*/}
+      <center>
+              <AdSense.Google
+                client="ca-pub-8251732556629149"
+                slot="6693148006"
+                //style={{ display: 'block'}}
+                layout="display"
+                format="auto"
+              />
+{/*@ts-ignore*/}
+            </center>
 
       <Features></Features>
       <Recent></Recent>

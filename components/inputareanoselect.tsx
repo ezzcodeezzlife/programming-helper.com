@@ -13,6 +13,8 @@ import Typed from "react-typed"
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition"
+// @ts-ignore
+import AdSense from "react-adsense"
 
 export default function translate(props: any) {
   const { data: session, status } = useSession()
@@ -252,6 +254,18 @@ export default function translate(props: any) {
               >
                 {copytext}
               </button>
+
+              <br>
+              </br>
+
+              <AdSense.Google
+                client="ca-pub-8251732556629149"
+                slot="6693148006"
+                //style={{ margin: "50px"}}
+                layout="display"
+                format="auto"
+              />
+
             </p>
             {/*
             <span>AI Service - Results may vary</span>
