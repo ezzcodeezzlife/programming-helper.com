@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css"
 import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
 import { MenuIcon, XIcon } from "@heroicons/react/outline"
-
+import Script from "next/script"
 import {
   AnnotationIcon,
   GlobeAltIcon,
@@ -131,6 +131,7 @@ const features = [
   },
 ]
 import Logo from "./logo.svg"
+import { NextScript } from "next/document"
 
 export default function Example() {
   return (
@@ -322,6 +323,24 @@ export default function Example() {
           </div>
         </div>
       </div>
+
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8251732556629149"
+      crossorigin="anonymous"></script>
+ <!-- index_banner_1 -->
+ <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-8251732556629149"
+      data-ad-slot="6693148006"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+ <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+ </script>
+        `}
+      </Script>
 
       <div className="bg-gray-50 m-6 my-14	rounded-xl">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
