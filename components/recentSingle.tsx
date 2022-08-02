@@ -3,6 +3,8 @@ import { IPost } from "../src/Models/Post"
 import { useEffect, useState } from "react"
 import Header from "../src/components/Header"
 import { SpeakerphoneIcon, XIcon } from "@heroicons/react/outline"
+// @ts-ignore
+import AdSense from "react-adsense"
 
 export default function Usuarios() {
   const [posts, setPosts] = useState<IPost[]>([])
@@ -46,6 +48,22 @@ export default function Usuarios() {
         */}
           </div>
         </div>
+      )}
+
+      {i % 25 === 0 && i != 0 ? (
+        <>
+          <div className="p-2">
+            <AdSense.Google
+              client="ca-pub-8251732556629149"
+              slot="7213960558"
+              //style={{ display: 'block'}}
+              layout="display"
+              format="auto"
+            />
+          </div>
+        </>
+      ) : (
+        <></>
       )}
     </>
   ))

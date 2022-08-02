@@ -20,7 +20,7 @@ import Seocomponent from "../components/seocomponent"
 import RecentSingle from "../components/recentSingle"
 
 // @ts-ignore
-import AdSense from 'react-adsense';
+import AdSense from "react-adsense"
 
 const navigation = [
   { name: "Features", href: "#features" },
@@ -324,27 +324,22 @@ export default function Example() {
 
             <FeaturesHero></FeaturesHero>
 
-                       
-    <div className="mt-12  pt-6">
-    
-    <AdSense.Google
-client='ca-pub-8251732556629149'
-slot='6693148006'
-//style={{ display: 'block'}}
-layout='display'
-format='auto'
-/></div>
-
+            <div className="mt-12  pt-6">
+              <AdSense.Google
+                client="ca-pub-8251732556629149"
+                slot="6693148006"
+                //style={{ display: 'block'}}
+                layout="display"
+                format="auto"
+              />
+            </div>
           </div>
-   
         </div>
       </div>
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-  
-    
-
+      <script
+        async
+        src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      ></script>
 
       <div className="bg-gray-50 m-6 my-14	rounded-xl">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
@@ -368,21 +363,7 @@ format='auto'
       </div>
 
       <RecentSingle></RecentSingle>
-
-      <div className="p-12 ">
-    
-    <AdSense.Google
-client='ca-pub-8251732556629149'
-slot='7213960558'
-//style={{ display: 'block'}}
-layout='display'
-format='auto'
-/></div>
-
-    
-
     </>
-    
   )
 }
 
