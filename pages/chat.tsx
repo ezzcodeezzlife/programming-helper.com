@@ -332,7 +332,7 @@ export default function translate() {
       <center>
               <AdSense.Google
                 client="ca-pub-8251732556629149"
-                slot="6693148006"
+                slot="1195077610"
                 //style={{ display: 'block'}}
                 layout="display"
                 format="auto"
