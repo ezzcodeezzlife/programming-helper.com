@@ -323,24 +323,28 @@ export default function Example() {
             </div>
 
             <FeaturesHero></FeaturesHero>
+
+                       
+    <div className="mt-12  pt-6">
+    
+    <AdSense.Google
+client='ca-pub-8251732556629149'
+slot='6693148006'
+//style={{ display: 'block'}}
+layout='display'
+format='auto'
+/></div>
+
           </div>
+   
         </div>
       </div>
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<div id="test" style={{padding: 20, backgroundColor: "yellow", alignItems: "center"}}>
-      
+
+  
     
-    
-      <AdSense.Google
-  client='ca-pub-8251732556629149'
-  slot='6693148006'
-  style={{ display: 'block', height: '90px' }}
-  layout='display'
-  format='auto'
-/>
-    
-    </div>
+
 
       <div className="bg-gray-50 m-6 my-14	rounded-xl">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
