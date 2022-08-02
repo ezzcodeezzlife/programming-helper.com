@@ -325,12 +325,9 @@ export default function Example() {
       </div>
 
 <div id="test" style={{padding: 20, backgroundColor: "yellow"}}>
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8251732556629149" crossOrigin="anonymous" 
+            strategy="afterInteractive">
         {`
-          
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8251732556629149"
-      crossorigin="anonymous"></script>
- <!-- index_banner_1 -->
  <ins class="adsbygoogle"
       style="display:block"
       data-ad-client="ca-pub-8251732556629149"
