@@ -21,6 +21,8 @@ import Seocomponent from "./seocomponent"
 import Typed from "react-typed"
 import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react"
 import { transcode } from "buffer"
+// @ts-ignore
+import AdSense from "react-adsense"
 
 const features = [
   {
@@ -417,6 +419,17 @@ export default function Inputarea(props: any) {
                 <></>
               )}
               <br></br>
+
+            
+              <AdSense.Google
+                client="ca-pub-8251732556629149"
+                slot="6693148006"
+                //style={{ display: 'block'}}
+                layout="display"
+                format="auto"
+              />
+         
+             
             </p>
             {/*
             <span>AI Service - Results may vary</span>
