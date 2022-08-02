@@ -52,15 +52,15 @@ export default function Usuarios() {
 
       {i % 25 === 0 && i != 0 ? (
         <>
-          <div className="p-2">
+          
             <AdSense.Google
               client="ca-pub-8251732556629149"
               slot="7213960558"
-              //style={{ display: 'block'}}
+              style={{ padding: 2}}
               layout="display"
               format="auto"
             />
-          </div>
+         
         </>
       ) : (
         <></>
