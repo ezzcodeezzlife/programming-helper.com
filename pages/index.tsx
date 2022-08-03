@@ -324,7 +324,7 @@ export default function Example() {
 
             <FeaturesHero></FeaturesHero>
 
-            <div className="mt-12 overflow-hidden rounded-sm pt-6">
+            <div className="mt-12 mx-2">
               <AdSense.Google
                 client="ca-pub-8251732556629149"
                 slot="6693148006"
