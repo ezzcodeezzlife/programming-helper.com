@@ -50,6 +50,8 @@ export default function Usuarios() {
         </div>
       )}
 
+      {/* 
+
       {i % 25 === 0 && i != 0 ? (
        
           <AdSense.Google
@@ -63,6 +65,9 @@ export default function Usuarios() {
       ) : (
         <></>
       )}
+
+
+*/}
     </>
   ))
 

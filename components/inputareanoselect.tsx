@@ -256,14 +256,11 @@ export default function translate(props: any) {
               </button>
               <br></br>
               <span className="text-sm text-zinc-400">
-                  Not happy with the result? Try a slightly different promt
-                </span>
+                Not happy with the result? Try a slightly different promt
+              </span>
               <br></br>
-              
-              
-              
             </p>
-           
+
             {/*
             <span>AI Service - Results may vary</span>
           */}
