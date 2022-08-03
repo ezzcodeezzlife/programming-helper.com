@@ -37,7 +37,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const parsed = JSON.parse(req.body)
 
     openai
-      .createCompletion("content-filter-alpha", {
+      .createCompletion( {
+        model: "content-filter-alpha",
         //text-davinci-002,
         prompt: "<|endoftext|>" + parsed.input + "\n--\nLabel:",
         temperature: 0,
@@ -55,7 +56,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           console.log("Chatmessage:", parsed.input)
           // add sending user id to the request
           openai
-            .createCompletion("text-davinci-002", {
+            .createCompletion({
+              model: "text-davinci-002",
               prompt:
                 "kindly answer the question the in the context of computer programming. \n\n\n\n Q: " +
                 parsed.input +
