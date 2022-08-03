@@ -254,7 +254,10 @@ export default function translate(props: any) {
               >
                 {copytext}
               </button>
-
+              <br></br>
+              <span className="text-sm text-zinc-400">
+                  Not happy with the result? Try a slightly different promt
+                </span>
               <br></br>
 
               <AdSense.Google
