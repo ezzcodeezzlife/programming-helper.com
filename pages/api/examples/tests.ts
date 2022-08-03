@@ -76,9 +76,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .createCompletion({
               model: "code-davinci-002",
               prompt:
-                "Test for this code: " +
-                req.body.textup +
-                " \n \n Test:\n\n",
+                "Test for this code: " + req.body.textup + " \n \n Test:\n\n",
               temperature: 0.5,
               max_tokens: 250,
               top_p: 1,

@@ -75,10 +75,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           openai
             .createCompletion({
               model: "code-davinci-002",
-              prompt:
-                "Git command for: " +
-                req.body.textup +
-                " \n\n",
+              prompt: "Git command for: " + req.body.textup + " \n\n",
               suffix: "\n",
               temperature: 0.5,
               max_tokens: 250,

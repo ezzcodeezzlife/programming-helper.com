@@ -79,7 +79,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                 " Time complexity Big O Notation of: \n " +
                 req.body.textup +
                 " \n Big O: ",
-              temperature: 0 ,
+              temperature: 0,
               max_tokens: 250,
               top_p: 1,
               frequency_penalty: 0.7,

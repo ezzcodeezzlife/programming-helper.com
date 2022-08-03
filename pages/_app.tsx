@@ -85,8 +85,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <SessionProvider session={pageProps.session} refetchInterval={0}>
         <Component {...pageProps} />
       </SessionProvider>
-
-      
     </>
   )
 }

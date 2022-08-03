@@ -76,9 +76,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .createCompletion({
               model: "code-davinci-002",
               prompt:
-                "Code: " + req.body.textup +
-
-                "\n Translation to " + req.body.selectedOption.value + ":\n",
+                "Code: " +
+                req.body.textup +
+                "\n Translation to " +
+                req.body.selectedOption.value +
+                ":\n",
               temperature: 0.4,
               max_tokens: 250,
               top_p: 1,

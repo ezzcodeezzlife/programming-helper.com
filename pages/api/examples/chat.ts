@@ -37,7 +37,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const parsed = JSON.parse(req.body)
 
     openai
-      .createCompletion( {
+      .createCompletion({
         model: "content-filter-alpha",
         //text-davinci-002,
         prompt: "<|endoftext|>" + parsed.input + "\n--\nLabel:",

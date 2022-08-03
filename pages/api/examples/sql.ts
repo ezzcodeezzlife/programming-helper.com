@@ -76,9 +76,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .createCompletion({
               model: "code-davinci-002",
               prompt:
-                "SQL command that querries: " +
-                req.body.textup +
-                " \n SQL:\n",
+                "SQL command that querries: " + req.body.textup + " \n SQL:\n",
               temperature: 0.2,
               max_tokens: 250,
               top_p: 1,

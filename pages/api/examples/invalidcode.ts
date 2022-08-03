@@ -79,7 +79,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                 "Fix all problems, typos in the code:\n\n" +
                 req.body.textup +
                 "\n\n Start of fixed code:\n",
-              suffix: "\ End of fixed code.",
+              suffix: " End of fixed code.",
               temperature: 0.9,
               max_tokens: 250,
               top_p: 1,

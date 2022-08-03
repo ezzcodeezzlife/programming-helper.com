@@ -76,7 +76,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             .createCompletion({
               model: "code-davinci-002",
               prompt:
-                "CSS that implements the following description:" + 
+                "CSS that implements the following description:" +
                 req.body.textup +
                 " \n\n Start of CSS: <style>",
               suffix: "</style>  End of CSS.",
