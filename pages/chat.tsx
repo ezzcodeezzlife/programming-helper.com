@@ -327,18 +327,18 @@ export default function translate() {
         )}
         {/*@ts-ignore*/}
       </center>
-      
+
       {/*@ts-ignore*/}
       <center>
-              <AdSense.Google
-                client="ca-pub-8251732556629149"
-                slot="1195077610"
-                //style={{ display: 'block'}}
-                layout="display"
-                format="auto"
-              />
-{/*@ts-ignore*/}
-            </center>
+        <AdSense.Google
+          client="ca-pub-8251732556629149"
+          slot="1195077610"
+          //style={{ display: 'block'}}
+          layout="display"
+          format="auto"
+        />
+        {/*@ts-ignore*/}
+      </center>
 
       <Features></Features>
       <Recent></Recent>

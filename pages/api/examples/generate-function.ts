@@ -23,20 +23,20 @@ const limiter = rateLimit({
 //test
 const { Configuration, OpenAIApi } = require("openai")
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-})
-const openai = new OpenAIApi(configuration)
-
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  await limiter.check(res, 10, "CACHE_TOKEN") // 8 requests per minute
+  let configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+  })
+  let openai = new OpenAIApi(configuration)
+
+  await limiter.check(res, 20, "CACHE_TOKEN") // 8 requests per minute
 
   const session = await getSession({ req })
 
   //console.log(req.body)
   //console.log(req.body.textup)
   //console.log(req.body.selectedOption.value)
-  console.log(process.env.OPENAI_API_KEY)
+
   console.log(session)
 
   console.log("content length", req.body.textup.length)
@@ -51,7 +51,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const { user } = session
 
     openai
-      .createCompletion("content-filter-alpha", {
+      .createCompletion({
+        model: "content-filter-alpha",
         //text-davinci-002,
         prompt: "<|endoftext|>" + req.body.textup + "\n--\nLabel:",
         temperature: 0,
@@ -66,23 +67,27 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           console.log("usermail:", user?.email)
 
+          configuration = new Configuration({
+            apiKey: process.env.OPENAI_API_KEY_CODEX,
+          })
+          openai = new OpenAIApi(configuration)
+
           // add sending user id to the request
           openai
-            .createCompletion("text-davinci-002", {
-              //text-davinci-002,
+            .createCompletion({
+              model: "code-davinci-002",
               prompt:
-                "Generate a function in " +
+                "function in " +
                 req.body.selectedOption.value +
-                " that does the following: " +
+                " that implements: " +
                 req.body.textup +
-                " \n    \n ### " +
-                "\n\n",
-              temperature: 0.7,
+                " \n \n Start of code:\n\n",
+              suffix: "\n\n End of code.",
+              temperature: 0.6,
               max_tokens: 250,
               top_p: 1,
-              frequency_penalty: 0,
+              frequency_penalty: 0.1,
               presence_penalty: 0,
-              stop: ["###"],
               user: user?.email,
             })
             .then(async (response: any) => {

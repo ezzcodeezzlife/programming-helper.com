@@ -77,7 +77,7 @@ export default function translate(props: any) {
       })
       .catch((err) => {
         setContent(
-          "Max 1000 characters. Please dont Spam requests. No Adult Content. Try again in a few seconds."
+          "⚠️ Please dont Spam requests. Max 1000 characters. Try again. ⚠️"
         )
         console.log(err)
       })
@@ -255,8 +255,7 @@ export default function translate(props: any) {
                 {copytext}
               </button>
 
-              <br>
-              </br>
+              <br></br>
 
               <AdSense.Google
                 client="ca-pub-8251732556629149"
@@ -265,7 +264,6 @@ export default function translate(props: any) {
                 layout="display"
                 format="auto"
               />
-
             </p>
             {/*
             <span>AI Service - Results may vary</span>

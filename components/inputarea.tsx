@@ -211,7 +211,7 @@ export default function Inputarea(props: any) {
       })
       .catch((err) => {
         setContent(
-          "Max 1000 characters. Please dont Spam requests. No Adult Content. Try again in a few seconds."
+          "⚠️ Please dont Spam requests. Max 1000 characters. Try again. ⚠️"
         )
         console.log(err)
       })

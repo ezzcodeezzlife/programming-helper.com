@@ -2098,10 +2098,10 @@
   "resolved" "https://registry.npmjs.org/oidc-token-hash/-/oidc-token-hash-5.0.1.tgz"
   "version" "5.0.1"
 
-"openai@^2.0.5":
-  "integrity" "sha512-M/drXV2QYdRhmB5EhAINpeA4oGzj0M6mSVfi8o8Rex3Re+yEnSBMUExtGZSlbVRAKpIvTLbq0oC7bgHBaSnjLw=="
-  "resolved" "https://registry.npmjs.org/openai/-/openai-2.0.5.tgz"
-  "version" "2.0.5"
+"openai@^3.0.0":
+  "integrity" "sha512-YNAPZKzBfE6MnR5Ro/z3uKbg7T3F3W1FoTCtYheKRdEjZeheMX49QYFeL990gBFAhuGziEZCUdhnNT+eIrxX/Q=="
+  "resolved" "https://registry.npmjs.org/openai/-/openai-3.0.0.tgz"
+  "version" "3.0.0"
   dependencies:
     "axios" "^0.26.0"
     "form-data" "^4.0.0"
