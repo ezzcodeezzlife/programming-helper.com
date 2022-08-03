@@ -37,8 +37,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const parsed = JSON.parse(req.body)
 
     openai
-      .createCompletion("content-filter-alpha", {
-        //text-davinci-002,
+      .createCompletion( {
+        model: "content-filter-alpha",
         prompt: "<|endoftext|>" + parsed.input + "\n--\nLabel:",
         temperature: 0,
         max_tokens: 1,
@@ -54,7 +54,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           // add sending user id to the request
           openai
-            .createCompletion("text-davinci-002", {
+            .createCompletion( {
+              model: "text-davinci-002",
               prompt:
                 "kindly elaborate on this topic in the context of computer programming. \n\n\n\n Q: " +
                 parsed.input +
