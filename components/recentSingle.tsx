@@ -51,7 +51,7 @@ export default function Usuarios() {
       )}
 
       {i % 25 === 0 && i != 0 ? (
-        <div className="overflow-hidden">
+      
           <AdSense.Google
             client="ca-pub-8251732556629149"
             slot="7213960558"
@@ -59,7 +59,7 @@ export default function Usuarios() {
             layout="display"
             format="auto"
           />
-        </div>
+      
       ) : (
         <></>
       )}
