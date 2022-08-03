@@ -57,7 +57,6 @@ export default function Usuarios() {
             slot="7213960558"
             style={{ margin: "10px" }}
             layout="display"
-            format="auto"
           />
       
       ) : (

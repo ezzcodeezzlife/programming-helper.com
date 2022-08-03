@@ -266,7 +266,6 @@ export default function translate(props: any) {
                 slot="6693148006"
                 //style={{ margin: "50px "}}
                 layout="display"
-                format="auto"
               /></div>
             </p>
             {/*
