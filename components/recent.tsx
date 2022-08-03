@@ -129,6 +129,13 @@ export default function Usuarios() {
           <div className=" grid grid-cols-1 sm:grid-cols-2 ">{mappedPosts}</div>
         </div>
       </div>
+
+      <div className="flex justify-center py-4 text-slate-400 space-x-3">
+        <a className="hover:text-slate-600" href="https://homepage-appsplosion.herokuapp.com/">Appsplosion</a>
+        <a className="hover:text-slate-600" href="https://homepage-appsplosion.herokuapp.com/privacypolicy">Contact</a>
+        <a className="hover:text-slate-600" href="https://homepage-appsplosion.herokuapp.com/privacypolicy">Privacy Policy</a>
+        <a className="hover:text-slate-600" href="https://github.com/ezzcodeezzlife/programming-helper.com">GitHub</a>
+      </div>
     </>
   )
 }
