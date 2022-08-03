@@ -55,7 +55,7 @@ export default function Usuarios() {
           <AdSense.Google
             client="ca-pub-8251732556629149"
             slot="7213960558"
-            style={{ margin: "10px" }}
+            style={{ margin: "20px" }}
             layout="display"
             format="auto"
           /></div>
