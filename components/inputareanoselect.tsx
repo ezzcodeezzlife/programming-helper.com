@@ -260,13 +260,13 @@ export default function translate(props: any) {
                 </span>
               <br></br>
               
-              <div className="mx-8 overflow-hidden">
+             
               <AdSense.Google
                 client="ca-pub-8251732556629149"
                 slot="6693148006"
                 //style={{ margin: "50px "}}
                 layout="display"
-              /></div>
+              />
             </p>
             {/*
             <span>AI Service - Results may vary</span>
