@@ -260,7 +260,7 @@ export default function translate(props: any) {
                 </span>
               <br></br>
               
-              <div className="mx-12 overflow-hidden">
+              <div className="mx-8 overflow-hidden">
               <AdSense.Google
                 client="ca-pub-8251732556629149"
                 slot="6693148006"
