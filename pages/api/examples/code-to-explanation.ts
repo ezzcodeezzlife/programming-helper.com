@@ -37,7 +37,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const { user } = session
 
     openai
-      .createCompletion("content-filter-alpha", {
+      .createCompletion( {
+        model: "content-filter-alpha",
         //text-davinci-002,
         prompt: "<|endoftext|>" + req.body.textup + "\n--\nLabel:",
         temperature: 0,
@@ -54,7 +55,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           // add sending user id to the request
           openai
-            .createCompletion("text-curie-001", {
+            .createCompletion( {
+              model: "text-davinci-002",
               //text-davinci-002,
               prompt:
                 "Explain this function please \n \n" +
