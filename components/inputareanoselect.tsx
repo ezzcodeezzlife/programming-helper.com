@@ -259,14 +259,15 @@ export default function translate(props: any) {
                   Not happy with the result? Try a slightly different promt
                 </span>
               <br></br>
-
+              
+              <div className="overflow-hidden">
               <AdSense.Google
                 client="ca-pub-8251732556629149"
                 slot="6693148006"
                 //style={{ margin: "50px"}}
                 layout="display"
                 format="auto"
-              />
+              /></div>
             </p>
             {/*
             <span>AI Service - Results may vary</span>
