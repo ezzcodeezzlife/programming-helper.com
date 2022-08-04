@@ -78,13 +78,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               prompt:
                 "Fix all problems, typos in the code:\n\n" +
                 req.body.textup +
-                "\n\n Start of fixed code:\n",
-              suffix: " End of fixed code.",
+                "\n\n Entire code but fixed problems:",
               temperature: 0.9,
               max_tokens: 250,
               top_p: 1,
               frequency_penalty: 0.1,
-              presence_penalty: 0,
+              presence_penalty: 0.5,
               user: user?.email,
             })
             .then(async (response: any) => {
