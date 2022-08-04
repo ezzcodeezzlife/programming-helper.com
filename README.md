@@ -1,3 +1,5 @@
+![Logo](https://www.svgrepo.com/show/68023/logo.svg)
+
 [programming-helper.com](https://www.programming-helper.com/)
 
 ## Programming
