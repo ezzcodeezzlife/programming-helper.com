@@ -83,7 +83,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             })
             .catch((error: any) => {
               console.log(error)
-              res.status(500).json(error)
+              res.status(500).json(error.message)
             })
         } else {
           res.status(400).json({
