@@ -1,4 +1,4 @@
-![Logo](https://www.svgrepo.com/show/68023/logo.svg)
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 [programming-helper.com](https://www.programming-helper.com/)
 
