@@ -133,12 +133,6 @@ export default function Usuarios() {
       <div className="flex justify-center py-4 text-slate-400 space-x-3">
         <a
           className="hover:text-slate-600"
-          href="https://homepage-appsplosion.herokuapp.com/"
-        >
-          Appsplosion
-        </a>
-        <a
-          className="hover:text-slate-600"
           href="https://homepage-appsplosion.herokuapp.com/privacypolicy"
         >
           Contact
