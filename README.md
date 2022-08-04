@@ -1,4 +1,4 @@
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![header image](https://github.com/ezzcodeezzlife/programming-helper.com/blob/master/assets/header.JPG)
 
 [programming-helper.com](https://www.programming-helper.com/)
 
