@@ -48,60 +48,58 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return
   }
 
-    openai
-      .createCompletion({
-        model: "content-filter-alpha",
-        prompt: "<|endoftext|>" + req.body.textup + "\n--\nLabel:",
-        temperature: 0,
-        max_tokens: 1,
-        top_p: 0,
-        logprobs: 10,
-      })
-      .then(function (response: any) {
-        console.log("content-filter score:", response.data.choices[0].text)
-        if (response.data.choices[0].text === "0") {
-          console.log("safe contnet")
+  openai
+    .createCompletion({
+      model: "content-filter-alpha",
+      prompt: "<|endoftext|>" + req.body.textup + "\n--\nLabel:",
+      temperature: 0,
+      max_tokens: 1,
+      top_p: 0,
+      logprobs: 10,
+    })
+    .then(function (response: any) {
+      console.log("content-filter score:", response.data.choices[0].text)
+      if (response.data.choices[0].text === "0") {
+        console.log("safe contnet")
 
-         
+        configuration = new Configuration({
+          apiKey: process.env.OPENAI_API_KEY_CODEX,
+        })
+        openai = new OpenAIApi(configuration)
 
-          configuration = new Configuration({
-            apiKey: process.env.OPENAI_API_KEY_CODEX,
+        openai
+          .createCompletion({
+            model: "code-davinci-002",
+            prompt:
+              "Added strong typing to code:\n\n" +
+              req.body.textup +
+              "\n\n Start of fixed code:\n",
+            suffix: " End of fixed code.",
+            temperature: 0.6,
+            max_tokens: 250,
+            top_p: 1,
+            frequency_penalty: 0,
+            presence_penalty: 0.9,
+            user: session?.user?.email,
           })
-          openai = new OpenAIApi(configuration)
-
-          openai
-            .createCompletion({
-              model: "code-davinci-002",
-              prompt:
-                "Added strong typing to code:\n\n" +
-                req.body.textup +
-                "\n\n Start of fixed code:\n",
-              suffix: " End of fixed code.",
-              temperature: 0.6,
-              max_tokens: 250,
-              top_p: 1,
-              frequency_penalty: 0,
-              presence_penalty: 0.9,
-              user: session?.user?.email,
-            })
-            .then(async (response: any) => {
-              console.log(response.data.choices[0].text)
-              //res.status(200).json(response.data)
-              console.log("Response:", response.data.choices[0])
-              try {
-                res.status(200).json({ data: response.data.choices[0].text })
-              } catch (err) {
-                console.log(err)
-              }
-            })
-            .catch((error: any) => {
-              console.log(error)
-              res.status(500).json(error.message)
-            })
-        } else {
-          res.status(400).json({
-            message: "Please under 1000 chars",
+          .then(async (response: any) => {
+            console.log(response.data.choices[0].text)
+            //res.status(200).json(response.data)
+            console.log("Response:", response.data.choices[0])
+            try {
+              res.status(200).json({ data: response.data.choices[0].text })
+            } catch (err) {
+              console.log(err)
+            }
           })
-        }
-      })
+          .catch((error: any) => {
+            console.log(error)
+            res.status(500).json(error.message)
+          })
+      } else {
+        res.status(400).json({
+          message: "Please under 1000 chars",
+        })
+      }
+    })
 }
