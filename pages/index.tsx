@@ -26,8 +26,10 @@ const navigation = [
   { name: "Features", href: "#features" },
   { name: "Chat", href: "/chat" },
   //{ name: "Community Discord", href: "#" },
-  { name: "GitHub", href: "https://github.com/ezzcodeezzlife/programming-helper.com" },
-
+  {
+    name: "GitHub",
+    href: "https://github.com/ezzcodeezzlife/programming-helper.com",
+  },
 ]
 
 const features = [

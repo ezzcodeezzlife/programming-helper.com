@@ -213,34 +213,26 @@ export default function translate(props: any) {
     </div>
 
 */}
-              {!session ? (
-                <button
-                  className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-                  onClick={buttonPressLogin}
-                >
-                  Sign in - {props.buttontext}
-                </button>
-              ) : (
-                <button
-                  className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-                  onClick={buttonPress}
-                >
-                  {" "}
-                  {requestloading ? (
-                    <>
-                      Loading
-                      <Typed
-                        strings={["..."]}
-                        typeSpeed={50}
-                        backSpeed={25}
-                        loop
-                      />
-                    </>
-                  ) : (
-                    <>{props.buttontext}</>
-                  )}{" "}
-                </button>
-              )}
+
+              <button
+                className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+                onClick={buttonPress}
+              >
+                {" "}
+                {requestloading ? (
+                  <>
+                    Loading
+                    <Typed
+                      strings={["..."]}
+                      typeSpeed={50}
+                      backSpeed={25}
+                      loop
+                    />
+                  </>
+                ) : (
+                  <>{props.buttontext}</>
+                )}{" "}
+              </button>
 
               <textarea
                 readOnly
