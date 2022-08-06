@@ -93,12 +93,7 @@ export default function Usuarios() {
         >
           Privacy Policy
         </a>
-        <a
-          className="hover:text-slate-600"
-          href="https://github.com/ezzcodeezzlife/programming-helper.com"
-        >
-          GitHub
-        </a>
+        
       </div>
     </>
   )

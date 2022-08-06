@@ -24,11 +24,7 @@ import AdSense from "react-adsense"
 
 const navigation = [
   { name: "Features", href: "#features" },
-  { name: "Chat", href: "/chat" },
-  {
-    name: "GitHub",
-    href: "https://github.com/ezzcodeezzlife/programming-helper.com",
-  },
+  { name: "AI Chat", href: "/chat" },
   {
     name: "Community Discord",
     href: "https://discord.gg/ukASBpNh3n",
