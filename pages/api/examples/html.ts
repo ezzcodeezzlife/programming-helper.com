@@ -48,9 +48,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return
   }
 
-  if (session) {
-    const { user } = session
-
     openai
       .createCompletion({
         model: "content-filter-alpha",
@@ -65,8 +62,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         if (response.data.choices[0].text === "0") {
           console.log("safe contnet")
 
-          console.log("usermail:", user?.email)
-
+      
           configuration = new Configuration({
             apiKey: process.env.OPENAI_API_KEY_CODEX,
           })
@@ -85,7 +81,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               top_p: 1,
               frequency_penalty: 0.6,
               presence_penalty: 0,
-              user: user?.email,
+              user: session?.user?.email,
             })
             .then(async (response: any) => {
               console.log(response.data.choices[0].text)
@@ -107,10 +103,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           })
         }
       })
-  } else {
-    res.send({
-      error:
-        "You must be signed in to view the protected content on this page.",
-    })
-  }
+ 
 }
