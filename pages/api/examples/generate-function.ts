@@ -81,7 +81,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               " \n \n Start of code:\n\n",
             suffix: "\n\n End of code.",
             temperature: 0.6,
-            max_tokens: 250,
+            max_tokens: 1000,
             top_p: 1,
             frequency_penalty: 0.1,
             presence_penalty: 0,
