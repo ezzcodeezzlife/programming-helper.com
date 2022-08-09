@@ -202,18 +202,6 @@ export default function translate(props: any) {
                 <></>
               )}
 
-              {/*
-<div>
-      <p>Use Voice: {listening ? (<> <button style={{backgroundColor:"#e9e9e9"}}   onClick={(event) =>  SpeechRecognition.stopListening()}>⏹️</button> </> ) : <button style={{backgroundColor:"#e9e9e9"}} onClick={(event) => SpeechRecognition.startListening()}> 🔴</button>}
-      
-      <button style={{backgroundColor:"#e9e9e9", color:"black"}} onClick={(event) => resetTranscript}>Reset</button>
-      </p>
-      
-       <p>{transcript}</p> 
-    </div>
-
-*/}
-
               <button
                 className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
                 onClick={buttonPress}

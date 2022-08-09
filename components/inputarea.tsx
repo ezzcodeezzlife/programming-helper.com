@@ -125,7 +125,7 @@ const features = [
     link: "/meta",
   },
 ]
-//ff
+
 const options = [
   { value: "Python", label: "Python" },
   { value: "Javascript", label: "Javascript" },
@@ -266,9 +266,6 @@ export default function Inputarea(props: any) {
     }
   }, [])
 
-  // If no session exists, display access denied message
-
-  // If session exists, display content
   return (
     <>
       <Seocomponent title={props.title} apipath={props.apipath}></Seocomponent>
