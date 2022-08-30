@@ -78,8 +78,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               req.body.selectedOption.value +
               " that implements: " +
               req.body.textup +
-              " \n \n Start of code:\n\n",
-            suffix: "\n\n End of code.",
+              " \n code: '''",
+            suffix: "'''",
             temperature: 0.6,
             max_tokens: 1000,
             top_p: 1,
