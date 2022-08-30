@@ -27,7 +27,7 @@ const navigation = [
   { name: "AI Chat", href: "/chat" },
   {
     name: "Community Discord",
-    href: "https://discord.gg/ukASBpNh3n",
+    href: "https://discord.gg/3FJ5Y2E2qr",
   },
 ]
 
