@@ -1,6 +1,5 @@
 ![header image](https://github.com/ezzcodeezzlife/programming-helper.com/blob/master/assets/header.JPG)
 
-[programming-helper.com](https://www.programming-helper.com/)
 
 ## Programming
 
